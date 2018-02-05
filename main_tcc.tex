@@ -1,0 +1,150 @@
+\documentclass{ufpatcc}
+
+\include{include}
+\include{packages}
+
+\graphicspath{{fig/}}
+
+\ufpaTitulo{Título do TCC}
+
+\ufpaAutor{Erick Modesto Campos}
+\ufpaAno{2017}
+\ufpaSegundoAutor{} % Segundo autor, se necessario
+\ufpaOrientador{MsC. Cassio Trindade Batista}
+\ufpaCoOrientador{Prof. Dr. Nelson Cruz Sampaio Neto}
+\ufpaMembroBancaA{Prof. Dr. Francisco Carlos Bentes Frey Muller}
+\ufpaMembroBancaB{MsC. Ilan Sousa Correa}
+\ufpaCoordenadorCurso{Prof. Dr. Francisco Carlos Bentes Frey Muller}
+
+\usepackage{titlesec}
+
+\begin{document}
+
+\ufpaPaginaDeRosto
+
+\pagenumbering{arabic}
+
+\ufpaPagRostodo 
+
+\ufpaPaginaDeAprovacao
+
+%%%%%%%%%%%%%%%%%%%%
+%   Oferecimento   %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{ufpaOferecimento}
+
+    “Dedico esse trabalho à minha família e amigos”
+
+\end{ufpaOferecimento}
+
+%%%%%%%%%%%%%%%%%%%%
+%  Agradecimento   %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{ufpaAgradecimentos}
+
+    Meus copiosos agradecimentos
+
+    
+\end{ufpaAgradecimentos}
+
+%%%%%%%%%%%%%%%%%%%%
+%      Epigrafe     %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{ufpaEpigrafe}
+    Epígrafe: título ou frase que, colocada no início de um livro, um capítulo, um
+    poema etc., serve de tema ao assunto ou para resumir o sentido ou situar a
+    motivação da obra; mote.
+    \begin{flushright}Wikipédia\end{flushright}
+\end{ufpaEpigrafe}
+
+%%%%%%%%%%%%%%%%%%%%
+%      Resumo      %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{ufpaResumo}
+
+    Resumo do TCC
+
+\end{ufpaResumo}
+
+\begin{abstract}
+
+    Abstract written in english
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%
+%  Lista de Siglas  %
+%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Lista de Abreviaturas} \label{sec:siglas}
+\addcontentsline{toc}{chapter}{Lista de Abreviações e Siglas}
+\input{siglas} \label{sec:siglas} 
+\clearpage
+
+%\chapter*{Lista de Símbolos} \label{sec:simbolos}
+%\addcontentsline{toc}{chapter}{Lista de Símbolos}
+%\input{list/simbolos} \label{sec:simbolos} \clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Insere a lista de Figuras e de Tabelas  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\listoffigures \clearpage
+\listoftables \clearpage
+
+%%%%%%%%%%%%%%%%%%%%
+%      Summary     %
+%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\chapter*{\centerline{\contentsname}}
+\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+\@starttoc{toc}%
+\makeatother
+%\tableofcontents 
+
+%%%%%%%%%%%%%%%%%%%%%
+%   Corpo do TCC    %
+%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\input{cap/cap1_introducao}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%`
+%   Referencias bibliograficas   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand\bibname{References}
+%\bibliographystyle{../../../public/ABNT-20020112}
+%\bibliographystyle{../public/IEEEtran}
+%\bibliographystyle{../../../Public/IEEEtran_pt}
+\bibliographystyle{abnt}
+\bibliography{references}
+
+%temorary tag just while there is no \citation
+%eliminates no \citation error
+\nocite{*}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%
+%   Appendix        %
+%%%%%%%%%%%%%%%%%%%%%
+
+%\appendix
+%\input{appendix/append_pll}
+%\input{appendix/append_fpga_flow}
+%\input{appendix/append_ad9361_driver}
+
+%%%%%%%%%%%%%%%%%%%%%
+%   blank page      %
+%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%% -- Termino do TCC
+\end{document}
+
