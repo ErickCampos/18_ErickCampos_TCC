@@ -1,0 +1,7 @@
+Este trabalho utiliza o rastreamento facial ao longo de frames capturados por
+uma webcam para controlar o movimento do cursor do mouse através dos movimentos
+da cabeça realizados pelo usuário do sistema proposto. Para a realizar os
+eventos de clique do mouse, os autores utilizaram um acionador do tipo pedal que
+possui uma comunicação sem fio com o computador através da tecnologia
+bluetooth. Com isso uma pessoa pode utilizar as funções principais de um mouse
+sem a necessidade de utilizar as mãos.

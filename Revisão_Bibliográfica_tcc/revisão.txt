@@ -1,0 +1,119 @@
+=============================================================
+2010_BMEI_SoochanKim_HeadMouseSystemBasedOnGyroAndOptoSensors
+=============================================================
+
+Este trabalho utilizou um sensor com acelerômetro e giroscópio para obter os
+ângulos e rotação da cabeça para controlar o ponteiro do mouse. Para isso, a
+informação obtida pelo sensor foi convertida de uma velocidade angular para
+ângulos através de varias operações matemáticas. Já para a detecção dos evento
+de click do mouse, foi utilizado dois sensores ópticos, um led infravermelho
+emissor e um led infravermelho receptor. O método proposto levou em consideração
+apenas o click simples e o click duplo, descartando a implementação da função de
+"clicar e arrastar". Os sensores foram posicionados bem próximos de um dos olhos
+do usuário e com eles foi possível identificar quando o usuário estava de olho
+fechado. Quando o usuário está de olho fechado o sinal de saída do sensor
+infravermelho é alta e quando o usuário está de olhos abertos o sinal de saída
+do sensor é baixo. Com isso foi possível detectar os eventos de click do mouse
+identificando a transição aberto-fechado dos olhos. A detecção foi baseada na
+amplitude da saída do sinal do sensor e do tempo em que o usuário ficava de olho
+fechado, evitando que o sistema identificasse um click involuntário quando o
+usuário piscasse de forma natural. O método de click proposto pelo autor é muito
+interessante, porém pode acarretar em uma série de equivocados reconhecimento de
+click devido ao sensor utilizado ser baste influenciados pelas condições do
+ambiente como iluminação de lâmpadas florescentes e do sol. Além
+disso,segundo~/cite{} o contato direto do olho humano com luz infravermelho pode
+causar danos a córne a a retina se não for tomado uma série de cuidados como
+intensidade da luz infravermelha e a distância entre a fonte de luz e o olho
+humano
+
+
+
+
+
+===================================================================
+2018_IUI_AanandNayyar_OptdwrllIntelligentAdjustmentOfDwellClickTime 
+===================================================================
+Neste trabalho foi proposto um algoritmo chamado de OptiDwell que utiliza
+dwell-click para emular as funções de click do mouse. O algoritmo proposto
+utiliza o mesmo princípio do dwelltime, mas com a diferença de que o usuário
+sabe exatamente quando o evento de click irá acontecer. O dwelltime utiliza o
+tempo em que o ponteiro do mouse fica parado sobre algo clicável na tela do
+computador para realizar o evento de click. O usuário sabe qual o tempo em
+que deve-se permanecer com o cursor posicionado sobre o botão que se deseja
+clicar, mas não é possível ter a noção exata desse tempo. Por exemplo se a
+pessoa deseja clicar no ícone de fechar uma janela, ele deve posicionar e
+esperar o tempo de 2s, por exemplo, para que o evento de click seja ativado.
+Porém se em 1.99s o cursor não estiver mais posicionado no ícone desejado o
+evento do click não será realizado. Com o método proposto, o usuário tem
+exatamente a noção do tempo para que um click posse ser realizado. O algoritmo
+utilizado também utiliza o tempo em que o cursor permanece parado sobre um ícone
+clicável na tela do computador, porém há a possibilidade de saber exatamente
+quando o o sistema irá realizar o evento de click, além de fornecer um feedback
+sonoro quando esse click acontecer. O usuário consegue ter a noção de quando o
+sistema irá realizar o click através da mudança de cor do ícone que se deseja
+clicar. Por exemplo, se o usuário desejar em uma letra no teclado virtual, essa
+letra irá trocar de cor, se o ponteiro do mouse ficar sobre a tecla, conforme o 
+tempo for passando quando chegar em uma determinada cor a função de clicar será
+ativada e um som de click será ativado. Com isso o sistema ajuda o usuário a
+ter uma noção do tempo que se deve esperar para ser identificado a função de
+click através de um feedback visual e sonoro, contudo o tempo continua sendo
+um problema, pois o tempo de execução de tarefas simples --- digitação, por
+exemplo --- demando mais tempo do que outros métodos alternativos além de
+proporcionar um certo incômodo nos usuários que utilizam, por exemplo, um
+sistema que realiza o ponteiro do cursor de um mouse através dos movimentos da
+cabeça, pois o usuário precisa ficar com a cabeça parada em uma certa posição
+para que o click seja realizado.
+
+
+
+============================================================================
+2012_EMBC_CarlosPinheiro_TheSimulationOfClickAndDoubleClickThroughEMGSignals
+============================================================================
+Nesse estudo foi utilizado sinais obtidos por eletromiografia (EMG) --- uma
+técnica de monitoramento de sinais elétricos produzidos pela células musculares
+--- para emular as funções de click simples e duplo. Os eletrodos que capturam
+os sinais elétricos foram colocados no músculo frontal, um músculo que cobre
+partes do crânio. A figra~\ref{} mostra em vermelho a localização do músculo
+frontal. O usuário deve levantar as sobrancelhas para que o seja capturado o
+sinal elétrico pelo circuito de EMG para que esse sinal seja convertido em um
+evento de click do mouse.  
+
+
+===============================================================================================
+2012_ICCCT_SharbaniKaushik_MouseCursorControlSystemBasedOnFacialElectromyogramAndMechanomyogram
+===============================================================================================
+
+Os autores desse trabalho propõe um método que possibilida controlar o movimento
+do cursor do mouse e os evendo de click equerdo e direito do mouse através de
+EMG e mecanomiografia MMG, uma técnica nao-invasiva que registra as vibrações
+ou sons produzidos pelo músculo esquelético ao se contrair~\cite{}. Os eletrodos
+de EMG foram colocados no músculo masseter e no músculo risório, que são
+mostrados na Figura~\ref{}. Para o MMG foi utilizado um Piezo elétrico --- um
+transdutor que sob estresse mecânicos como vibrações e compressões, gera sinais 
+elétricos --- que foi colocado no músculo platisma, localizado no pescoço como
+mostrado na Figura~\ref{}. As palavras up, down, left e right foram usadas para
+controlar o ponteiro do mouse. Já para função de click esquerdo e direito do
+mouse, foram utilizadas as palavras left click e right click, respectivamente.
+
+
+
+
+====================================================
+2002_ACMCAT_AzfarKarimullah_SpeechBasedCursorControl
+====================================================
+
+Para este trabalho foi proposto um método de controle do ponteiro do mouse e do
+evento de click através do reconhecimento de voz. O sistema possui seis comandos
+básicos: move left, move right, move up, move down, stop e click. Quando o
+usuário realiza um comando de controle do ponteiro do mouse, move right por
+exemplo, o cursor do mouse começa a se mover 20 pixels por segundo para a
+direção dada no comando e só para de se movimentar quando for reconhecido o
+camando stop. Em relação ao evento de click, foi implementado apenas o click
+simples do mouse, sendo necessário o usuário falar a palavra click para que o
+sistema emule essa função. O sistema de controle do ponteiro pode ser um
+problema visto que se uma pessoa quiser mover o cursor para um ícone que esteja
+muito próximo da posição atual do ponteiro pode não haver tempo suficiente entre
+os comandos de movimentação e de parada do cursor para  que o ponteiro fique
+exatamente no ícone desejado. Já a função de click do mouse é bastante
+interessante e se combinada com outros métodos alternativos de controle de
+mouse, ficaria muito faz eficaz de se utilizar.

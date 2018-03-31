@@ -1,0 +1,11 @@
+Este trabalho utiliza os movimentos da cabeça para controlar o cursor de um
+mouse. O auxílio de um acelerômetro foi utilizado para realizar o evento de
+clique do mouse. O sensor fica posicionado atrás da orelha do usuário e é
+dividido em modulo transmissor e modulo receptor que fica conectado no
+computador através da porta USB. Os módulos se comunicam utilizando sinais de
+radio frequência. O sensor detecta o padrão de vibração de quando o usuário
+realiza a ação de pressionar os dentes superiores sobre os inferiores, da
+maneira como funciona a mastigação. O sensor também é capaz de distinguir as
+vibração da pressão entre os dentes, da vibração que acontece quando uma pessoa
+movimenta a cabeça e até mesmo a vibração causada pela fala. Isso evita cliques
+de mouse detectados de forma equivocada tornando o treco mais confiável.  
