@@ -1738,7 +1738,7 @@ FUNCTION {mastersthesis}
   new.block
   format.pages "pages" output.check
   new.block
-  "Disserta\c{c}\~ao (Mestrado em F\'{\i}sica) - " "type" output.check
+  "Disserta\c{c}\~ao (Mestrado em Ci\^encia da Computa\c{c}\~ao) - " "type" output.check
   before.all 'output.state :=
   school "school" output.check
   address "address" output.check
