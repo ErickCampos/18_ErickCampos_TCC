@@ -357,9 +357,138 @@ Com isso uma que tenha os movimentos dos membros inferiores preservados,
 consegue utilizar a função de clique no computador sem a necessidade de utilizar
 a mãos. 
 
-%\section{Objetivos}
+Como visto até agora, existem diversos tipos de acionadores construídos com a
+finalidade de serem utilizados como método alternativo para o clique do
+\textit{mouse}.  Contudo, dentre a literatura consultada, não foi encontrado
+nenhuma pesquisa na área acadêmica que utilizasse um acionador baseado em sopro
+como interface para gerar comandos de clique para serem emulados no computador.
+Até existem produtos no mercado com a proposta de controlar os eventos de
+clique, como o acionador Sip/Puff Switch~\cite{SipPuff} e o
+IntegraMouse~\cite{IntegraMouse}, um produto que permite controlar o ponteiro do
+\textit{mouse} e realizar cliques no computador, através dos movimentos da boca
+e de sopro, respectivamente. Entretanto, o Sip/Puff Switch custa cerca
+de U\$ 319, já o IntegraMouse está custando em média \euro 2000. Esses preços
+são extremamanete altos para pessoas que tenham um baixo poder aquisitivo. Isso
+contribui bastante para que esse tipo de Tecnologia Assistiva não seja
+amplamente difundida, contribuindo para o aumento da exclusão digital imposta às
+PCD.
 
-%\section{Síntese de Conteúdo}
+Diante de tais circunstâncias, este trabalho tem como finalidade apresentar  uma
+solução para diminuir a exclusão digital vivenciada por PCD, as quais estão à
+margem do mundo eletrônico por conta da ausência de recursos que adaptem os
+dispositivos às suas necessidades. Sendo assim, um acionador externo baseado em
+sopro facilitaria o uso das funções de clique do \textit{mouse} para tarefas
+executadas no computador e essa ferramenta seria utilizada em conjunto, por
+exemplo, com um \textit{software} que capture imagens do rosto do usuário em
+tempo real através de uma \textit{webcam} para controlar o movimento do cursor
+do \textit{mouse} ao longo do monitor. Dessa forma, uma pessoa que antes não
+conseguia utilizar um computador, poderá realizar várias tarefas no computador
+de forma independente, ajudando na inclusão digital e social dessa pessoa.
 
+\section{Objetivos}
+
+O objetivo geral do projeto é construir um protótipo de acionador externo
+baseado e sopro que ajude as PCD a controlarem de forma independente os eventos
+de clique do \textit{mouse}. A principio, como prova de conceito, será possível
+controlar os cliques apenas em sistemas operacionais Linux, como o Ubuntu e seus
+derivados. No entanto, o sistema projetado pode ser ampliando para os sistemas
+operacionais Windows e MacOS para atender um maior número de potenciais usuários
+do produto. É importante também que esse produto seja de baixo custo e que todo
+o projeto seja livremente disponibilizado, para que qualquer pessoa que tenha
+acesso a esse projeto, caso opte, possa construir por conta própria seu
+acionador, aumentando assim, o número de pessoas beneficiadas por este trabalho.
+
+O protótipo será colocado em uma posição próxima a boa do usuário com o auxílio
+de um \textit{headset} modificado que servirá de suporte para ajudar o acionador
+a ficar a posição ideal para que o usuário consiga realizar o sopro sem
+dificuldades. A interface de comunicação do acionador com o computador será o
+P2 Jack 3.5~mm para que a pessoa possa utilizar o mesmo acionador, que foi
+projetado para usar a função de clique de um \textit{mouse}, em outro tipo de
+contexto, como em brinquedos que precisam de um tipo de acionamento externo. Um
+\textit{software} será desenvolvido para capturar os sinais da interface P2 Jack
+e convertê-los em ações de clique no computador.
+
+Testes com o protótipo serão aplicados a voluntários para verificar o potencial
+do produto e verificar possíveis desvantagens para futuras melhorias.
+
+\begin{subsection}{Objetivos Específicos}
+
+Os objetivos específicos podem ser:
+i) estudo e implementação das ferramentas que constituem acionador;
+ii) estudo de API's para criação do \textit{software};
+iii) teste com voluntários;
+iv) resultados.
+
+Uma breve descrição sobre cada tópico é feita a seguir.
+
+\begin{enumerate}[i)]
+
+\setlength\itemsep{-.2cm}
+	\item Estudo e implementação ferramentas que constituem o acionador: \vspace{-.2cm}
+	\begin{itemize}
+		%\setlength\itemsep{-.1cm}
+		\item Estudo do efeito piezoelétrico;
+		\item Estudo de circuito comparador com amplificadores operacionais;
+		\item Construção circuito protótipo do acionador.
+	\end{itemize}
+
+	\item Estudo de API's para a criação do \textit{software}: \vspace{-.2cm}
+	\begin{itemize}
+		%\setlength\itemsep{-.1cm}
+		\item Estudo de API's para captura de sinais da interface P2 Jack;
+		\item Estudo de API's que permitam manipular os eventos de clique;
+		\item Implementação do \textit{software}.
+	\end{itemize}
+
+	\item Testes com voluntários: \vspace{-.2cm}
+	\begin{itemize}
+		%\setlength\itemsep{-.1cm}
+		\item Cenário de testes compostos pelo método proposto e outro método alternativo para os eventos de clique;
+		\item Aplicação de um questionário capaz de quantificar atributos qualitativos do sistema.
+	\end{itemize}
+
+	\item Resultados: \vspace{-.1cm}
+	\begin{itemize}
+		%\setlength\itemsep{-.1cm}
+		\item Análise comparativa entre o método proposto e outro método alternativo de clique;
+		\item vantagens e desvantagens do acionador;
+		\item Indicação de trabalhos futuros.
+	\end{itemize}
+
+\end{enumerate}
+
+\end{subsection}
+
+\section{Síntese de Conteúdo}
+
+Este capítulo fez uma breve introdução sobre as motivações que levaram ao
+desenvolvimento do projeto, mostrando com breves detalhes o que foi construído.
+A seguir, é apresentada uma síntese dos conteúdos que serão abordados nos
+próximos capítulos.
+
+\begin{description}
+	\item[Capítulo 2.] Revisão Teórica. 
+
+	\item[Capítulo 3.] Metodologia. 
+	Neste capítulo, as atividades realizadas para a construção do projeto serão
+	detalhadas. Serão descritos com detalhes os procedimentos utilizados
+	para que o acionador construído pudesse se comunicar com o computador
+	através da interface P2 Jack com o auxílio do \textit{software} desenvolvido
+	o qual é capaz de capturar os sinais do P2 Jack e convertê-los em ações de
+	clique.
+	
+	\item[Capítulo 4.] Ambiente de Teste e Resultados. 
+	O sistema foi testado com algumas pessoas, as quais forneceram um
+	\textit{feedback} através de um questionário de qualidade e usabilidade.
+	Os detalhes sobre a metodologia dos testes aplicados aos voluntários e os
+	resultados obtidos e avaliados serão discutidos neste capítulo.
+
+	\item[Capítulo 5.] Considerações Finais. 
+	Discussões sobre os resultados dos testes feitos com o grupo de voluntários
+	serão abordadas nesse capítulo, juntamente com a conclusão do trabalho e a
+	perspectiva para as próximas versões do projeto, esta última discutida na
+	seção de trabalhos futuros. Detalhes sobre todas as falhas cometidas e
+	dificuldades gerais encontradas durante o projeto também serão relatados. 
+\end{description}
 
 \end{chapter}
