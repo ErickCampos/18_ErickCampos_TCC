@@ -22,7 +22,7 @@
 
 \ufpaPaginaDeRosto
 
-\pagenumbering{arabic}
+\pagenumbering{roman}
 
 \ufpaPagRostodo 
 
@@ -33,7 +33,8 @@
 %%%%%%%%%%%%%%%%%%%%
 
 \begin{ufpaOferecimento}
-
+	\index{Oferecimento@Oferecimento}%
+	\addcontentsline{toc}{chapter}{Dedicatória} 
     “Dedico esse trabalho à minha família e amigos”
 
 \end{ufpaOferecimento}
@@ -43,10 +44,11 @@
 %%%%%%%%%%%%%%%%%%%%
 
 \begin{ufpaAgradecimentos}
-
+	\index{Agradecimentos@Agradecimentos}% 
+	 \addcontentsline{toc}{chapter}{Agradecimentos} 
     Meus copiosos agradecimentos
 
-    
+
 \end{ufpaAgradecimentos}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -64,26 +66,29 @@
 %      Resumo      %
 %%%%%%%%%%%%%%%%%%%%
 
-\begin{ufpaResumo}
+\tableofcontents
+\clearpage
 
-    Resumo do TCC
-
-\end{ufpaResumo}
-
-\begin{abstract}
-
-    Abstract written in english
-
-\end{abstract}
+%\begin{ufpaResumo}
+%
+%    Resumo do TCC
+%
+%\end{ufpaResumo}
+%
+%\begin{abstract}
+%
+%    Abstract written in english
+%
+%\end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%
 %  Lista de Siglas  %
 %%%%%%%%%%%%%%%%%%%%%
 
-\chapter*{Lista de Abreviaturas} \label{sec:siglas}
-\addcontentsline{toc}{chapter}{Lista de Abreviações e Siglas}
-\input{siglas} \label{sec:siglas} 
-\clearpage
+%\chapter*{Lista de Abreviaturas} \label{sec:siglas}
+%\addcontentsline{toc}{chapter}{Lista de Abreviações e Siglas}
+%\input{siglas} \label{sec:siglas} 
+%\clearpage
 
 %\chapter*{Lista de Símbolos} \label{sec:simbolos}
 %\addcontentsline{toc}{chapter}{Lista de Símbolos}
@@ -92,18 +97,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Insere a lista de Figuras e de Tabelas  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\listoffigures \clearpage
-\listoftables \clearpage
+\listoffigures 
+\addcontentsline{toc}{chapter}{Lista de Figuras} 
+\clearpage
+
+\listoftables 
+\addcontentsline{toc}{chapter}{Lista de Tabelas} 
+\clearpage
+
+\chapter*{Lista de Abreviaturas} \label{sec:siglas}
+\addcontentsline{toc}{chapter}{Lista de Abreviações e Siglas}
+\input{siglas} \label{sec:siglas} 
+\clearpage
+
 
 %%%%%%%%%%%%%%%%%%%%
 %      Summary     %
 %%%%%%%%%%%%%%%%%%%%
-\makeatletter
-\chapter*{\centerline{\contentsname}}
-\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
-\@starttoc{toc}%
-\makeatother
+%\makeatletter
+%\chapter*{\centerline{\contentsname}}
+%\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+%\@starttoc{toc}%
+%\makeatother
 %\tableofcontents 
+
+
+\begin{ufpaResumo}
+\addcontentsline{toc}{chapter}{Resumo}
+    Resumo do TCC
+
+\end{ufpaResumo}
+
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+    Abstract written in english
+
+\end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%
 %   Corpo do TCC    %
