@@ -504,7 +504,7 @@
 %%
 %%%%%
 \newenvironment{ufpaResumo}{
-}{
+}{  
     \newpage
 }
 
@@ -514,7 +514,7 @@
 %%
 %%%%%
 \renewenvironment{abstract}{
-}{
+}{  
     \newpage
   %\pagenumbering{arabic}
 }
