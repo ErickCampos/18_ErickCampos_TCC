@@ -1,0 +1,39 @@
+
+allLabels={'Very Useless',
+    'Useless', 
+    'Neutral', 
+    'Useful',
+    'Very Useful'};
+
+allGroups={'Question 1',
+    'Question 2',
+    'Question 3'
+    'Question 4'
+    'Question 5'
+    'Question 6'};
+
+%% number of replies in each rating category
+ratings=[%
+    40, 30, 20, 10, 0;  %ok
+    30, 40, 20, 10, 0;  %ok
+    30, 30, 40, 0, 0;   %ok
+    40, 20, 40, 0, 0;   %ok
+     40, 50, 0 10, 0;   %ok
+     40, 20, 10, 20, 10;
+     
+];
+
+
+y_q5 = [4 4 4 5 5 4 5 4 5 2]';
+y_q6 = [5 3 2 2 5 5 1 4 5 4]';
+
+
+
+
+question=[' '];
+
+
+likert(allLabels,allGroups,ratings,question)
+
+
+
