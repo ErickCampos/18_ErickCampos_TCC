@@ -30,6 +30,66 @@ possuem um alto preço no mercado.
 
 \begin{section}{Trabalhos Futuros}
 
+A ferramenta baseada em sopro desenvolvida neste trabalho foi inicialmente
+destinada a ser usada nos sistemas operacionais Windows, Linux e Android. No
+entanto, o \textit{software} responsável por captar sinais de áudio e
+convertê-los em eventos de cliques foi implementado apenas para plataformas
+baseadas em Linux. É necessário desenvolver um software capaz de rodar no
+Windows também, provavelmente utilizando a biblioteca de \textit{stream} de
+áudio ASIO~\cite{asio} que possui suporte do PortAudio~\cite{portaudio} -- uma
+biblioteca \textit{open-source} que permite manipular os sinais da interface de
+áudio utilizado a linguagem C++	 Para sistemas Android, por outro lado, a classe
+\emph{KeyEvent} tem uma implementação nativa para capturar os cliques do botão
+do fone de ouvido através da \textit{flag} de evento
+\emph{KEYCODE\_HEADSETHOOK}, fazendo com que o \textit{software} que captura os
+dados de áudio não seja mais necessário.
+
+Para evitar os cliques involuntários causados pelo \textit{headset} utilizado
+como suporte para o dispositivo baseado em sopro, uma boa alternativa seria
+utilizar uma solução semelhante a~\cite{ok}, onde um tubo de PVC fica fixo na
+frente do usuário. A outra extremidade do tubo seria colocado em cima do
+transdutor piezoelétrico. Dessa forma, choques acidentais com o dispositivo de
+sopro seriam evitados, o que resultaria na diminuição dos casos de cliques
+involuntários. Contudo, ao utilizar essa solução será necessário substituir o
+programa que realiza o controle do cursor do \textit{mouse}. O ideal seria
+utilizar um \textit{software} que realiza o controle do ponteiro através dos
+movimentos dos olhos, pois o tubo de PCV deverá fixo, impossibilitando o uso de
+métodos que utilizem os movimentos da cabeça do usuário como controle do cursor
+do \textit{mouse}. Uma segunda alternativa seria construir uma espécie de
+capacete qe poderia ser construído utilizando impressoras 3D. Esse capacete
+ficaria posicionado na cabeça do usuário, porém essa solução poderia causar
+desconforto nos usuários.  
+
+Também é necessário investigar algumas possibilidades de sensores a serem
+utilizados como alternativa ao piezo. Como o funcionamento desse transdutor é
+causado por estresses mecânicos, qualquer choque mecânico --- a vibração causada
+pela movimentação rápida da cabeça, por exemplo --- pode ser suficiente para
+ativar o evento de clique. Dispositivos como ~\cite{ok} utilizam  um microfone
+de eletreto como sensor para detectar a ação de sopro, então esse sensor pode
+ser uma boa solução para substituir o piezo. A desvantagem de usar microfones de
+eletreto é que eles são sensíveis a fala, um fato que não se confirma com o
+dispositivo proposto neste trabalho que não permite a ativação do clique através
+da pressão do ar produzida pela voz humana. Contudo, alguns filtros analógicos
+poderiam ser utilizados para garantir a confiabilidade do microfone de eletreto
+utilizado como sensor de sopro. 
+
+Outra possibilidade seria usar um sensor de pressão atmosférica (barômetro) para
+melhorar a detecção de sopro. O sensor BMP180~\cite{bmp180} é amplamente
+utilizado em projetos eletrônicos devido seu baixo custo e facilidade de uso.
+Portanto esse sensor poderia ser uma boa alternativa ao piezo.
+
+Seria interessante utilizar o software desenvolvido em conjunto com outros tipos
+de interação não convencional, a fim de expandir as possibilidades de interação,
+tornando o dispositivo multimodal. Acionadores  que utilizam circuitos
+eletromiográficos podem ser usados como um método alternativo de clique, pois
+há diversos trabalhos que mostram a eficácia deste tipo de método para tarefas
+que demandam um funcinamento de lógica binário. Métodos baseados em aproximação
+como o acionador construído em~\cite{Batista17} e até mesmo em dispositivos
+que necessitam de contato físico como~\cite{ok} poderiam ser utilizados como
+método de interação. Dessa forma, o usuário seria capaz de escolher o melhor
+método de interação que se adpta às suas necessidades, o que acabaria ajudando
+um maior número de deficiências.
+
 \end{section}
 
 \end{chapter}
