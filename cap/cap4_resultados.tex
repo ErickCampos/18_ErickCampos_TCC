@@ -56,7 +56,7 @@ translúcidas logo atrás do monitor.
 A computador utilizado possuia um processador Intel Core i5 da 4ª geração e
 3.20~GHz, memória RAM de 4~GB e 1~TB de espaço de armazenamento com o sistema
 operacional Ubuntu 16.04 Xenial Xerus x64. O monitor era um AOC E1670SWU de LED
-com 15.6 polegadas e com resolução de 1366 x 768.
+com 15.6 polegadas e com resolução de 1366 $\times$ 768.
 
 \begin{figure}[!h]
 	\centering
@@ -168,7 +168,7 @@ acima da mediana e 25\% abaixo.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.00\linewidth]{fig/time}
+	\includegraphics[width=1.0\linewidth]{fig/time}
 	\caption{Distribuição do tempo de conclusão das tarefas.}
 	\label{fig:tempo}
 \end{figure}
@@ -313,17 +313,17 @@ Tabela~\ref{tab:quest}.
 \centering
 \small
 \def\arraystretch{1.0}
-\begin{tabular}{p{2cm}cc|ll}
+\begin{tabular}{c|ll}
 	\hline
 	\hline
-	~ & \textbf{Question} &\multicolumn{2}{c}{\textbf{Answer}} \\
+	 \textbf{Question} &\multicolumn{2}{c}{\textbf{Answer}} \\
 	\hline
-	\textbf{1} & Como foi sua experiência usando esse método alternativo de clique? & 1 -- insuficiente        & 5 -- excelente   \\
-	\textbf{2} & O que voĉe achou do tempo para realizar a tarefa?                  & 1 -- lento               & 5 -- rápido      \\
-	\textbf{3} & Como foi a precisão para realizar a tarefa?                        & 1 -- insuficiente        & 5 -- excelente   \\
-	\textbf{4} & Como foi o esforço cognitivo para realizar a tarefa?               & 1 -- alto                & 5 -- baixo       \\
-	\textbf{5} & Como foi o esforço físico para realizar a tarefa?                  & 1 -- alto                & 5 -- baixo       \\
-	\textbf{6} & Você se concentrou mais na tarefa ou no método de clique?          & 1 -- no método           & 5 -- na tarefa   \\
+	 Como foi sua experiência usando esse método alternativo de clique? & 1 -- insuficiente        & 5 -- excelente   \\
+	 O que voĉe achou do tempo para realizar a tarefa?                  & 1 -- lento               & 5 -- rápido      \\
+	 Como foi a precisão para realizar a tarefa?                        & 1 -- insuficiente        & 5 -- excelente   \\
+	 Como foi o esforço cognitivo para realizar a tarefa?               & 1 -- alto                & 5 -- baixo       \\
+	 Como foi o esforço físico para realizar a tarefa?                  & 1 -- alto                & 5 -- baixo       \\
+	 Você se concentrou mais na tarefa ou no método de clique?          & 1 -- no método           & 5 -- na tarefa   \\
 	%\hline
 	%\textbf{\#}& \multicolumn{3}{c}{Based on your experience, what suggestions
 	%would you give about the puff-based device?} \\
@@ -348,21 +348,29 @@ ou 5, como mostrado na Figura~\ref{fig:PuffQuestions}, enquanto que as respostas
 para o \textit{dwell time} variaram de 3 a 5, como mostrado na
 Figura~\ref{fig:DwellQuestions}.  
 
-\begin{figure}[H]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.0\linewidth]{fig/DwellQuestions}
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{fig/DwellQuestions}
 	\caption{Likert scale of the dwell time questions.} 
 	\label{fig:DwellQuestions}
+	\end{minipage}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.0\linewidth]{fig/PuffQuestions}
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{fig/PuffQuestions}
 	\caption{Likert scale of the puff questions.}
 	\label{fig:PuffQuestions}
+	\end{minipage}
 \end{figure}
 
-É notório uma quantidade superior de respostas que variaram de 1 a 3 para o
+
+
+É notório a quantidade superior de respostas que variaram de 1 a 3 para o
 \textit{dwell time} em comparação com o clique baseado em sopro, o  que
 significa a maioria das pessoas não ficara, tão satisfeitas com o desempenho do
 \textit{dwell time}. De acordo com os participantes, essa insatisfação ocorreu
