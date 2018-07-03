@@ -9,7 +9,7 @@ na Figura~\ref{fig:circuito}
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=1\linewidth]{fig/acionador}
+	\includegraphics[width=0.9\linewidth]{fig/acionador}
 	\caption{Esquemático do acionador baseado em sopro.}
 	\label{fig:circuito}
 	\end{minipage}
@@ -60,8 +60,33 @@ necessária para que a saída do amplificador seja de nível lógico alto,
 configurando assim um clique, pode ser determinada pela tensão de referência
 ajustada pelo potenciômetro.
 
-\textcolor{red}{falta continuar a falar do resto dos componentes mas como eu to
-com dificuldade de escrever essa parte eu pulei pra etapa da confecção da placa}
+Como um dos objetivos do acionador é ser de baixo custo, a cominicação entre o
+acionador desenvolvido e a computador é realizada através da interface de áudio
+P2 Jack. Para gerar um pulso na interface de áudio, basta curto circuitar o pino
+de GND com o \textit{Right} e \textit{Left} do P2 Jack do acionador. Para fazer
+isso foi necessário a utilização de uma porta lógica inversora do componente
+SN7404. Essa porta lógica captura o sinal da saída do LM358 somente quando a
+saída do amplificador é de nível lógico alto, pois a saída desse componente
+também é utilizado como alimentação do SN7404. Portanto, quando a saída do
+amplificador é de nível lógico baixo, o inversor não funciona, pois não há
+tensão suficiente para alimentar esse componente. Quando a saída do LM358 é de
+nível lógico alto, o inversor é alimentado com uma tensão suficiente para
+realizar p funcionamento correto. Essa tensão é utilizada como entrada do
+SN7404 que inverte o sinal de entrada para nível lógico baixo. A saída do
+inveror é concetada nos pinos  \textit{Right} e \textit{Left} do P2 Jack --- que
+estão curto circuitados --- produzindo gerando um pulso na entrada da interface
+de áudio do computador. A partir desse pulso reconhecido pelo computador é
+possível realizar a implementação da emulação dos evento de clique do
+\textit{mouse}. É importante ressaltar que a tensão de sáida do amplificador
+operacional, quando está em nível lógico alto, é bem próximo de 9~V. Essa tensão
+é superior a tensão recomenda (5.5~V) pela fabicante do componente~\cite{7404}. 
+Para diminuir essa tensão para a recomendada, foi utilizado um LED em série com
+um resistor de 300~\si{\ohm}. Quando a saída do amplificador é de nível lógico
+alto, há uma queda de tensão do catodo do LED que é suficiente para alimentar o
+inversor.Sendo assim além de ser utilizado como divisor de tensão, o LED também
+funciona como um \textit{feedback} visual, indicando quando o acionador foi
+ativado pelo sopro do usuário.  
+
 
 \begin{section}{Confecção da Placa de Circuito Impresso}
 Para a construção da placa do acionador baseado e sopro utilizou-se o
@@ -102,20 +127,20 @@ placa nos locais desejados e realizar a soldagem dos componentes da placa.
 Realizado todas as etapas descritas a placa está totalmente finalizada e pronta
 para ser utilizada. 
 
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.45\linewidth]{fig/puff2}
+	\caption{Placa de circuito impresso do acionador baseado em sopro.}
+	\label{fig:placa}
+	\end{minipage}
+\end{figure} 
 
 A Figura~\ref{fig:placa} mostra a placa confeccionada neste trabalho. É possível
 notar que o dispositivo é relativamente pequeno. Mede cerca de 7$\times$7
 centímetros.       
 
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{\textwidth}
-	\centering
-	\includegraphics[width=0.6\linewidth]{fig/puff2}
-	\caption{Placa de circuito impresso do acionador baseado em sopro.}
-	\label{fig:placa}
-	\end{minipage}
-\end{figure} 
 
 \end{section}
 
@@ -171,6 +196,7 @@ do acionador.}
 	\end{minipage}
 \end{figure}
 
+
 Essa foi a ideia utilizada para desenvolver o suporte de sustentação do
 acionador. Os arames recozidos pensados na solução anterior foram reaproveitados
 para a estrutura desenvolvida. A função dos arames é de manter fixo o acionador
@@ -185,7 +211,7 @@ Figura~\ref{fig:suporte}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/erick}
+	\includegraphics[width=0.5\linewidth]{fig/erick}
 	\caption{Um usuário testanto o acionador baseado em sopro em conjunto com o
 suporte de sustentação. Note que o LED de \textit{status} fica no campo de visão
 do usuário. Sendo assim, o suporte não compromete a visualização do LED que
@@ -194,6 +220,8 @@ informa quando o acionador foi ativado pelo sopro.}
 	\end{minipage}
 \end{figure}
 
+
+
 Com essa estrutura o acionador sempre ficará na frente da boca do usuário,
 independente da posição da cabeça da pessoa. É importante também ressaltar que,
 como o \textit{headset} utilizado possui uma estrutura de ajuste de tamanho, o
@@ -201,4 +229,26 @@ suporte pode ser utilizado por varias pessoas bastando apenas ajustar o tamanho
 desejado para cada tamanho de cabeça. 
 
 \end{section}
+
+\begin{section}{Controle do Cursor do \textit{Mouse}}
+
+O dispositivo baseado em sopro proposto neste trabalho foi desenvolvido para ser
+utilizado em conjunto com algum \textit{software} que permite controlar o
+ponteiro do \textit{mouse} através de métodos não convencionais. Neste trabalho
+não foi desenvolvido nenhum programa que realiza essa função de controle do
+cursor. No entanto, foi utilizado o \textit{software} eViacam~\cite{eviacam}.
+Esse programa, distrubuído livremente, é multiplataforma e permite controlar os
+movimentos do cursor do \textit{mouse} através dos movimentos da cabeça
+capturados por uma \textit{webcam}.
+
+O eViacam foi escolhido por ser gratuito, prático (pois é necessário apenas de
+um computador com uma \textit{webcam} para funcionar) e possuir muitas opções de
+personalização das configurações que podem adaptadas para vários perfis de
+usuários.  
+
+ 
+
+
+\end{section}
+
 \end{chapter}
