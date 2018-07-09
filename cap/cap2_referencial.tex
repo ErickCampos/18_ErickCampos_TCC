@@ -281,4 +281,90 @@ entrada do conector seja mono e o conector seja TRS.
 \end{subsection}
 
 \end{section}
+
+
+\begin{section}{Kicad}
+Para o desenvolvimento de placas de circuito impresso, é primeiramente projetar
+o \textit{layout} do circuito. Para realizar essa tarefa é necessário a
+utilização de um \textit{software} EDA (do inglês, \textit{electronic design
+automation}). Existem vários \textit{software} EDA, como o Eagle~\cite{eagle}. O
+Eagle é um \textit{software} amplamente utilizado para o desenvolvimento de
+placas de circuito impresso, contudo possui a desvantagem de não ser um
+\textit{software} livre que é liberado gratuitamente apenas para uso pessoal e
+não comercial. Além disso, a versão gratuita não possui uma quantidade limitada
+de ferramentas de desenvolvimento. Para ter acesso a essas ferramentas é
+necessário adquidir uma assinatura que pode ser mensal ou anual. Os preços dessa
+assinatura variam de R\$~52.91 a R\$~3227.40~\cite{EagleAssinatura}
+
+Existem de ferramentas EDA que são de código aberto e gratuitos. O
+Kicad~\cite{kicad} é o  \textit{software} de código aberto e gratuito mais
+utilizado entre os desenvolvedores. Essa ferramenta oferece recursos necessário
+para o desenvolvimento de quase todo tipo de projeto. Obviamente que não
+há disponível todas as bibliotecas de componentes possíveis. Po exemplo, não há
+uma biblioteca para o componente PJ324~\cite{pj324}. Contudo, há a possibilidade
+de desenvolvimento de bibliotecas próprias e disponibilizá-las em repositórios,
+como o Github~\cite{github}, para que qualquer pessoa possa utilizá-la em
+projetos pessoais.  
+\end{section}
+
+
+
+\begin{section}{Captura de Áudio}
+
+Para o desenvolvimento de uma aplicação de captura ou reprodução de áudio é
+necessário a utilização de alguma API. Uma API (do inglês, \textit{application
+programing interface}) é uma interface que define o contrato para que duas
+aplicações se comuniquem entre si~\cite{API17}. A utilização de uma API pode
+simplificar o desenvolvimento de aplicações, contudo há algumas limitações, como
+linguagem e plataforma utilizada. 
+
+Existem várias API para o desenvolvimento de aplicações de áudio. Agumas APIs são
+nativas do sistema operacional, portanto cada sistema operacional possui APIs
+específicas. A grande desvantagem de utilizar APIs nativas de um determinado
+sistema operacional é que, para a utilização da mesma aplicação em outro sistema
+operacional, é necessario a reescrita do códígo utilizando um API suportada pelo
+sistema operacional onde deseja-se executar a aplicação. 
+
+A camada de áudio de sistemas operacionais baseados em Linux, por
+exemplo, possui o ALSA~\cite{alsa} e também o OSS~\cite{oss} como
+\textit{drivers} que permitem a manipulação de áudios e cada um driver possui
+uma API para o desenvolvimento de aplicações. A camada de áudio do windows
+também ferramentas próprias de manipulação de áudio. Uma alternativa para ajuda
+na portabibilidade da aplicação de áudio desenvolvida é utilizar APIs
+multiplataformas.
+
+Uma ferramenta bastante utilizada para o desenvolvimento de aplicações de áudio
+é o PortAudio~\cite{portaudio}, uma biblioteca de código aberto,
+multiplataforma, que permite escrever programas em C/C++ para realizar gravação
+e reprodução de áudios. A Figura~\ref{fig:portaudio} mostra a arquitetura do
+PortAudio.
+
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/portaudio}
+	\caption{Arquitetura do PortAudio.}
+	\label{fig:portaudio}
+	\end{minipage}
+\end{figure} 
+
+O PortAudio possui suporte para maioria das APIs nativas de cada sistema
+operacional. É realizado uma comunicação entre o PortAudio e as APIs nativas. A
+grande vantagem de utilizar essa ferramenta é que não é necessário aprender cada
+API nativa dos sistemas operacionais. Dessa forma é possível utilizar o mesmo
+código em diferentes sistemas operacionais, facilitando a portabilidade do
+\textit{software} desenvolvido.
+
+A desvantagem de utilizar o PortAudio é que essa ferramenta não fornece total
+suporte para as funcionalidades de cada API nativa. Por exemplo, o PorAudio não
+fornece conversão de taxa de amostragem se for solicitado uma taxa de amostragem
+que não seja suportada pela API de áudio nativa. Outro bom exemplo é que o ASIO
+SDK permite apenas que uma aplicação seja executada por vez, dessa forma o
+PortAudio, atualmente, não suporta a execução de várias aplicações
+simultaneamente.
+
+\end{section}
+
+
 \end{chapter}
