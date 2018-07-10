@@ -366,5 +366,37 @@ simultaneamente.
 
 \end{section}
 
+\begin{section}{X11 e Xlib}
+
+O X Window System, X ou X11, é um sistema de janelas criados pela MIT (do
+inglês, \textit{Massachusetts Institute of Technology})~\cite{xlib}. Esse
+sistema atualmente está na sua décima primeira versão --- por isso é também 
+chamada de X11 --- que foi publicada em 1987. O X11 é um protocolo que funciona
+no modelo cliente-servidor e é utilizado como padrão para GUIs (do inglês,
+\textit{graphical user interface}) em sistemas baseados em UNIX e Linux. Uma
+visão geral da arquitetura do X Window System é mostrado na
+FIgura~\ref{fig:x11}.
+
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/X11}
+	\caption{Arquitetura do modelo cliente-servidor do X11.}
+	\label{fig:x11}
+	\end{minipage}
+\end{figure} 
+
+O servidor C é executado em computadores com telas de bitmap. O servidor
+distribui a entrada do usuário e aceita pedidos de saída de vários programas
+cliente através de uma variedade de diferentes canais de comunicação entre
+processos~\cite{suse}. É possível criar diversas aplicações utilizando o X11,
+como criação de interfaces gráficas para usuários e execução dos movimentos e
+eventes de clique do \textit{mouse}. 
+
+As aplicações funcionam como cliente e são desenvolvidas utilizando a
+Xlib~\cite{xlib}, uma biblioteca cliente do protocolo X escrita em C. A Xlib
+realiza o intermédio entre o cliente (aplicação) e o servidor X.  
+\end{section}
 
 \end{chapter}
