@@ -8,21 +8,55 @@ diversas tarefas tornou-se mais recorrente no cotidiano das pessoas. Com mais
 pessoas utilizando essas ferramentas está surgindo inúmeras formas de melhorar a
 interação entre usuários e aparelhos eletrônicos.
 
-Sistemas de reconhecimento ativo de gestos(AGR, do inglês \textit{actice gesture
-recognition})~\cite{Darrel96}, reconhecimento automático de voz (ASR, do inglês
-\textit{automatic speech recognition})~\cite{Taylor09}, síntese de voz (TTS, do inglês \textit{
-text-to-speech})~\cite{Huang01}, e acionadores externos são utilizados para melhorar a 
-interação humano-computador (IHC). Um sistema AGR é responsável por aplicar
-técnicas de computação visual para realizar o processamento \textit{frames} de
-vídeos de entrada e definir, então, na saída, qual a ação referente ao movimento
-motor realizado por uma determinada parte do corpo do usuário. O ASR é o sistema
-que recebe um sinal de fala digitalizado como entrada e gera um texto transcrito
-na saída. O sistema TTS possui a função de gerar um sinal de voz sintetizado a
-partir de um texto posto como entrada. Já os acionadores externos são
-equipamentos que auxiliam as pessoas com deficiência (PCD) a utilizarem
-aparelhos eletrônicos. Essas ferramentas ajudam  no controle de dispositivos
-eletrônicos promovendo comodidade e praticidade às pessoas e são normalmente
-enquadradas no conceito de Tecnologia Assistiva.
+A comunicação entre pessoas e sistemas computacionais intensificou-se nas 
+últimas décadas. Os desenvolvimentos tecnológicos alcançaram um estágio no qual
+a interação humano-computador (IHC) incrivelmente está se assemelhando, por
+exemplo, com a comunicação estabelecida entre duas pessoas. De fato, as máquinas
+estão se aproximando do comportamento humano no sentido de serem capazes de
+executarem tarefas semelhantes as ações de ouvir, entender, pensar e agir de
+forma automática e independente. 
+
+Apesar de todas as melhorias obtidas pela comunidade de pesquisa nos campos de
+reconhecimento de padrões e \textit{design} de interface do usuário, as chamadas
+interações convencionais~\cite{Preece15} ainda são as mais utilizadas para
+controle de dispositivos. Por exemplo, \textit{mouse} e teclado são os
+dispositivos de entrada mais utilizados em computadores de mesa, já que as telas
+sensíveis ao toque são utilizados em \textit{smartphones} e \textit{tablets}. No
+entanto, esses métodos de entradas convencionais forçam o usuário a utilizar as
+mãos, o que se torna um problema sério se o usuário possuir algum problema na
+realização de movimentos dos membros superiores --- que inclui também pessoas
+com problemas em habilidades motoras finas, por exemplo, fraqueza dos dedos,
+cujas limitações se concentram no manuseio de objetos físicos. Nesse sentido, as
+interações não-convencionais devem ser exploradas a fim de evitar que pessoas
+com deficiência motora sejam excluídas digitalmente. 
+
+Interações não-convencionais, por definição, ocorrem quando o usuário é capaz de
+se comunicar com um sistema computacional utilizando um dispositivo de
+comunicação não tão comum, como câmeras, microfones, ou qualquer outro tipo de
+sensor para entrada e/ou saída de dados~\cite{Machado10}. Por exemplo, pode-se
+utilizar a fala como uma interação não-convencional para realizar uma tarefa de
+digitação. Nesse caso, o dispositivo de entrada utilizado como método
+convencional para realizar a digitação (normalmente um teclado) precisa ser
+substituído por um microfone. Isso permite que tais equipamentos sejam
+utilizados, portanto, como tecnologias assistivas, pois elas podem ser o único
+caminho para que pessoas com deficiência motora dos membros superiores consigam
+interagir autonomamente com dispositivos eletrônicos.
+
+%Sistemas de reconhecimento ativo de gestos(AGR, do inglês \textit{actice gesture
+%recognition})~\cite{Darrel96}, reconhecimento automático de voz (ASR, do inglês
+%\textit{automatic speech recognition})~\cite{Taylor09}, síntese de voz (TTS, do inglês \textit{
+%text-to-speech})~\cite{Huang01}, e acionadores externos são utilizados para melhorar a 
+%interação humano-computador (IHC). Um sistema AGR é responsável por aplicar
+%técnicas de computação visual para realizar o processamento \textit{frames} de
+%vídeos de entrada e definir, então, na saída, qual a ação referente ao movimento
+%motor realizado por uma determinada parte do corpo do usuário. O ASR é o sistema
+%que recebe um sinal de fala digitalizado como entrada e gera um texto transcrito
+%na saída. O sistema TTS possui a função de gerar um sinal de voz sintetizado a
+%partir de um texto posto como entrada. Já os acionadores externos são
+%equipamentos que auxiliam as pessoas com deficiência (PCD) a utilizarem
+%aparelhos eletrônicos. Essas ferramentas ajudam  no controle de dispositivos
+%eletrônicos promovendo comodidade e praticidade às pessoas e são normalmente
+%enquadradas no conceito de Tecnologia Assistiva.
 
 A Tecnologia Assistiva (TA) é uma área do conhecimento, de característica
 interdisciplinar, que engloba produtos, recursos, metodologias, estratégias,
@@ -33,10 +67,10 @@ inclusão social~\cite{cat09}.
 
 Através da TA é possível reduzir as dificuldades vivenciadas por pessoas que
 necessitam de soluções que não as deixem à margem da utilização de aparelhos
-eletrônicos. Visando diminuir a exclusão digital imposta às PCD pela dificuldade
-ou total incapacidade para manipular certos equipamentos, a acessibilidade é
-vista como elemento fundamental para elevar a autoestima e o grau de
-independência dessas pessoas.
+eletrônicos. Visando diminuir a exclusão digital imposta às pessoas com
+deficiência (PCD) pela dificuldade ou total incapacidade para manipular certos
+equipamentos, a acessibilidade é vista como elemento fundamental para elevar a
+autoestima e o grau de independência dessas pessoas.
 
 \section{Justificativa}
 
@@ -76,17 +110,19 @@ Tabela~\ref{tab:ibge} mostra o perfil da população brasileira com deficiência
 \end{tabular}
 \end{table}
 
-Apesar da atual existência de inúmeros instrumentos voltados para Tecnologia
-Assistiva como cadeiras de rodas e \textit{software} que facilitam a utilização
-de computadores, grande parcela das PCD ainda não tem acesso a essas
-ferramentas. A Organização Mundial de Saúde estima, por exemplo, que em países
+Apesar da atual existência de inúmeros instrumentos voltados para TA como
+cadeiras de rodas e \textit{software} que facilitam a utilização de
+computadores, grande parcela das PCD ainda não têm acesso a essas ferramentas. A
+Organização Mundial de Saúde estima, por exemplo, que em países
 subdesenvolvidos, aproximadamente 15\% das PCD têm acesso a essas Tecnologias
-Assistivas\cite{WHO15}. Um fator que pode contribuir para esse cenário são os altos preços
-de algumas dessas tecnologias. Os acionadores externos, por exemplo, apesar de
-existir uma grande variedade de tipos e funcionalidades, possuem um preço bem
-elevado. A Tabela~\ref{tab:acionadores} mostra os preços de alguns acionadores externos
-disponíveis no mercado.
-
+Assistivas\cite{WHO15}. Um fator que pode contribuir para esse cenário são os
+altos preços de algumas dessas tecnologias. Os acionadores externos (dispositivos
+de entrada que permitem as PCD a utilizarem equipamentos ativados normalmente por
+botões ou teclados~\cite{tecla}), por exemplo, apesar de existir uma grande
+variedade de tipos e funcionalidades, possuem um preço bem elevado. A
+Tabela~\ref{tab:acionadores} mostra os preços de alguns acionadores externos
+disponíveis no mercado. 
+ 
 \begin{table}[!h]
 \centering
 \caption{Acionadores externos comerciais.}
@@ -115,10 +151,10 @@ disponíveis no mercado.
 \end{tabular}
 \end{table}
 
-Acionadores que possuem como saída de comunicação o P2 Jack
+Acionadores que possuem como saída de comunicação o P2 Jack,
 como~\cite{CandyCorn}, ~\cite{PalPad}, ~\cite{JellyBean}, ~\cite{Chin}, ~\cite{
-MicroLight}, ~\cite{HoneyBee} e~\cite{StringSwitch} são mais utilizados como
-atuadores de um determinado circuito. Um grande exemplo disso pode ser visto no
+MicroLight}, ~\cite{HoneyBee} e~\cite{StringSwitch}, são mais utilizados como
+chaves para um determinado circuito. Um grande exemplo disso pode ser visto no
 vídeo~\cite{ATswitchYT} que mostra a ativação da fala programada de uma boneca
 através do pressionamento de um acionador. Como forma de controle de uma
 determinada função do computador --- como o clique de um \textit{mouse} ---
@@ -128,85 +164,85 @@ realiza essa tarefa. É até possível controlar o clique de um mouse com a
 comunicação P2 Jack, mas é necessário o auxílio de um \textit{mouse},
 como~\cite{MouseJack}, mostrado na Figura~\ref{fig:mouse}, que possua uma
 adaptação que receba como entrada o P2 Jack de um acionador. Já para
-acionadores como~\cite{Blue2}, ~\cite{SavantElite2}, ~\cite{FootPedal},
-~\cite{FootSwitch} e ~\cite{SipPuff} que possuem comunicação Bluetooth ou USB, 
+acionadores, como~\cite{Blue2}, ~\cite{SavantElite2}, ~\cite{FootPedal},
+~\cite{FootSwitch} e ~\cite{SipPuff}, que possuem comunicação Bluetooth ou USB, 
 conseguem realizar o controle dos evento de
 clique de \textit{mouse} facilmente sem o auxílio de outros dispositivos,
 bastando apenas realizar uma pequena configuração no próprio acionador.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{fig/mouse13}
+	\includegraphics[width=0.5\textwidth]{fig/mouse13}
 	\caption{Mouse adaptado para receber a interface P2 Jack de um acionador.}
 	\label{fig:mouse}
 \end{figure}
 
 Como pode ser visto, o preço desses acionadores comerciais são bem elevados.
-Algum deles possuem um mecanismo bem simples e ainda assim são vendidos a preços
+Alguns deles possuem um mecanismo bem simples e ainda assim são vendidos a preços
 absurdos. Por exemplo, o acionador~\cite{StringSwitch}, como mostrado no
 vídeo~\cite{videoStringSwitch}, possui apenas uma simples corda que puxa uma
-chave de fim de curso. O pino de referência é soldado no pino de refêrencia do
-P2 Jack e o pino de estado da chave é soldado do pino se saída do P2 Jack.
-Assim, quando o corda do acionador é puxada, os pinos de referência e saída do
-P2 Jack são curto circuitados, ``simulando'' no P2 Jack os mesmos estados de
-aberto e fechado da chave de fim de curso. Realizando pesquisas em sites como
-MercadoLivre~\footnote{\url{https://www.mercadolivre.com.br/}}, é possível
-encontrar a unidade de uma chave similar a utilizada nesse acionador custando 
-cerca de R\$ 2.50. Já o pino de P2 jack custa cerca de R\$ 1. Com esses dois
-materiais é possível construir um acionador semelhante ao discutido custando
-menos de R\$ 10, valor bem abaixo dos U\$ 65 cobrado por esse acionador.
+chave de fim de curso. O pino de referência da chave é soldado no pino de
+refêrencia do P2 Jack e o pino de estado da chave é soldado do pino se saída do
+P2 Jack.  Assim, quando o corda do acionador é puxada, os pinos de referência e
+saída do P2 Jack são curto circuitados, ``simulando'', no P2 Jack, os mesmos
+estados de aberto e fechado da chave de fim de curso. Realizando pesquisas em
+sites como MercadoLivre~\footnote{\url{https://www.mercadolivre.com.br/}}, é
+possível encontrar a unidade de uma chave similar a utilizada nesse acionador
+custando cerca de R\$ 2.50. Já o pino de P2 jack custa cerca de R\$ 1. Com esses
+dois materiais é possível construir um acionador semelhante ao discutido
+custando menos de R\$ 10, valor bem abaixo dos U\$ 65 cobrado por esse
+acionador.
 
 Na atual crise em que o Brasil se escontra, uma família de baixa renda, por
 exemplo, difilcilmente iria adquidir um acionador externo devido ao elevedo
 preço desses produtos, pois certamente comprometeria a renda mensal dessa
 família.  Considernado que uma família possua a renda mensal de um salário
-mínimo, e que esse salário está custe R\$ 954, e com o preço do dólar custando
-R\$ 3.38, seria comprometido aproximadamente 23\% do salário dessa família caso
-optassem por comprar esse acionador. Sendo assim, PCD de baixa renda ficam
-impossibilitadas de adquirir esses produtos, excluindo-as de usufruir de
-dispositivos que são voltadas para facilitar o uso de certos equipamentos que
-não são adaptados para esse determinado público.
+mínimo, e que esse salário está custando cerca de R\$ 954, e com o preço do
+dólar custando R\$ 3.38, seria comprometido aproximadamente 23\% do salário
+dessa família caso optassem por comprar esse acionador. Sendo assim, PCD de
+baixa renda ficam impossibilitadas de adquirir esses produtos, excluindo-as de
+usufruir de dispositivos que são voltadas para facilitar o uso de certos
+equipamentos que não são adaptados para esse determinado público.
 
 Nesse sentido, esta pesquisa tem como intuito apresentar uma solução para
 diminuir a exclusão digital vivenciada pelas PCD, que muitas vezes não conseguem
-utilizar aparelhos eletrônicos como \textit{smartphones} e computadores devido a
-limitação de recursos que se adaptem às suas necessidades. Além disso a solução
-proposta, apesar de ser voltada para o uso de uma determinada função em
-aparelhos eletrônicos como computador, pode ser utilizada em outros dispositivos
+utilizar aparelhos eletrônicos, como \textit{smartphones} e computadores, devido
+a limitação de recursos que se adaptem às suas necessidades. Além disso a
+solução proposta, apesar de ser voltada para o uso de uma determinada função em
+aparelhos eletrônicos, como computador, pode ser utilizada em outros dispositivos
 que necessitem de uma interação através do pressionamento de um botão, como
-ligar ou desligar televisores e lâmpadas. O uso de acionadores externos são bons
-exemplos de dispositivos que auxiliam na utilização de diversos dispositivos,
+ligar ou desligar televisores. O uso de acionadores externos são bons
+exemplos de dispositivos que auxiliam a utilização de diversos dispositivos,
 porém como grande parte dos acionadores disponíveis no mercado possuem um custo
 muito elevado, há a necessidade da solução proposta ser mais acessível
-economicamente para que mais PCD possam ter acesso a essas ferramentas que
-auxiliam o uso de tarefas em dispositivos que normalmente não possuem interfaces
-alternativas de controle. 
+economicamente para que mais PCD possam ter acesso a essa ferramenta. % que
+%auxiliam o uso de tarefas em dispositivos que normalmente não possuem interfaces
+%alternativas de controle. 
  
 \subsection{Trabalhos Relacionados}
 A ideia de ajudar PCD a utilizar aparelhos eletrônicos com o auxílio de 
 acionadores externos é alvo de inúmeras pesquisas. Uma grande parte dessas
 pesquisas foca em auxiliar tarefas de controle das funções básicas do
-\textit{mouse} de um computador. Para controlar o ponteiro do \textit{mouse}, o
-método mais utilizado é o que utiliza os movimentos da cabeça ou dos olhos. Para
-esse tipo de abordagem há uma certa dificuldade em emular a função de clique.
-Geralmente, para essa determinada função,  é utilizada o \textit{dwelltime}, 
-um método que utiliza um tempo específico em segundos em que o ponteiro do mouse
-fica sobre um determinada área da tela para realizar  o clique. Por exemplo, se
-o usuário posicionar o ponteiro sobre o ícone de fechar uma aba de um navegador
-por um determinado tempo, irá ser chamado a função de clique sob esse ícone,
-fechando essa aba do navegador. Um dos problemas desse tipo de abordagem está no
-fato de que o usuário é obrigado a ficar com a cabeça os com os olhos parados
-em uma determinada posição por algum tempo para que a função de clique seja
-ativada. Isso gera uma um certo incômodo e fadiga no pescoço e nos olhos, para o 
-caso de o  ponteiro ser controlado com os movimentos da cabeça e dos olhos, 
-respectivamente, além de ,naturalmente, aumentar o tempo de utilização a medida em
+\textit{mouse} de um computador. Para controlar o ponteiro do \textit{mouse},
+geralmente utiliza-se os movimentos da cabeça ou dos olhos como método
+não-convencional de controle. Para esse tipo de abordagem há uma certa
+dificuldade em emular a função de clique.  Normalmente, para essa determinada
+função,  é utilizada o \textit{dwelltime}, um método que utiliza um tempo
+específico em segundos em que o ponteiro do mouse fica sobre um determinada área
+da tela para realizar  o clique. Por exemplo, se o usuário posicionar o ponteiro
+sobre o ícone de fechar uma aba de um navegador por um determinado tempo, irá
+ser chamado a função de clique sobre esse ícone, fechando a aba do navegador. Um
+dos problemas desse tipo de abordagem está no fato de que o usuário é obrigado a
+ficar com a cabeça ou com os olhos parados em uma determinada posição por algum
+tempo para que a função de clique seja ativada. Isso pode gerar um certo incômodo
+no usuário, além de, naturalmente, aumentar o tempo de utilização a medida em
 que o número de tarefas realizadas também aumentar.
 
-Devido isso há diversas pesquisas que tentam solucionar esse problema através de
+Devido isso, há diversas pesquisas que tentam solucionar esse problema através de
 métodos alternativos para a emulação do clique do \textit{mouse}.
 Em~\cite{Aanand18} foi proposto um algoritmo chamado de OptiDwell para emular a
 função de clique. Esse algoritmo utiliza o mesmo princípio do
-\textit{dwelltime}, mas com a difirença de que o usuário sabe exatamente quando
+\textit{dwelltime}, mas com a diferença de que o usuário sabe exatamente quando
 o evento de clique irá acontecer. No \textit{dwelltime} o usuário sabe qual é o
 tempo especifico em que o ponteiro deve ficar sobre uma área que se deseja
 clicar, mas não tem a noção exata desse tempo. Por exemplo, se a pessoa deseja
