@@ -1,9 +1,10 @@
 \begin{chapter}{Referencial Teórico}
-Este capítulo tem como objetivo apresentar o referêncial teórico das ferramentas
+Este capítulo tem como objetivo apresentar o referencial teórico das ferramentas
 mais importantes para o desenvolvimento do dispositivo proposto neste trabalho,
-como i) o efeito piezoelétrico; ii) Conectores de áudio; iii) captura de sinais
-através da interface de áudio do computador; e, finalmente iv) ferramenta para a
-emulação dos eventos de clique do \textit{mouse}
+como i) piezoeletricidade; ii) operadores operacionais; iii) Conectores de
+áudio; iv) ferramenta de desenvolvimento de placas de circuito impresso; v) captura de sinais
+através da interface de áudio do computador; e, finalmente vi) ferramenta para a
+emulação dos eventos de clique do \textit{mouse}.
 
 \begin{section}{Piezoeletricidade}
 
@@ -24,20 +25,21 @@ principio de funcionamento é dividido em efeito piezoelétrico direto e reverso
 que serão brevemente descritos seguir.
 
 \begin{subsection}{Efeito Piezoelétrico Direto}
+
 O efeito piezoelétrico direto refere-se a capacidade de um material gerar tensão
 elétrica quando submetido a estresses mecânicos como compressão ou
-vibração~\cite{jaffe2012piezoelectric}. Muitos
-aparelhos eletrônicos utilizam essa propriedade da piezoeletricidade. Por exemplo,
-piezos são bastantes utilizados na indústria como uma ferramenta que ajuda a
-detectar a presença de objetos em determinadas áreas. Quando há a algum objeto
-nessa área desejada, o peso desse objeto realiza um força de compressão sobre 
-o material piezoelétrico produzindo uma tensão que pode ser medida por um
-sensor. Sendo assim, a máquina  ``percebe'' que tem um objeto
-sobre a área desejada e pode realizar a sua função pré-programada. É importante
-perceceber que o piezo não funciona como sensor, apenas converte uma grandeza
-física, nesse caso a força peso causada pela massa do objeto, em uma energia
-capaz de ser medida por um determinado instrumento.
-
+vibração~\cite{jaffe2012piezoelectric}. Muitos aparelhos eletrônicos utilizam
+essa propriedade da piezoeletricidade. Por exemplo, piezos são bastantes
+utilizados na indústria como uma ferramenta que ajuda a detectar a presença de
+objetos em determinadas áreas. Quando há algum objeto sobre uma área desejada,
+o peso desse objeto realiza uma força de compressão sobre o material
+piezoelétrico produzindo uma tensão que pode ser medida por um sensor. Dessa
+forma, uma máquina pode ``perceber'' que tem um objeto sobre a área desejada e
+pode realizar a sua função pré-programada. É importante perceber que o piezo não
+funciona como sensor, apenas converte uma grandeza física, nesse caso a força
+peso causada pela massa do objeto, em uma energia capaz de ser medida por um
+determinado instrumento.
+  
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
@@ -52,23 +54,24 @@ A Figura~\ref{fig:direto} mostra o princípio de funcionamento do efeito
 piezoelétrico direto. Um material piezoelétrico --- um cristal de quartzo, por
 exemplo --- é posicionado entre duas placas de metal. Para ocorrer a geração de
 energia elétrica, é necessário algum tipo de estresse mecânico no material, como
-compressão ou vibração. Quando as placas de metal são pressionadas, ocorre uma
-diferença de potencial entre essas placas como consequência do chamado de efeito
-piezoelétrico direto.  É possível armazenar a energia gerada pela compressão do
-marial piezoelétrico e utilizá-la para alimentar circuitos elétricos,
-substituindo as baterias por exemplo. 
+compressão ou vibração. Quando as placas de metal são pressionadas, por exemplo,
+ocorre uma diferença de potencial elétrico na superfície das placas como
+consequência do chamado de efeito piezoelétrico direto.  É possível armazenar a
+energia gerada pela compressão do material piezoelétrico e utilizá-la para
+alimentar circuitos elétricos, substituindo as baterias por exemplo, como
+realizado em~\cite{twitter}. 
 
 \end{subsection}
 
 
 \begin{subsection}{Efeito Piezoelétrico Reverso}
 É possível realizar o processo contrário do efeito piezoelétrico direto. A
-Figura~\ref{fig:reverso} ilustra o princípo de funcionamento do efeito
-piezoelétrico reverso. Dado duas placas de metal separados por um matereial
+Figura~\ref{fig:reverso} ilustra o princípio de funcionamento do efeito
+piezoelétrico reverso. Dado duas placas de metal separados por um material
 piezoelétrico, é possível gerar perturbações mecânicas nessas placas. Para isso
-é necessário aplicar um diferença de potencial nas placas que vibram
-proporcinalmente a tensão aplicada~\cite{Lin12}. É possível gerar ondas de som a
-partir das vibrações das placas de metal, mas para que isso ocorra as plcas
+é necessário aplicar um diferença de potencial elétrico nas placas que vibram
+proporcionalmente a tensão aplicada~\cite{Lin12}. É possível gerar ondas de som a
+partir das vibrações das placas de metal, mas para que isso ocorra as palcas
 devem necessariamente vibrar em uma faixa de frequência entre 20~Hz e 20~Khz
 (faixa de frequência audível ao ser humano).
 
