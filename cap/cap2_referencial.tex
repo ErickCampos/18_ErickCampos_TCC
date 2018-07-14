@@ -65,15 +65,16 @@ realizado em~\cite{twitter}.
 
 
 \begin{subsection}{Efeito Piezoelétrico Reverso}
-É possível realizar o processo contrário do efeito piezoelétrico direto. A
+
+É possível realizar o processo contrário ao efeito piezoelétrico direto. A
 Figura~\ref{fig:reverso} ilustra o princípio de funcionamento do efeito
-piezoelétrico reverso. Dado duas placas de metal separados por um material
-piezoelétrico, é possível gerar perturbações mecânicas nessas placas. Para isso
-é necessário aplicar um diferença de potencial elétrico nas placas que vibram
-proporcionalmente a tensão aplicada~\cite{Lin12}. É possível gerar ondas de som a
-partir das vibrações das placas de metal, mas para que isso ocorra as palcas
-devem necessariamente vibrar em uma faixa de frequência entre 20~Hz e 20~Khz
-(faixa de frequência audível ao ser humano).
+piezoelétrico reverso. Dado duas placas de metal separadas por um material
+piezoelétrico, é possível gerar perturbações mecânicas nessas placas. Para isso,
+é necessário aplicar uma diferença de potencial elétrico nas placas que vibram
+proporcionalmente a tensão aplicada~\cite{Lin12}. É possível gerar ondas de sons
+audíveis a partir das vibrações das placas de metal, mas para que isso ocorra,
+as placas devem necessariamente vibrar em uma faixa de frequência entre 20~Hz e
+20~Khz (faixa de frequência audível ao ser humano).
 
 
 \begin{figure}[!h]
@@ -86,13 +87,13 @@ devem necessariamente vibrar em uma faixa de frequência entre 20~Hz e 20~Khz
 	\end{minipage}
 \end{figure}
 
-Muitos aparelhos eletrônicos utilizam o efeito piezoelétrico. Os sons de
+Muitos aparelhos eletrônicos utilizam o efeito piezoelétrico reverso. Os sons de
 sinalizações emitidos por computadores ao serem ligados ou quando há algum tipo
 de problema no funcionamento no computador, são gerados por um dispositivo
-chamado buzzer e é um bom exemplo de utilização do efeito piezoelétrico reverso.
-Até mesmo alguns sonares utilizam o princípio desse fenômeno da
+chamado \textit{buzzer} e é um bom exemplo de utilização do efeito piezoelétrico
+reverso.  Até mesmo alguns sonares utilizam o princípio desse fenômeno da
 piezoeletricidade, onde é aplicado uma tensão modulada por PWM (do inglês,
-\textit{pulse with modulation}) em um material piezoeletricidade que emite um
+\textit{pulse with modulation}) em um material piezoelétrico que emite um
 sinal ultrassom. Alguns desses instrumentos ultrassônicos são utilizados na área
 médica para realização de cirurgias, como a maxilofacial onde é necessário
 realizar cortes em tecidos ósseos~\cite{Carvalho17}.
@@ -101,9 +102,10 @@ realizar cortes em tecidos ósseos~\cite{Carvalho17}.
 
 \end{section}
 
-\begin{section}{Amplificadores Operacionais}
-O circuito eletrônico conhecido como amplificador operacional (opamp) é um componente
-muito importante em cirtuitos elétricos que realiza operações especiais de
+\begin{section}{Amplificadores Operacionais} 
+
+O circuito eletrônico conhecido como amplificador operacional é um componente
+muito importante em circuitos elétricos que realiza operações especiais de
 processamento de sinais~\cite{Richard2000}. A Figura~\ref{fig:opamp} mostra a
 representação de um amplificador operacional.
 
@@ -124,7 +126,7 @@ entrada inversora é representada pelo símbolo ``-''. Quando é aplicado um sin
 na entrada não inversora, o sinal na saída possui a mesma fase do sinal de
 entrada. Por outro lado, quando o sinal é aplicado na entrada inversora, o sinal
 de saída possui uma fase contrária ao sinal de entrada. É importante ressaltar
-que em alguns autores omitem a representação dos terminais de alimentação por
+que alguns autores omitem a representação dos terminais de alimentação por
 considerarem desnecessários e tenderem a sobrecarregar visualmente os esquemas
 de circuitos, tornando-os mais difíceis de serem interpretados. Contudo fica
 subentendido que os terminais de alimentação fazem parte do circuito, embora
@@ -132,9 +134,9 @@ muitas vezes não sejam mostrados.
 
 A partir de várias combinações de resistores nos terminais do amplificador
 operacional é possível executar funções muito úteis com os sinais de entrada, 
-como multiplicação por um fator constante, soma, mudança de fase de sinal e
-subtração~\cite{Nilson09}. Outro função bastante importante que pode ser
-implementada com amplificadores operacionais é comparação de sinais. Dado dois
+como multiplicação por um fator constante, soma, mudança de fase e
+subtração~\cite{Nilson09}. Outra função bastante importante que pode ser
+implementada com amplificadores operacionais é a comparação de sinais. Dado dois
 sinais, um em cada entrada, a saída é determinada a partir de uma comparação de
 intensidade entre os dois sinais de entrada~\cite{Terrell96}.  
  
@@ -151,7 +153,7 @@ intensidade entre os dois sinais de entrada~\cite{Terrell96}.
 
 A Figura~\ref{fig:comparador1} mostra um comparador de tensão utilizando a
 configuração não inversora. Nessa configuração de comparação é utilizado uma
-tensão fixa como referência ($V_{Ref}$) na entrada inversora. A
+tensão como referência ($V_{Ref}$) na entrada inversora. A
 Figura~\ref{fig:sinal1} mostra o comportamento dos sinais utilizando essa
 configuração.
 
@@ -166,14 +168,13 @@ configuração.
 \end{figure}
 
 Enquanto a tensão de referência for maior que o sinal da entrada não inversora
-($V_{In}$), a saída tende para 0~V. Contudo, quando a tensão da entrada não
-inversora é maior que a tensão de referência, a saída ($V_{Out}$) tende para a
+($V_{In}$), a saída ($V_{Out}$) tende para 0~V. Contudo, quando a tensão da
+entrada não inversora é maior que a tensão de referência, a saída  tende para a
 magnitude da tensão utilizada como alimentação do amplificador operacional
-($V_{cc}$). Por
-exemplo, se o amplificador for alimentado com 15~V a saída desse componente se
-aproximaria de 15~V, porém nunca seria 15~V. Idealmente, o valor de saída nesse
-caso tenderia para o infinito, contudo na prática isso não acontece devido a
-diversos fatores físicos do componente.
+($V_{cc}$). Por exemplo, se o amplificador for alimentado com 15~V a saída desse
+componente se aproximaria de 15~V, porém nunca seria 15~V. Idealmente, o valor
+de saída deveria ser exatamente 15~V, contudo na prática isso não
+acontece devido a diversos fatores físicos do componente.
 
 \begin{figure}[!h]
 	\centering
@@ -213,13 +214,13 @@ saída tende para 0~V.
 \begin{section}{Conectores de Áudio}
 
 Sinais de áudio podem ser transmitidos através de vários tipos de conectores.
-Por exemplo, é possivel reproduzir os sinais de áudio produzidos por uma
+Por exemplo, é possível reproduzir os sinais de áudio produzidos por uma
 guitarra para uma caixa acústica amplificada. Geralmente utiliza-se o conector
-P10 para realizar a transmissão da guitarra para a caixa acústica. Já para fones
-de ouvidos, por exemplo, é utilizado o conector P2. Segundo uma matéria
-disponível na BBC News~\cite{BBC}, o conector P2 é utilizado desde o século XIX.
-Os conectores mais utilizados são os conectores TS e TRS que serão brevemente
-descritos a seguir.
+P10 para realizar a transmissão de áudio da guitarra para a caixa acústica. Já
+para fones de ouvidos, por exemplo, é utilizado o conector P2. Segundo uma
+matéria disponível na BBC News~\cite{BBC}, o conector P2 é utilizado desde o
+século XIX.  Os conectores mais utilizados são os conectores TS e TRS, também
+conhecidos como conectores Jack, que serão brevemente descritos a seguir.
 
 \begin{subsection}{Conector TS}
 
@@ -238,11 +239,11 @@ Figura~\ref{fig:TS} mostra a ilustração de um conector TS.
 	\end{minipage}
 \end{figure} 
 
-O conector TS possui somente um canal de transmissão de sinal analógico é
-um conector mono~\cite{ts}. O TS possui dois pinos que são separados entre si por
-um anel isolante. O pino Tip que  fica localizado no final do conector é 
-utilizado para realizar a  transmissão do sinal. Já o pino Sleeve é responsável
-por ser a referência (GND) do conector.
+O conector TS possui somente um canal de transmissão de sinal analógico,
+por isso é um conector mono~\cite{ts}. O TS possui dois pinos
+que são separados entre si por um anel isolante. O pino Tip que  fica localizado
+no final do conector é utilizado para realizar a  transmissão do sinal. Já o
+pino Sleeve é responsável por ser a referência (GND) do conector.
 
 \end{subsection}
 
@@ -265,14 +266,14 @@ ilustração de um conector TRS.
 	\end{minipage}
 \end{figure} 
 
-O conector TRS possui três pinos que, assim como o TS, também são separados 
-entres sim por anéis isolantes. Contudo, o TRS pode transmitir dois sinais
-analógicos simultâneamente, sendo, portanto, um conector estéreo. O pino Sleeve,
-ou GND, é a referênca do conector. O pino Ring, também chamado de Right ( canal 
-direito da transmissão ) é o  pino central do conector. Já Tip, pino localizado
-no final do conector, também é conhecido por Left, pois é responsável por
-transmitir um sinal pelo canal esquerdo.
-
+O conector TRS possui três pinos que, assim como o TS, são separados 
+entres si por anéis isolantes. Contudo, o TRS pode transmitir dois sinais
+analógicos simultaneamente, sendo, portanto, um conector estéreo~\cite{ts}. O
+pino Sleeve, ou GND, é a referência do conector. O pino Ring, também chamado de
+Right ( canal direito da transmissão ) é o  pino central do conector. Já Tip,
+pino localizado no final do conector, também é conhecido por Left, pois é 
+responsável por transmitir um sinal pelo canal esquerdo.
+  
 É possível transformar um conector TRS em TS, ou seja, transformar um conector
 estéreo em mono. Para isso é necessário realizar um curto circuito entre os
 pinos Ring e Tip do conector estéreo. Quando um sinal é enviado para o Ring e
@@ -286,28 +287,30 @@ entrada do conector seja mono e o conector seja TRS.
 \end{section}
 
 
-\begin{section}{Kicad}
-Para o desenvolvimento de placas de circuito impresso, é primeiramente projetar
-o \textit{layout} do circuito. Para realizar essa tarefa é necessário a
-utilização de um \textit{software} EDA (do inglês, \textit{electronic design
-automation}). Existem vários \textit{software} EDA, como o Eagle~\cite{eagle}. O
-Eagle é um \textit{software} amplamente utilizado para o desenvolvimento de
-placas de circuito impresso, contudo possui a desvantagem de não ser um
-\textit{software} livre que é liberado gratuitamente apenas para uso pessoal e
-não comercial. Além disso, a versão gratuita não possui uma quantidade limitada
-de ferramentas de desenvolvimento. Para ter acesso a essas ferramentas é
-necessário adquidir uma assinatura que pode ser mensal ou anual. Os preços dessa
-assinatura variam de R\$~52.91 a R\$~3227.40~\cite{EagleAssinatura}
+\begin{section}{Ferramentas de Desenvolvimento de Placas de Circuito Impresso}
 
-Existem de ferramentas EDA que são de código aberto e gratuitos. O
+Para o desenvolvimento de placas de circuito impresso, primeiramente é
+necessário desenvolver o \textit{layout} do circuito que deseja-se transferir
+para a placa. Para realizar essa tarefa é necessário a utilização de um
+\textit{software} EDA (do inglês, \textit{electronic design automation}).
+Existem vários \textit{software} EDA, como o Eagle~\cite{eagle}. O Eagle é um
+\textit{software} amplamente utilizado para o desenvolvimento de placas de
+circuito impresso, contudo possui a desvantagem de não ser um \textit{software}
+livre sendo liberado gratuitamente apenas para uso pessoal e não comercial. Além
+disso, a versão gratuita possui uma quantidade limitada de ferramentas de
+desenvolvimento. Para ter acesso a essas ferramentas é necessário adquirir uma
+assinatura que pode ser mensal ou anual. Os preços dessa assinatura variam de
+R\$~52.91 a R\$~3227.40~\cite{EagleAssinatura}.
+
+Existem ferramentas EDA que são de código aberto e totalmente gratuitas. O
 Kicad~\cite{kicad} é o  \textit{software} de código aberto e gratuito mais
-utilizado entre os desenvolvedores. Essa ferramenta oferece recursos necessário
+utilizado entre os desenvolvedores. Essa ferramenta oferece recursos necessários
 para o desenvolvimento de quase todo tipo de projeto. Obviamente que não
-há disponível todas as bibliotecas de componentes possíveis. Po exemplo, não há
-uma biblioteca para o componente PJ324~\cite{pj324}. Contudo, há a possibilidade
-de desenvolvimento de bibliotecas próprias e disponibilizá-las em repositórios,
-como o Github~\cite{github}, para que qualquer pessoa possa utilizá-la em
-projetos pessoais.  
+há disponível todas as bibliotecas de componentes possíveis. Por exemplo, não há
+uma biblioteca para o componente HT12D~\cite{ht12d}. Contudo, há a possibilidade
+de desenvolvimento de bibliotecas próprias sendo possível disponibilizá-las em
+repositórios, como o Github~\cite{github}, para que qualquer pessoa possa
+utilizá-la em projetos pessoais.  
 \end{section}
 
 
@@ -321,26 +324,25 @@ aplicações se comuniquem entre si~\cite{API17}. A utilização de uma API pode
 simplificar o desenvolvimento de aplicações, contudo há algumas limitações, como
 linguagem e plataforma utilizada. 
 
-Existem várias API para o desenvolvimento de aplicações de áudio. Agumas APIs são
+Existem várias APIs para o desenvolvimento de aplicações de áudio. Agumas APIs são
 nativas do sistema operacional, portanto cada sistema operacional possui APIs
 específicas. A grande desvantagem de utilizar APIs nativas de um determinado
 sistema operacional é que, para a utilização da mesma aplicação em outro sistema
-operacional, é necessario a reescrita do códígo utilizando um API suportada pelo
+operacional, é necessário a reescrita do código utilizando um API suportada pelo
 sistema operacional onde deseja-se executar a aplicação. 
 
 A camada de áudio de sistemas operacionais baseados em Linux, por
 exemplo, possui o ALSA~\cite{alsa} e também o OSS~\cite{oss} como
-\textit{drivers} que permitem a manipulação de áudios e cada um driver possui
-uma API para o desenvolvimento de aplicações. A camada de áudio do windows
-também ferramentas próprias de manipulação de áudio. Uma alternativa para ajuda
-na portabibilidade da aplicação de áudio desenvolvida é utilizar APIs
+\textit{drivers} que permitem a manipulação de áudios e cada \textit{driver}
+possui uma API para o desenvolvimento de aplicações. Uma alternativa para ajudar
+a portabilidade da aplicação de áudio desenvolvida é utilizar APIs
 multiplataformas.
 
-Uma ferramenta bastante utilizada para o desenvolvimento de aplicações de áudio
-é o PortAudio~\cite{portaudio}, uma biblioteca de código aberto,
-multiplataforma, que permite escrever programas em C/C++ para realizar gravação
-e reprodução de áudios. A Figura~\ref{fig:portaudio} mostra a arquitetura do
-PortAudio.
+Uma ferramenta bastante utilizada para o desenvolvimento de aplicações que
+realizam manipulações de áudio é o PortAudio~\cite{portaudio}, uma biblioteca de
+código aberto, multiplataforma, que permite escrever programas em C/C++ para
+realizar gravação e reprodução de áudios. A Figura~\ref{fig:portaudio} mostra a
+arquitetura do PortAudio.
 
 \begin{figure}[!h]
 	\centering
@@ -353,14 +355,13 @@ PortAudio.
 \end{figure} 
 
 O PortAudio possui suporte para maioria das APIs nativas de cada sistema
-operacional. É realizado uma comunicação entre o PortAudio e as APIs nativas. A
-grande vantagem de utilizar essa ferramenta é que não é necessário aprender cada
-API nativa dos sistemas operacionais. Dessa forma é possível utilizar o mesmo
-código em diferentes sistemas operacionais, facilitando a portabilidade do
-\textit{software} desenvolvido.
+operacional. A grande vantagem de utilizar essa ferramenta é que não é
+necessário aprender cada API nativa dos sistemas operacionais. Dessa forma é
+possível utilizar o mesmo código em diferentes sistemas operacionais,
+facilitando a portabilidade do \textit{software} desenvolvido.
 
 A desvantagem de utilizar o PortAudio é que essa ferramenta não fornece total
-suporte para as funcionalidades de cada API nativa. Por exemplo, o PorAudio não
+suporte para toas as funcionalidades de cada API nativa. Por exemplo, o PortAudio não
 fornece conversão de taxa de amostragem se for solicitado uma taxa de amostragem
 que não seja suportada pela API de áudio nativa. Outro bom exemplo é que o ASIO
 SDK permite apenas que uma aplicação seja executada por vez, dessa forma o
@@ -369,12 +370,12 @@ simultaneamente.
 
 \end{section}
 
-\begin{section}{X11 e Xlib}
+\begin{section}{X Window System}
 
 O X Window System, X ou X11, é um sistema de janelas criados pela MIT (do
 inglês, \textit{Massachusetts Institute of Technology})~\cite{xlib}. Esse
 sistema atualmente está na sua décima primeira versão --- por isso é também 
-chamada de X11 --- que foi publicada em 1987. O X11 é um protocolo que funciona
+chamado de X11 --- que foi publicada em 1987. O X11 é um protocolo que funciona
 no modelo cliente-servidor e é utilizado como padrão para GUIs (do inglês,
 \textit{graphical user interface}) em sistemas baseados em UNIX e Linux. Uma
 visão geral da arquitetura do X Window System é mostrado na
@@ -390,16 +391,16 @@ FIgura~\ref{fig:x11}.
 	\end{minipage}
 \end{figure} 
 
-O servidor C é executado em computadores com telas de bitmap. O servidor
+O servidor X é executado em computadores com telas de bitmap. O servidor
 distribui a entrada do usuário e aceita pedidos de saída de vários programas
 cliente através de uma variedade de diferentes canais de comunicação entre
 processos~\cite{suse}. É possível criar diversas aplicações utilizando o X11,
 como criação de interfaces gráficas para usuários e execução dos movimentos e
-eventes de clique do \textit{mouse}. 
+eventos de clique do \textit{mouse}. 
 
-As aplicações funcionam como cliente e são desenvolvidas utilizando a
-Xlib~\cite{xlib}, uma biblioteca cliente do protocolo X escrita em C. A Xlib
-realiza o intermédio entre o cliente (aplicação) e o servidor X.  
+As aplicações funcionam como cliente e são desenvolvidas utilizando
+principalmente a Xlib~\cite{xlib}, uma biblioteca cliente do protocolo X escrita
+em C. A Xlib realiza o intermédio entre o cliente (aplicação) e o servidor X.  
 \end{section}
 
 \end{chapter}
