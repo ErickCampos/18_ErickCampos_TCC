@@ -19,16 +19,16 @@ O princípio de funcionamento do acionador externo proposto é relativamente
 simples. A percepção do sopro é realizada graças ao piezo encapsulado em um
 disco redondo que fica acoplado na parte superior do dispositivo. Quando o
 usuário realiza o sopro diretamente no piezo, há um estresse mecânico que produz
-uma diferença de potencial nas extremidades do material piezoelétrico. Através
+uma diferença de potencial elétrica nas extremidades do material piezoelétrico. Através
 da percepção dessa tensão produzida no piezo é possível gerar um evento de
 clique de \textit{mouse} no computador. O resistor colocado em paralelo com o
 piezo é responsável por determinar a sensibilidade com que o transdutor gera
 tensão após ser submetido a algum tipo de estresse mecânico. Portanto quanto
-maior o valor de resistência do resistor, maio será a sensibilidade do piezo.
-No protótipo desenvolvido utilizou-se um resistor de 10~M\si{\ohm} o que
+maior o valor de resistência do resistor, maior será a sensibilidade do piezo.
+No protótipo desenvolvido utilizou-se um resistor de 10~M\si{\ohm}  que
 proporcionou uma boa sensibilidade no piezo. Foram testados resistores com
-valores de resistência maior que 10~M\si{\ohm}, como 15~M\si{\ohm}, 20~M\si{\ohm} e
-30~M\si{\ohm}, contudo a sensibilidade com resistência maiores que 15~M\si{\ohm}
+valores de resistência maiores que 10~M\si{\ohm}, como 15~M\si{\ohm}, 20~M\si{\ohm} e
+30~M\si{\ohm}, contudo a sensibilidade com resistências maiores que 15~M\si{\ohm}
 deixava o transdutor muito suscetível a detectar estresses mecânicos com
 intensidades não desejadas. Já resistências menores que 15~M\si{\ohm} não
 alterava significativamente a sensibilidade do piezo, quando comparado com o
@@ -47,20 +47,20 @@ operacional LM358. Esse componente eletrônico possui a função de comparar dua
 tensões que determinam a saída do acionador. Há uma tensão de referência
 , que pode ser variável graças a um potenciômetro de 10~k\si{\ohm}, e a tensão
 produzida pelo transdutor piezo. O amplificador operacional atua, neste caso,
-como um comparador de tensões. Quando a tensão de referência é superior a tensão
-do piezo, a saída do amplificador é de nível lógico baixo. Contudo, quando a
-tensão de referência é inferior a tensão do piezo, a saída do amplificador é de
-nível lógico alto. Não há possibilidade de a saída do amplificador ser diferente
-desses dois casos. Dessa forma, a leitura do sinal de tensão produzido pelo sopro
-, com o auxílio do piezo, é binária, o que ajuda a implementar a emulação dos
-eventos de clique. É importante ressaltar que como o valor de referência 
-pode ser ajustável graças ao potenciômetro, esse componente também atua como um
-ferramenta de ajuste de sensibilidade. Sendo assim, a intensidade do sopro
-necessária para que a saída do amplificador seja de nível lógico alto,
-configurando assim um clique, pode ser determinada pela tensão de referência
-ajustada pelo potenciômetro.
+como um comparador de tensões na configuração não inversora. Quando a tensão de
+referência é superior a tensão do piezo, a saída do amplificador é de nível
+lógico baixo. Contudo, quando a tensão de referência é inferior a tensão do
+piezo, a saída do amplificador é de nível lógico alto. Não há possibilidade da
+saída do amplificador ser diferente desses dois casos. Dessa forma, a leitura do
+sinal de tensão produzido pelo sopro , com o auxílio do piezo, é binária, o que
+ajuda a implementar a emulação dos eventos de clique. É importante ressaltar que
+como o valor de referência pode ser ajustável, graças ao potenciômetro, esse
+componente também atua como um ferramenta de ajuste de sensibilidade. Sendo
+assim, a intensidade do sopro necessária para que a saída do amplificador seja
+de nível lógico alto, configurando assim um clique, pode ser determinada pela
+tensão de referência ajustada pelo potenciômetro.
 
-Como um dos objetivos do acionador é ser de baixo custo, a cominicação entre o
+Como um dos objetivos do acionador é ser de baixo custo, a comunicação entre o
 acionador desenvolvido e a computador é realizada através da interface de áudio
 P2 Jack. Para gerar um pulso na interface de áudio, basta curto circuitar o pino
 de GND com o \textit{Right} e \textit{Left} do P2 Jack do acionador. Para fazer
@@ -71,34 +71,36 @@ também é utilizado como alimentação do SN7404. Portanto, quando a saída do
 amplificador é de nível lógico baixo, o inversor não funciona, pois não há
 tensão suficiente para alimentar esse componente. Quando a saída do LM358 é de
 nível lógico alto, o inversor é alimentado com uma tensão suficiente para
-realizar p funcionamento correto. Essa tensão é utilizada como entrada do
+realizar o funcionamento correto. Essa tensão é utilizada como entrada do
 SN7404 que inverte o sinal de entrada para nível lógico baixo. A saída do
-inveror é concetada nos pinos  \textit{Right} e \textit{Left} do P2 Jack --- que
-estão curto circuitados --- produzindo gerando um pulso na entrada da interface
+inversor é conectada nos pinos  \textit{Right} e \textit{Left} do P2 Jack --- que
+estão curto circuitados --- gerando um pulso na entrada da interface
 de áudio do computador. A partir desse pulso reconhecido pelo computador é
 possível realizar a implementação da emulação dos evento de clique do
-\textit{mouse}. É importante ressaltar que a tensão de sáida do amplificador
+\textit{mouse}.
+
+ É importante ressaltar que a tensão de saída do amplificador
 operacional, quando está em nível lógico alto, é bem próximo de 9~V. Essa tensão
-é superior a tensão recomenda (5.5~V) pela fabicante do componente~\cite{7404}. 
+é superior a tensão recomenda (5.5~V) pela fabricante do componente~\cite{7404}. 
 Para diminuir essa tensão para a recomendada, foi utilizado um LED em série com
 um resistor de 300~\si{\ohm}. Quando a saída do amplificador é de nível lógico
 alto, há uma queda de tensão do catodo do LED que é suficiente para alimentar o
-inversor.Sendo assim além de ser utilizado como divisor de tensão, o LED também
-funciona como um \textit{feedback} visual, indicando quando o acionador foi
-ativado pelo sopro do usuário.  
+inversor. Sendo assim, além de ser utilizado como divisor de tensão, o LED
+também funciona como um \textit{feedback} visual, indicando quando o acionador
+foi ativado pelo sopro do usuário.  
 
 
 \begin{section}{Confecção da Placa de Circuito Impresso}
-Para a construção da placa do acionador baseado e sopro utilizou-se o
-\textit{software} KiCad~\cite{kicad}, uma ferramenta de código aberto,
-multiplataforma e bastante utilizada por desenvolvedores. Todo o projeto da
-construção do acionador proposto está disponível em~\cite{ErickGit} para que
-qualquer pessoa possa acessar o projeto e, se desejar, construir seu próprio
-acionador. É importante ressaltar que alguns componentes, como o piezo, não
-possuíam biblioteca nativa no Kicad. Por isso foi necessário desenvolver uma 
-biblioteca para cada um desses componentes.
 
-Após a construção do \textit{layout} do circuito no Kicad é que se iniciou a
+Para a construção da placa do acionador baseado em sopro utilizou-se o
+\textit{software} KiCad como ferramenta para desenvolver o \textit{layout} do
+circuito do acionador. Todo o projeto da construção do acionador proposto está
+disponível em~\cite{ErickGit} para que qualquer pessoa possa acessar o projeto
+e, se desejar, construir seu próprio acionador. É importante ressaltar que
+alguns componentes, como o piezo, não possuíam biblioteca nativa no Kicad. Por
+isso foi necessário desenvolver uma biblioteca para cada um desses componentes.
+
+Após a construção do \textit{layout} do circuito no Kicad iniciou-se a
 etapa de confecção da placa. Foi utilizada a técnica de transferência térmica,
 um método bem primitivo bastante suscetível a erros, porém bastante prático e
 barato. O circuito é impresso em papel fotográfico em uma impressora a laser na
@@ -107,15 +109,15 @@ fenolite ou de fibra de vidro através de um processo térmico, onde, a placa é
 pressionada por uma superfície em temperatura relativamente alta. No caso do
 Protótipo construído neste trabalho, foi utilizado um ferro de passar roupa para
 realizar esse processo térmico. É importante pressionar bastante o ferro de
-passar roupas contra a placa e realizar movimentos em todas as direções a fim 
+passar roupa contra a placa e realizar movimentos em todas as direções a fim 
 de transferir todo o \textit{layout} do circuito para a placa. Após o processo
 térmico é necessário retirar da placa o papel fotográfico que continha o 
 circuito. Se algum trecho do circuito não for transferido para a placa --- isso
-é muito comum de acontecer --- é possível corrigir com um pincel
-marcador permanente de CD/DVD as trilhas não transferidas do circuito.  
+é muito comum de acontecer --- é possível corrigir, com um pincel
+marcador permanente de CD/DVD, as trilhas não transferidas do circuito.  
 
-O processo seguinte a transferência do circuito para a placa é a corrosão da
-placa. Para isso é utilizada uma solução de percloreto de ferro. Essa solução é
+O processo seguinte a transferência do circuito para a placa é a sua corrosão.
+Para isso, é utilizada uma solução de percloreto de ferro. Essa solução é
 muito fácil de ser encontrada, pois muitas lojas de eletrônica vendem esse
 produto. Geralmente o percloreto de ferro é vendido em pó, porém é necessário
 apenas misturar o produto com água para obter a solução desejada. O placa com o
@@ -151,16 +153,16 @@ O maior desafio encontrado no desenvolvimento deste trabalho foi de encontrar
 uma forma que o usuário conseguisse realizar o sopro diretamente no piezo, pois 
 esse é o componente capaz de perceber o sopro do usuário. Os acionadores
 baseados em sopro disponíveis no mercado utilizam soluções com tubos de PVC onde
-a pessoa sopra através desse tubo para conseguir utilizar o acionar. Contudo,
+a pessoa sopra através desse tubo para conseguir utilizar o acionador. Contudo,
 esse tipo de solução restringe demais a possibilidade de mais de uma pessoa
 utilizar a mesma ferramenta, pois para utilizar esse tipo de ferramenta é
-necessário manter contato direto com a boca no tubo e isso não é recomendado
+necessário manter contato direto aa boca com o tubo e isso não é recomendado
 devido as questões de higiene pessoal e prevenção de doenças que podem ser 
 transmitidas pela saliva~\cite{Li2000}.
 
 Algumas soluções, como em~\cite{CorpPuff}, utilizam uma espécie de 
 \textit{headset} para sustentar os tubos de PVC próximos a boca do usuário. Isso
-serviu como base para a construção do suporte de sustentação construído neste
+serviu como base para a construção do suporte de sustentação desenvolvido neste
 trabalho. Inicialmente a ideia era desenvolver uma ferramenta baseada em
 \textit{headsets} como mostrado na Figura~\ref{fig:headset}.
 
@@ -169,28 +171,28 @@ trabalho. Inicialmente a ideia era desenvolver uma ferramenta baseada em
 	\begin{minipage}[c]{\textwidth}
 	\centering
 	\includegraphics[width=0.4\linewidth]{fig/heaset}
-	\caption{\textit{headsets} que seria utilizado como base.}
+	\caption{Modelo de \textit{headset} inicialmente idealizado.}
 	\label{fig:headset}
 	\end{minipage}
 \end{figure} 
 
 A intenção era desenvolver toda a armação do suporte utilizando arame recozido.
-O estrutura ficaria acoplada na parte de trás da cabeça do usuário se estenderia
+A estrutura ficaria acoplada na parte de trás da cabeça do usuário, se estenderia
 pela orelha e as duas extremidades da estrutura seria responsável por segurar o
 acionador próximo a boca do usuário. Contudo, essa solução poderia ser
 bastante incômoda, pois o peso do acionador sustentado pela estrutura em volta
-da orelha do usuário que poderia gerar muito desconforto e insatisfação.
+da orelha do usuário poderia gerar muito desconforto e insatisfação.
 
-A ideia de utilizar uma ferramenta em forma \textit{headset} não foi descartada.
-Surgiu a ideia de utilizar como base um \textit{headset} semelhante ao mostrado 
-na Figura~\ref{fig:fone}. 
+A ideia de utilizar uma ferramenta em forma \textit{headset} não foi totalmente
+descartada. Surgiu a ideia de utilizar como base um \textit{headset} semelhante 
+ao mostrado  na Figura~\ref{fig:fone}. 
  
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
 	\includegraphics[width=0.4\linewidth]{fig/fone}
-	\caption{\textit{headset} utilizado como base para o suporte de sustentação
+	\caption{\textit{Headset} utilizado como base para o suporte de sustentação
 do acionador.}
 	\label{fig:fone}
 	\end{minipage}
@@ -203,7 +205,7 @@ para a estrutura desenvolvida. A função dos arames é de manter fixo o acionad
 próximo a boca do usuário. Os arames foram acoplados nas laterais do
 \textit{headset} utilizado e foram curvados de uma forma que as extremidades
 dos arames ficassem na frente da boca do usuário. Duas garras do tipo jacaré
-focaram colocadas nas extremidades  dos arames a fim de acoplar o acionador na
+foram colocadas nas extremidades  dos arames a fim de acoplar o acionador na
 estrutura construída. O resultado do suporte desenvolvido é mostrado na
 Figura~\ref{fig:suporte}. 
 
@@ -211,22 +213,23 @@ Figura~\ref{fig:suporte}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.5\linewidth]{fig/erick}
-	\caption{Um usuário testanto o acionador baseado em sopro em conjunto com o
-suporte de sustentação. Note que o LED de \textit{status} fica no campo de visão
-do usuário. Sendo assim, o suporte não compromete a visualização do LED que
-informa quando o acionador foi ativado pelo sopro.}
+	\includegraphics[width=0.45\linewidth]{fig/erick}
+	\caption{Um usuário testando o acionador baseado em sopro em conjunto com o
+suporte de sustentação.} %Note que o LED de \textit{status} fica no campo de visão
+%do usuário. Sendo assim, o suporte não compromete a visualização do LED que
+%informa quando o acionador foi ativado pelo sopro.}
 	\label{fig:suporte}
 	\end{minipage}
 \end{figure}
 
-
-
 Com essa estrutura o acionador sempre ficará na frente da boca do usuário,
-independente da posição da cabeça da pessoa. É importante também ressaltar que,
-como o \textit{headset} utilizado possui uma estrutura de ajuste de tamanho, o
-suporte pode ser utilizado por varias pessoas bastando apenas ajustar o tamanho
-desejado para cada tamanho de cabeça. 
+independente da posição da cabeça da pessoa. Além disso, o LED de
+\textit{status} fica sempre no campo de visão do usuário. Sendo assim, o suporte
+não compromete a visualização do LED que informa quando o acionador foi ativado
+pelo sopro. É importante também ressaltar que, como o \textit{headset} utilizado
+possui uma estrutura de ajuste de tamanho, o suporte pode ser utilizado por
+varias pessoas bastando apenas ajustar o tamanho desejado para cada tamanho de
+cabeça. 
 
 \end{section}
 
