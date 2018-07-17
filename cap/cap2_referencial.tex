@@ -8,22 +8,22 @@ emulação dos eventos de clique do \textit{mouse}.
 
 \begin{section}{Piezoeletricidade}
 
-Há certos elementos na natureza capazes de converter uma uma grandeza física em
-outra. Por exemplo, transformar temperatura em tensão elétrica. Esses
-elementos são chamados de transdutores~\cite{william}. Um grande exemplo de
-transdutor é o microfone, que é capaz de converter o som, uma onda mecânica, em
-sinais elétricos que são amplificados por um circuito e reproduzidos por algum
-dispositivo de som, como alto-falantes. Muitas vezes transdutores são chamados
-de sensores, porém esta denominação não é correta, pois, segundo~\cite{usher},
-sensor é um dispositivo capaz de medir uma grandeza física, como é o caso do
-termômetro que realiza a medição de temperatura. 
+Há certos elementos capazes de converter uma uma grandeza física em outra. Por
+exemplo, transformar temperatura em tensão elétrica. Esses elementos são
+chamados de transdutores~\cite{william}. Um grande exemplo de transdutor é o
+microfone, que é capaz de converter o som, uma onda mecânica, em sinais
+elétricos que são amplificados posteriormente por um circuito. %Muitas vezes
+%transdutores são chamados de sensores, porém esta denominação não é correta,
+%pois, segundo~\cite{usher}, sensor é um dispositivo capaz de medir uma grandeza
+%física, como é o caso do termômetro que realiza a medição de temperatura. 
 
-Há certos transdutores que são capazes de converter mais de uma grandeza física,
-como é o caso do transdutor piezoelétrico. Esse transdutor utiliza a chamada
-piezoeletricidade e é bastante utilizado em diversas aplicações diferentes. Seu
-principio de funcionamento é dividido em efeito piezoelétrico direto e reverso
-que serão brevemente descritos seguir.
-
+Além disso, há certos transdutores que são capazes de converter mais de uma
+grandeza física, como é o caso do transdutor piezoelétrico. Esse transdutor
+opera sob o fenômeno físico conhecido como piezoeletricidade e é bastante
+utilizado em diversas aplicações diferentes. Seu principio de funcionamento é
+dividido em efeito piezoelétrico direto e reverso, os quais serão brevemente 
+descritos a seguir.
+  
 \begin{subsection}{Efeito Piezoelétrico Direto}
 
 O efeito piezoelétrico direto refere-se a capacidade de um material gerar tensão
@@ -33,18 +33,17 @@ essa propriedade da piezoeletricidade. Por exemplo, piezos são bastantes
 utilizados na indústria como uma ferramenta que ajuda a detectar a presença de
 objetos em determinadas áreas. Quando há algum objeto sobre uma área desejada,
 o peso desse objeto realiza uma força de compressão sobre o material
-piezoelétrico produzindo uma tensão que pode ser medida por um sensor. Dessa
-forma, uma máquina pode ``perceber'' que tem um objeto sobre a área desejada e
-pode realizar a sua função pré-programada. É importante perceber que o piezo não
-funciona como sensor, apenas converte uma grandeza física, nesse caso a força
-peso causada pela massa do objeto, em uma energia capaz de ser medida por um
-determinado instrumento.
+piezoelétrico, produzindo uma diferença de potencial elétrico. Dessa
+forma, uma máquina pode ``perceber'' que há um objeto sobre a área desejada e
+pode então realizar a sua função pré-programada. %É importante perceber que o
+%piezo converte, nesse caso a força peso causada pela massa do objeto, em uma
+%energia elétricacapaz de ser .
   
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{fig/EfeitoPiezoEletricoDireto}
+	\includegraphics[width=0.8\linewidth]{fig/EfeitoPiezoEletricoDireto}
 	\caption{Efeito piezoelétrico direto.}
 	\label{fig:direto}
 	\end{minipage}
@@ -54,50 +53,50 @@ A Figura~\ref{fig:direto} mostra o princípio de funcionamento do efeito
 piezoelétrico direto. Um material piezoelétrico --- um cristal de quartzo, por
 exemplo --- é posicionado entre duas placas de metal. Para ocorrer a geração de
 energia elétrica, é necessário algum tipo de estresse mecânico no material, como
-compressão ou vibração. Quando as placas de metal são pressionadas, por exemplo,
-ocorre uma diferença de potencial elétrico na superfície das placas como
-consequência do chamado de efeito piezoelétrico direto.  É possível armazenar a
+compressão ou vibração. Quando as placas de metal são pressionadas ocorre uma
+diferença de potencial elétrico na superfície das placas como consequência do
+chamado de efeito piezoelétrico direto.  É possível inclusice armazenar a
 energia gerada pela compressão do material piezoelétrico e utilizá-la para
-alimentar circuitos elétricos, substituindo as baterias por exemplo, como
-realizado em~\cite{twitter}. 
+alimentar circuitos elétricos, ap invés de usar baterias~\cite{twitter}. 
 
 \end{subsection}
 
 
 \begin{subsection}{Efeito Piezoelétrico Reverso}
 
-É possível realizar o processo contrário ao efeito piezoelétrico direto. A
-Figura~\ref{fig:reverso} ilustra o princípio de funcionamento do efeito
-piezoelétrico reverso. Dado duas placas de metal separadas por um material
-piezoelétrico, é possível gerar perturbações mecânicas nessas placas. Para isso,
-é necessário aplicar uma diferença de potencial elétrico nas placas que vibram
-proporcionalmente a tensão aplicada~\cite{Lin12}. É possível gerar ondas de sons
-audíveis a partir das vibrações das placas de metal, mas para que isso ocorra,
-as placas devem necessariamente vibrar em uma faixa de frequência entre 20~Hz e
-20~Khz (faixa de frequência audível ao ser humano).
+A Figura~\ref{fig:reverso} ilustra o princípio de funcionamento do efeito
+piezoelétrico reverso, processo contrário ao efeito piezoelétrico direto. Dado
+duas placas de metal separadas por um material piezoelétrico, é possível gerar
+perturbações mecânicas nessas placas. Para isso, é necessário aplicar uma
+diferença de potencial elétrico nas placas que vibram proporcionalmente a tensão
+aplicada~\cite{Lin12}. Ondas de sons audíveis podem ser geradas a partir das
+vibrações das placas de metal, mas para que isso ocorra, as placas devem
+necessariamente vibrar em uma faixa de frequência entre 20~Hz e 20~kHz (faixa de
+frequência audível ao ser humano).
 
 
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{fig/EfeitoPiezoEletricoReverso}
+	\includegraphics[width=0.8\linewidth]{fig/EfeitoPiezoEletricoReverso}
 	\caption{Efeito piezoelétrico reverso.}
 	\label{fig:reverso}
 	\end{minipage}
 \end{figure}
 
 Muitos aparelhos eletrônicos utilizam o efeito piezoelétrico reverso. Os sons de
-sinalizações emitidos por computadores ao serem ligados ou quando há algum tipo
-de problema no funcionamento no computador, são gerados por um dispositivo
-chamado \textit{buzzer} e é um bom exemplo de utilização do efeito piezoelétrico
-reverso.  Até mesmo alguns sonares utilizam o princípio desse fenômeno da
-piezoeletricidade, onde é aplicado uma tensão modulada por PWM (do inglês,
-\textit{pulse with modulation}) em um material piezoelétrico que emite um
-sinal ultrassom. Alguns desses instrumentos ultrassônicos são utilizados na área
-médica para realização de cirurgias, como a maxilofacial onde é necessário
-realizar cortes em tecidos ósseos~\cite{Carvalho17}.
-
+sinalizações emitidos por computadores ao serem ligados (\textit{beeps}) ou
+quando há algum tipo de problema no funcionamento no computador, são gerados por
+um dispositivo chamado \textit{buzzer}, o que é um bom exemplo de utilização do
+efeito piezoelétrico reverso.  Até mesmo alguns sonares utilizam o princípio
+desse fenômeno da piezoeletricidade, onde é aplicado uma tensão modulada por PWM
+(do inglês \textit{pulse with modulation}) em um material piezoelétrico que
+emite um sinal ultrassom. Alguns desses instrumentos ultrassônicos são
+utilizados na área médica para realização de cortes em cirurgias, como a
+maxilofacial onde é necessário realizar cortes em tecidos
+ósseos~\cite{Carvalho17}. 
+ 
 \end{subsection}
 
 \end{section}
@@ -106,34 +105,33 @@ realizar cortes em tecidos ósseos~\cite{Carvalho17}.
 
 O circuito eletrônico conhecido como amplificador operacional é um componente
 muito importante em circuitos elétricos que realiza operações especiais de
-processamento de sinais~\cite{Richard2000}. A Figura~\ref{fig:opamp} mostra a
-representação de um amplificador operacional.
+processamento de sinais~\cite{Richard2000}. 
 
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.5\linewidth]{fig/opamp}
+	\includegraphics[width=0.55\linewidth]{fig/opamp}
 	\caption{Representação de um amplificador operacional.}
 	\label{fig:opamp}
 	\end{minipage}
 \end{figure}
 
 O operador operacional ilustrado na Figura~\ref{fig:opamp} possui dois terminais
-de alimentação, duas entradas --- inversora e não inversora --- e uma saída. A
-entrada não inversora é convencionalmente representada pelo símbolo ``+'' e a 
-entrada inversora é representada pelo símbolo ``-''. Quando é aplicado um sinal
-na entrada não inversora, o sinal na saída possui a mesma fase do sinal de
-entrada. Por outro lado, quando o sinal é aplicado na entrada inversora, o sinal
-de saída possui uma fase contrária ao sinal de entrada. É importante ressaltar
-que alguns autores omitem a representação dos terminais de alimentação por
-considerarem desnecessários e tenderem a sobrecarregar visualmente os esquemas
-de circuitos, tornando-os mais difíceis de serem interpretados. Contudo fica
-subentendido que os terminais de alimentação fazem parte do circuito, embora
-muitas vezes não sejam mostrados.
+de alimentação, duas entradas, inversora e não inversora ($V_{-}$ e $V_{+}$), e
+uma saída. A entrada não inversora é convencionalmente representada pelo símbolo
+``+'' e a entrada inversora é representada pelo símbolo ``-''. Quando é aplicado
+um sinal na entrada não inversora, o sinal na saída possui a mesma fase do sinal
+de entrada. Por outro lado, quando o sinal é aplicado na entrada inversora, o
+sinal de saída possui uma fase contrária ao sinal de entrada. É importante
+ressaltar que alguns autores omitem a representação dos terminais de alimentação
+por considerarem desnecessários e tenderem a sobrecarregar visualmente os
+esquemas de circuitos, tornando-os mais difíceis de serem interpretados. Contudo
+fica subentendido que os terminais de alimentação fazem parte do circuito,
+embora muitas vezes não sejam mostrados.
 
 A partir de várias combinações de resistores nos terminais do amplificador
-operacional é possível executar funções muito úteis com os sinais de entrada, 
+operacional, é possível executar funções muito úteis com os sinais de entrada, 
 como multiplicação por um fator constante, soma, mudança de fase e
 subtração~\cite{Nilson09}. Outra função bastante importante que pode ser
 implementada com amplificadores operacionais é a comparação de sinais. Dado dois
@@ -145,15 +143,15 @@ intensidade entre os dois sinais de entrada~\cite{Terrell96}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.6\linewidth]{fig/nao_inversor}
+	\includegraphics[width=0.55\linewidth]{fig/nao_inversor}
 	\caption{Circuito comparador não inversor.}
 	\label{fig:comparador1}
 	\end{minipage}
 \end{figure}
 
 A Figura~\ref{fig:comparador1} mostra um comparador de tensão utilizando a
-configuração não inversora. Nessa configuração de comparação é utilizado uma
-tensão como referência ($V_{Ref}$) na entrada inversora. A
+configuração não inversora. Nessa configuração de comparação, uma tensão como
+referência ($V_{Ref}$) é utilizada na entrada inversora. A
 Figura~\ref{fig:sinal1} mostra o comportamento dos sinais utilizando essa
 configuração.
 
@@ -187,8 +185,8 @@ acontece devido a diversos fatores físicos do componente.
 \end{figure}
 
 Já a Figura~\ref{fig:comparador2} mostra um comparador de tensão utilizando a
-configuração inversoa. Nessa configuração também é utilizado uma tensão de
-refêrencia, porém é colocada na entrada não inversora.O comportamento dos sinais
+configuração inversora. Nessa configuração, também é utilizada uma tensão de
+refêrencia, porém é colocada na entrada não inversora. O comportamento dos sinais
 utilizando a configuração inversora é mostrado na Figura~\ref{fig:sinal2}. 
 
 
@@ -202,9 +200,9 @@ utilizando a configuração inversora é mostrado na Figura~\ref{fig:sinal2}.
 	\end{minipage}
 \end{figure}
 
-A configuração de comporador inversor ocorre, como o próprio nome sugere, um
-comportamento oposto ao comparador não inversor. Enquanto a tensão de refência é
-maior que a tensão da entrada não a saída tende para a magnitude da tensão de
+A configuração de comparador inversor ocorre, como o próprio nome sugere, um
+comportamento oposto ao comparador não inversor. Enquanto a tensão de referência
+é maior que a tensão da entrada a saída tende para a magnitude da tensão de
 alimentação do operador operacional. Já quando ocorre o contrário,  a tensão da
 saída tende para 0~V.
 
