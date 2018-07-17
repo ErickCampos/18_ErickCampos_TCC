@@ -159,7 +159,7 @@ configuração.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.5\linewidth]{fig/comparador_nao_inversor}
+	\includegraphics[width=0.55\linewidth]{fig/comparador_nao_inversor}
 	\caption{Comportamento do sinal de saída do comparador não inversor.}
 	\label{fig:sinal1}
 	\end{minipage}
@@ -194,7 +194,7 @@ utilizando a configuração inversora é mostrado na Figura~\ref{fig:sinal2}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.5\linewidth]{fig/comparador_inversor}
+	\includegraphics[width=0.55\linewidth]{fig/comparador_inversor}
 	\caption{Comportamento do sinal de saída do comparador inversor.}
 	\label{fig:sinal2}
 	\end{minipage}
@@ -209,128 +209,136 @@ saída tende para 0~V.
 \end{section}
 
 
-\begin{section}{Conectores de Áudio}
+\begin{section}{Conectores de Áudio TS e TRS}
 
 Sinais de áudio podem ser transmitidos através de vários tipos de conectores.
 Por exemplo, é possível reproduzir os sinais de áudio produzidos por uma
-guitarra para uma caixa acústica amplificada. Geralmente utiliza-se o conector
+guitarra para uma caixa acústica amplificada. Geralmente, utiliza-se o conector
 P10 para realizar a transmissão de áudio da guitarra para a caixa acústica. Já
-para fones de ouvidos, por exemplo, é utilizado o conector P2. Segundo uma
+para fones de ouvidos, o conector P2 é mais comumente utilizado. Segundo uma
 matéria disponível na BBC News~\cite{BBC}, o conector P2 é utilizado desde o
-século XIX.  Os conectores mais utilizados são os conectores TS e TRS, também
-conhecidos como conectores Jack, que serão brevemente descritos a seguir.
-
-\begin{subsection}{Conector TS}
+século XIX, que serviam para conectar e desconectar conexões em painés
+telefônicos antigos.  Os conectores mais utilizados são os conectores TS e TRS,
+também conhecidos como conectores Jack, que serão brevemente descritos a
+seguir.  
 
 O TS é um conector utilizado para transmitir sinais analógicos e são mais
-utilizados natransmissão de áudio. Há diversos tamanhos de conectores TS e são
-comercializados com diferentes diâmetros, como 2.5~mm, 3.5~mm e 6.35~mm. A
-Figura~\ref{fig:TS} mostra a ilustração de um conector TS.
+utilizados natransmissão de áudio. Esse conector é chamado de TS por ser as
+iniciais das palavras Tip e Sleeve. Há diversos tamanhos de
+conectores TS e são comercializados com diferentes diâmetros, como 2,5~mm,
+3,5~mm e 6,35~mm. A Figura~\ref{fig:ts} mostra a ilustração de um conector TS.
+Esse conector possui somente um canal de transmissão de sinal analógico, por
+isso é um conector mono~\cite{ts}. O TS possui dois pinos que são separados
+entre si por um anel isolante. O pino Tip que  fica localizado no final do
+conector é utilizado para realizar a  transmissão do sinal. Já o pino Sleeve é
+responsável por ser a referência (GND, \textit{groun}, ou terra) do conector.
 
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{\textwidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{fig/ts}
-	\caption{Conector TS.}
-	\label{fig:TS}
-	\end{minipage}
-\end{figure} 
 
-O conector TS possui somente um canal de transmissão de sinal analógico,
-por isso é um conector mono~\cite{ts}. O TS possui dois pinos
-que são separados entre si por um anel isolante. O pino Tip que  fica localizado
-no final do conector é utilizado para realizar a  transmissão do sinal. Já o
-pino Sleeve é responsável por ser a referência (GND) do conector.
+O TRS, mostrado na Figura~\ref{fig:trs}, também é um conector utilizado para
+transmissão de sinais analógicos. Esse conector às vezes é chamado de P3, por
+possuir três pinos, porém este nome está tecnicamente incorreto pois a
+nomenclatura é denominada de acordo com o diâmetro de cada conector. Sendo assim
+a nomenclatura P2, por exemplo, podendo ser tanto TS quanto TRS,  refere-se a
+conectores com diâmetro de 3,5~mm, assim como P10 refere-se a conectores de
+6,35~mm. 
 
-\end{subsection}
+%\begin{figure}[!h]
+%	\centering
+%	\begin{minipage}[c]{\textwidth}
+%	\centering
+%	\includegraphics[width=0.9\linewidth]{fig/trs}
+%	\caption{Conector TRS.}
+%	\label{fig:TRS}
+%	\end{minipage}
+%\end{figure} 
 
-\begin{subsection}{Conector TRS}
-O TRS também é um conector utilizado para transmissão de sinais analógicos. Esse
-conector é normalmente chamado de P3, por possuir três pinos, porém este nome
-está tecnicamente incorreto pois a nomenclatura é denominada de acordo com o
-diâmetro de cada conector. Sendo assim a nomenclatura P2, por exemplo, podendo
-ser tanto TS quanto TRS,  refere-se a conectores com diâmetro de 3.5~mm, assim
-como P10 refere-se a conectores de 6.35~mm. A Figura~\ref{fig:TRS} mostra a
-ilustração de um conector TRS.
-
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{\textwidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{fig/trs}
-	\caption{Conector TRS.}
-	\label{fig:TRS}
-	\end{minipage}
-\end{figure} 
+\begin{figure}
+\centering
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, height=0.2\textheight]{fig/ts}
+  \caption{Conector TS.}
+  \label{fig:ts}
+\end{subfigure}%
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, height=0.2\textheight]{fig/trs}
+  \caption{Conector TRS.}
+  \label{fig:trs}
+\end{subfigure}
+\caption{Conectores de áudio.}
+\label{fig:conector}
+\end{figure}
 
 O conector TRS possui três pinos que, assim como o TS, são separados 
 entres si por anéis isolantes. Contudo, o TRS pode transmitir dois sinais
 analógicos simultaneamente, sendo, portanto, um conector estéreo~\cite{ts}. O
 pino Sleeve, ou GND, é a referência do conector. O pino Ring, também chamado de
-Right ( canal direito da transmissão ) é o  pino central do conector. Já Tip,
+Right (canal direito da transmissão) é o  pino central do conector. Já Tip,
 pino localizado no final do conector, também é conhecido por Left, pois é 
 responsável por transmitir um sinal pelo canal esquerdo.
   
 É possível transformar um conector TRS em TS, ou seja, transformar um conector
-estéreo em mono. Para isso é necessário realizar um curto circuito entre os
+estéreo em mono. Para isso, é necessário realizar um curto-circuito entre os
 pinos Ring e Tip do conector estéreo. Quando um sinal é enviado para o Ring e
 Tip, como eles estão curto circuitados, os dois canais transmitem o mesmo
-sinal em somente um canal. Sendo assim, o conector TRS age como se fosse um
-conector TS. Esse tipo de alteração é necessária caso o dispositivo que receba a
-entrada do conector seja mono e o conector seja TRS. 
+sinal em somente um canal, agindo como um conector TS.
 
-\end{subsection}
 
 \end{section}
 
 
 \begin{section}{Ferramentas de Desenvolvimento de Placas de Circuito Impresso}
 
-Para o desenvolvimento de placas de circuito impresso, primeiramente é
-necessário desenvolver o \textit{layout} do circuito que deseja-se transferir
+Para o desenvolvimento de placas de circuito impresso (PCB, do inglês
+\textit{printed circuit board}), primeiramente é
+preciso desenvolver o \textit{layout} do circuito que deseja-se transferir
 para a placa. Para realizar essa tarefa é necessário a utilização de um
-\textit{software} EDA (do inglês, \textit{electronic design automation}).
-Existem vários \textit{software} EDA, como o Eagle~\cite{eagle}. O Eagle é um
-\textit{software} amplamente utilizado para o desenvolvimento de placas de
-circuito impresso, contudo possui a desvantagem de não ser um \textit{software}
-livre sendo liberado gratuitamente apenas para uso pessoal e não comercial. Além
-disso, a versão gratuita possui uma quantidade limitada de ferramentas de
-desenvolvimento. Para ter acesso a essas ferramentas é necessário adquirir uma
-assinatura que pode ser mensal ou anual. Os preços dessa assinatura variam de
-R\$~52.91 a R\$~3227.40~\cite{EagleAssinatura}.
-
+\textit{software} EDA (do inglês, \textit{electronic design automation}). O
+Eagle~\cite{eagle} é um dos \textit{software} EDA mais utilizados para o
+desenvolvimento de placas de circuito impresso, contudo possui a desvantagem de
+não ser um \textit{software} livre, sendo liberado gratuitamente apenas para uso
+pessoal e não comercial. Além disso, a versão gratuita possui uma quantidade
+limitada de ferramentas de desenvolvimento. Para ter acesso a essas ferramentas,
+o desenvolvedor tem que adquirir uma assinatura que pode ser mensal ou anual. Os
+valores dessa assinatura variam de R\$~52,91 a
+R\$~3.227,40~\cite{EagleAssinatura}. 
+ 
 Existem ferramentas EDA que são de código aberto e totalmente gratuitas. O
 Kicad~\cite{kicad} é o  \textit{software} de código aberto e gratuito mais
 utilizado entre os desenvolvedores. Essa ferramenta oferece recursos necessários
-para o desenvolvimento de quase todo tipo de projeto. Obviamente que não
-há disponível todas as bibliotecas de componentes possíveis. Por exemplo, não há
-uma biblioteca para o componente HT12D~\cite{ht12d}. Contudo, há a possibilidade
+para o desenvolvimento de quase todo tipo de projeto. Obviamente, devido à vasta
+quantidade de componentes eletrônicos existentes no mundo, não existem
+bibliotecas para todos os componentes possíveis. Contudo, há a possibilidade
 de desenvolvimento de bibliotecas próprias sendo possível disponibilizá-las em
-repositórios, como o Github~\cite{github}, para que qualquer pessoa possa
-utilizá-la em projetos pessoais.  
+repositórios gratuitos, como o GitHub~\cite{github}, para que qualquer pessoa
+possa utilizá-la em projetos pessoais.  
 \end{section}
-
 
 
 \begin{section}{Captura de Áudio}
 
 Para o desenvolvimento de uma aplicação de captura ou reprodução de áudio é
-necessário a utilização de alguma API. Uma API (do inglês, \textit{application
-programing interface}) é uma interface que define o contrato para que duas
-aplicações se comuniquem entre si~\cite{API17}. A utilização de uma API pode
-simplificar o desenvolvimento de aplicações, contudo há algumas limitações, como
-linguagem e plataforma utilizada. 
+imprescindível a utilização de alguma API. Uma API (do inglês,
+\textit{application programing interface}) é uma interface que define o contrato
+para que duas aplicações se comuniquem entre si~\cite{API17}. A utilização de
+uma API pode simplificar o desenvolvimento de aplicações, contudo há algumas
+limitações, como linguagem e plataforma utilizada. 
 
 Existem várias APIs para o desenvolvimento de aplicações de áudio. Agumas APIs são
 nativas do sistema operacional, portanto cada sistema operacional possui APIs
 específicas. A grande desvantagem de utilizar APIs nativas de um determinado
-sistema operacional é que, para a utilização da mesma aplicação em outro sistema
+sistema operacional é questão da protabibidade. Para a utilização da mesma aplicação em outro sistema
 operacional, é necessário a reescrita do código utilizando um API suportada pelo
-sistema operacional onde deseja-se executar a aplicação. 
+sistema operacional onde deseja-se executar a aplicação. Isso é um grande
+problema, pois reescrever um código praticamente do iníco, uma vez que uma nova
+API deve ser utilizada, demanda tempo e muitas vezes recursos finaceiros
+adicionais para o desenvolvimento do projeto.
+
 
 A camada de áudio de sistemas operacionais baseados em Linux, por
-exemplo, possui o ALSA~\cite{alsa} e também o OSS~\cite{oss} como
+exemplo, possui o ALSA~\cite{alsa} e também o OSS~\cite{oss} (mais antigo e
+menos utilizado) como
 \textit{drivers} que permitem a manipulação de áudios e cada \textit{driver}
 possui uma API para o desenvolvimento de aplicações. Uma alternativa para ajudar
 a portabilidade da aplicação de áudio desenvolvida é utilizar APIs
@@ -340,7 +348,7 @@ Uma ferramenta bastante utilizada para o desenvolvimento de aplicações que
 realizam manipulações de áudio é o PortAudio~\cite{portaudio}, uma biblioteca de
 código aberto, multiplataforma, que permite escrever programas em C/C++ para
 realizar gravação e reprodução de áudios. A Figura~\ref{fig:portaudio} mostra a
-arquitetura do PortAudio.
+arquitetura do PortAudio para sistemas Linux e Windows.
 
 \begin{figure}[!h]
 	\centering
@@ -364,19 +372,18 @@ fornece conversão de taxa de amostragem se for solicitado uma taxa de amostrage
 que não seja suportada pela API de áudio nativa. Outro bom exemplo é que o ASIO
 SDK permite apenas que uma aplicação seja executada por vez, dessa forma o
 PortAudio, atualmente, não suporta a execução de várias aplicações
-simultaneamente.
+simultaneamente~\cite{portaudio}.
 
 \end{section}
 
 \begin{section}{X Window System}
 
-O X Window System, X ou X11, é um sistema de janelas criados pela MIT (do
-inglês, \textit{Massachusetts Institute of Technology})~\cite{xlib}. Esse
-sistema atualmente está na sua décima primeira versão --- por isso é também 
-chamado de X11 --- que foi publicada em 1987. O X11 é um protocolo que funciona
-no modelo cliente-servidor e é utilizado como padrão para GUIs (do inglês,
-\textit{graphical user interface}) em sistemas baseados em UNIX e Linux. Uma
-visão geral da arquitetura do X Window System é mostrado na
+O X Window System, também conhecido como X ou X11, é um sistema de janelas
+criados pela MIT. Esse sistema atualmente está na sua décima primeira versão
+(por isso é também chamado de X11), publicada em 1987. O X11 também é um
+protocolo que funciona no modelo cliente-servidor e é utilizado como padrão para
+GUIs (do inglês, \textit{graphical user interface}) em sistemas baseados em UNIX
+e Linux. Uma visão geral da arquitetura do X Window System é mostrado na
 FIgura~\ref{fig:x11}.
 
 \begin{figure}[!h]
@@ -396,8 +403,8 @@ processos~\cite{suse}. É possível criar diversas aplicações utilizando o X11
 como criação de interfaces gráficas para usuários e execução dos movimentos e
 eventos de clique do \textit{mouse}. 
 
-As aplicações funcionam como cliente e são desenvolvidas utilizando
-principalmente a Xlib~\cite{xlib}, uma biblioteca cliente do protocolo X escrita
+As aplicações funcionam como cliente e são desenvolvidas utilizando 
+principalmente a API Xlib~\cite{xlib}, uma biblioteca cliente do protocolo X escrita
 em C. A Xlib realiza o intermédio entre o cliente (aplicação) e o servidor X.  
 \end{section}
 
