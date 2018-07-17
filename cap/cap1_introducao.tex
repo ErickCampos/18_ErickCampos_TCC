@@ -128,13 +128,15 @@ subdesenvolvidos, por exemplo, apenas 15\% das PCD têm acesso a essas Tecnologi
 Assistivas\cite{WHO15}. Um fator que pode contribuir para esse cenário são os
 altos preços de algumas dessas tecnologias. 
 
+\subsection{Acionadores Externos}
+
 Acionadores externos, dispositivos de entrada que permitem as PCD a utilizarem
 equipamentos ativados normalmente por botões ou teclados~\cite{tecla}, são um
 grande exemplo de ferramentas voltadas para TA que não são acessíveis
 economicamente para grande parte da população. Apesar de existirem uma grande 
 variedade de tipos e funcionalidades, a média de preço dos acionadores externos
-é bastante alta. A Tabela~\ref{tab:acionadores} mostra os valores de alguns acionadores
-externos disponíveis no mercado. 
+é bastante alta. A Tabela~\ref{tab:acionadores} mostra os valores comerciais 
+de alguns  acionadores externos disponíveis no mercado. 
  
 \begin{table}[!h]
 \centering
@@ -172,22 +174,22 @@ programada de uma boneca através do pressionamento de um
 acionador~\cite{ATswitchYT}. %Como forma de controle de uma determinada função do
 %computador --- como o clique de um \textit{mouse} --- através de um acionador
 %externo, não foi encontrado nenhum dispositivo que utiliza a comunicação P2 Jack
-%conectado diretamente no computador que realiza essa tarefa. É até possível
-%controlar o clique de um mouse com a comunicação P2 Jack, mas é necessário o
-%auxílio de um \textit{mouse}, como~\cite{MouseJack}, mostrado na
-%Figura~\ref{fig:mouse}, que possua uma adaptação que receba como entrada o P2
-%Jack de um acionador. 
-Já para acionadores, como~\cite{Blue2},
-~\cite{SavantElite2}, ~\cite{FootPedal}, ~\cite{FootSwitch} e ~\cite{SipPuff},
-que possuem comunicação Bluetooth ou USB, conseguem realizar o controle dos
-evento de clique de \textit{mouse} facilmente sem o auxílio de outros
-dispositivos, bastando apenas realizar uma pequena configuração no próprio
-acionador. Todavia, no caso do Bluetooth, é necessário um dispositivo que tenha
-suporte para esta tecnologia para conseguir controloar a função de clique e,
-inicialmente, é fundamental realizar o pareamento do \textit{mouse} no computador
-para conseguir as funções de clique. Já no caso do USB, a comunicação do
-\textit{mouse} com o computador é realizada somente com o auxílio de um
-microcontrolador que possui a função de implementar o protocolo de comunicação.
+%conectado diretamente no computador que realiza essa tarefa. 
+É possível controlar o clique de um mouse com a comunicação P2 Jack, mas é
+necessário o auxílio de um \textit{mouse}, como~\cite{MouseJack}, mostrado na
+Figura~\ref{fig:mouse}, que possua uma adaptação que receba como entrada o P2
+Jack de um acionador. 
+Já para acionadores, como~\cite{Blue2}, ~\cite{SavantElite2}, ~\cite{FootPedal},
+~\cite{FootSwitch} e ~\cite{SipPuff}, que possuem comunicação Bluetooth ou USB,
+conseguem realizar o controle dos evento de clique de \textit{mouse} facilmente
+sem o auxílio de outros dispositivos, bastando apenas realizar uma pequena
+configuração no próprio acionador. Todavia, no caso do Bluetooth, é necessário
+um computador que possua suporte a tecnologia Bluetooth, e, inicialmente, é
+fundamental realizar o pareamento do \textit{mouse} no computador para conseguir
+realizar as funções de clique com o acionador. Já no caso do USB, a interface é 
+realizada somente com o auxílio de um microcontrolador que possui a função de 
+implementar o protocolo de comunicação entre o acionador e o sistema operacional
+do computador.
 
 \begin{figure}[!h]
 	\centering
@@ -196,7 +198,7 @@ microcontrolador que possui a função de implementar o protocolo de comunicaç�
 	\label{fig:mouse}
 \end{figure}
 
-Como pode ser visto, o cuso dos acionadores comerciais são bem elevados. Alguns
+Como pode ser visto, o custo dos acionadores comerciais são bem elevados. Alguns
 deles possuem um mecanismo bem simples e ainda assim são vendidos a valores
 absurdos. Por exemplo, o acionador~\cite{StringSwitch} possui apenas uma simples
 corda que puxa uma chave de fim de curso. Assim, quando o corda do acionador é
@@ -209,131 +211,116 @@ cerca de R\$ 2,50. Já o pino de P2 jack custa cerca de R\$ 1. Com esses dois
 materiais é possível construir um acionador semelhante ao discutido custando
 menos de R\$ 10, valor bem abaixo dos U\$ 65 cobrado por esse acionador. %ok
 
-Na atual crise em que o Brasil se escontra, uma família de baixa renda, por
-exemplo, difilcilmente iria adquidir um acionador externo devido ao elevedo
-custo desse produto, pois certamente comprometeria sua renda mensal.
-Considernado uma renda mensal de um salário mínimo  (R\$ 927) e o preço do dólar
-a R\$ 3.38, aproximadamente 23\% desse salário seria comprometido. Sendo assim,
-PCD de baixa renda ficam impossibilitadas de adquirir tais produtos,
-excluindo-as de usufruir de dispositivos que são voltadas para facilitar o uso
-de equipamentos que não são adaptados para esse determinado público. %ok
+Na atual crise em que o Brasil se encontra, uma família de baixa renda, por
+exemplo, dificilmente iria adquirir um acionador externo devido ao elevado custo
+desse produto, pois certamente comprometeria sua renda mensal.  Considerando uma
+renda mensal de um salário mínimo  (R\$ 954) e o preço do dólar a R\$
+3,85~\footnote{Retirado de: \url{https://www.xe.com/pt/} em 17 jul. 2018},
+aproximadamente 26\% desse salário seria comprometido para comprar um acionador
+de U\$~65. Sendo assim, PCD de baixa renda ficam impossibilitadas de adquirir
+tais produtos, excluindo-as de usufruir de dispositivos que são voltados para
+facilitar o uso de equipamentos que não são adaptados para esse determinado
+público. %ok
 
 Nesse sentido, esta pesquisa tem como intuito apresentar uma solução para
 diminuir a exclusão digital vivenciada pelas PCD, que muitas vezes não conseguem
 utilizar aparelhos eletrônicos, como \textit{smartphones} e computadores
 \textit{desktop}, devido a limitação de recursos que os adaptem às suas
 necessidades. Além disso a solução proposta, apesar de ser voltada para o uso de
-uma determinada função em sistemas computacionais pode ser
-utilizada em outros dispositivos que necessitem de uma interação através do
-pressionamento de um botão, como ligar ou desligar televisores. O uso de
-acionadores externos são bons exemplos de dispositivos que auxiliam a utilização
-de diversos dispositivos, porém como grande parte dos acionadores disponíveis no
-mercado possuem um custo muito elevado, há a necessidade da solução proposta ser
-mais acessível economicamente para que mais PCD possam ter acesso a essa
-ferramenta. 
+uma determinada função em sistemas computacionais, pode ser utilizada em outros
+dispositivos que necessitem de uma interação através do pressionamento de um
+botão, como ligar ou desligar televisores. Como grande parte dos acionadores
+disponíveis no mercado possuem um custo muito elevado, há a necessidade de a
+solução proposta ser de baixo custo para que mais PCD possam ter
+acesso a essa ferramenta. 
 
 % que %auxiliam o uso de tarefas em dispositivos que normalmente não possuem
 % interfaces %alternativas de controle. 
  
-\subsection{Trabalhos Relacionados}
-A ideia de ajudar PCD a utilizar aparelhos eletrônicos com o auxílio de 
-acionadores externos é alvo de inúmeras pesquisas. Uma grande parte dessas
-pesquisas foca em auxiliar tarefas de controle das funções básicas do
-\textit{mouse} de um computador. Para controlar o ponteiro do \textit{mouse},
-geralmente utiliza-se os movimentos da cabeça ou dos olhos como método
-não-convencional de controle. Para esse tipo de abordagem há uma certa
-dificuldade em emular a função de clique.  Normalmente, para essa determinada
-função,  é utilizada o \textit{dwelltime}, um método que utiliza um tempo
-específico em segundos em que o ponteiro do mouse fica sobre um determinada área
-da tela para realizar  o clique. Por exemplo, se o usuário posicionar o ponteiro
-sobre o ícone de fechar uma aba de um navegador por um determinado tempo, irá
-ser chamado a função de clique sobre esse ícone, fechando a aba do navegador. Um
-dos problemas desse tipo de abordagem está no fato de que o usuário é obrigado a
-ficar com a cabeça ou com os olhos parados em uma determinada posição por algum
-tempo para que a função de clique seja ativada. Isso pode gerar um certo incômodo
-no usuário, além de, naturalmente, aumentar o tempo de utilização a medida em
-que o número de tarefas realizadas também aumentar.
+\subsubsection {Pesquisas Acadêmicas Relacionadas à Acionadores Externos}
 
-Devido isso, há diversas pesquisas que tentam solucionar esse problema através de
-métodos alternativos para a emulação do clique do \textit{mouse}.
-Em~\cite{Aanand18} foi proposto um algoritmo chamado de OptiDwell para emular a
-função de clique. Esse algoritmo utiliza o mesmo princípio do
-\textit{dwelltime}, mas com a diferença de que o usuário sabe exatamente quando
-o evento de clique irá acontecer. Utilizando o \textit{dwelltime} o usuário sabe qual é o
-tempo específico em que o ponteiro deve ficar sobre uma área que se deseja
-clicar, mas não tem a noção exata desse tempo. Por exemplo, se a pessoa deseja
-pausar um vídeo no YouTube, ela deve posicionar o ponteiro sobre o ícone de
-pause do vídeo e esperar o tempo de 2 segundos --- caso o \textit{dwelltime}
-esteja configurado para 2 segundos --- para que a função de clique seja ativada.
-Se em 1.99 segundos após ponteiro ficar sobre o ícone de pause, o cursor sair
-dessa posição, a função de clique não é chamada, sendo necessário, então,
-posicionar o ponteiro novamente em cima do ícone desejado. Com o algoritmo
-OptiDwell, o usuário tem uma noção mais precisa do tempo para que a função de
-clique seja realizada. O usuário sabe que o clique está para ser realizado
-através da mudança de cor do cursor do \textit{mouse}. Por
-exemplo, se a pessoa deseja clicar em uma letra no teclado virtual,
-disponibilizado em vários sistemas operacionais, quando o ponteiro estiver sobre
-uma determinada letra, a cor do ponteiro ficará mudando de cor ao longo do
-tempo. Quando o ponteiro estiver em uma determinada cor, a função de clique será
-chamada, além de ser ativado som de estalo (clique). Com isso a pessoa tem uma
-noção mais precisa do tempo para realizar o clique, através de um
-\textit{feedback} visual e sonoro. Contudo, o tempo de execução dessa função
-continua sendo um problema, pois o tempo de execução de tarefas simples, como a
-digitação, demanda bastante tempo e, com esse método, o tempo execução é bem maior
-se comparado com outros métodos alternativos.
+A ideia de ajudar PCD a utilizar aparelhos eletrônicos com o auxílio de
+acionadores externos tem sido alvo de inúmeras pesquisas acadêmicas. Uma grande
+parte dessas pesquisas foca no auxílio de tarefas de controle das funções
+básicas do \textit{mouse} de um computador, onde geralmente se utiliza o
+movimento da cabeça ou dos olhos como método não-convencional de controle do
+cursor do \textit{mouse}. No entanto, para esse tipo de abordagem, há uma certa
+dificuldade em emular a função de clique.  Normalmente, para essa determinada
+função,  é utilizada o \textit{dwell time}, um método que utiliza um tempo
+específico em segundos em que o ponteiro do mouse fica sobre um determinada área
+da tela para realizar  o clique. Todavia, tal técnica obriga o usuário a ficar
+com a cabeça ou com os olhos parados em uma determinada posição por algum tempo
+para que a função de clique seja ativada, gerando um certo incômodo no usuário%,
+%além de, naturalmente, aumentar o tempo de utilização a medida em que o número
+%de tarefas realizadas também aumentar.
+
+Outro problema recorrente do \textit{dwell time} é que naturalmente o tempo de
+utilização aumenta a medida que o número de tarefas também aumenta. Devido isso,
+há diversas pesquisas que tentam solucionar esses problemas do \textit{dwell
+time} através de métodos alternativos para a emulação do clique do
+\textit{mouse}.  Em~\cite{Aanand18} foi proposto um algoritmo chamado de
+OptiDwell para emular a função de clique.  Esse algoritmo utiliza o mesmo
+princípio do \textit{dwelltime}, mas com a diferença de que o usuário sabe
+exatamente, através de \textit{feedbacks} visuais e sonoros, quando o evento de
+clique irá acontecer.  Com o algoritmo OptiDwell, o usuário tem uma noção mais
+precisa do tempo para que a função de clique seja realizada. O usuário sabe que
+o clique está para ser realizado através da mudança de cor do cursor do
+\textit{mouse}. Por exemplo, se a pessoa deseja clicar em uma letra no teclado
+virtual, a cor do ponteiro ficará mudando ao longo do tempo. Quando o ponteiro
+estiver em uma determinada cor, a função de clique será chamada, além de ser
+ativado um som de estalo (clique). Com isso a pessoa tem uma noção mais precisa do
+tempo para realizar o clique, mas o tempo de execução dessa função continua 
+sendo um problema.
 
 O trabalho proposto em~\cite{Skim10} utiliza um acionador baseado em dois
-sensores ópticos: um LED (do inglês, ~\textit{light emitting diode})
-infravermelho emissor e um receptor. Esse método levou em consideração o
-clique simples e duplo, descartando a implementação da função ``clicar e
-arrastar''. Os sensores foram posicionados bem próximos de um dos olhos do
-usuário e através da tensão no LED infravermelho receptor foi possível
-identificar se a pessoa estava de olho aberto ou fechado. Quando o usuário fica
-de olho fechado há um certo sinal de tensão no LED receptor, mas quando o usuário
-abre o olho, o sinal infravermelho refletido no olho aberto gera uma tensão, no
-LED receptor, bem abaixo da tensão percebida quando a pessoa está com o olho
-fechado. Com isso, foi possível detectar os eventos de clique identificando os
-piscar dos olhos --- transição aberto-fechado dos olhos --- do usuário. A
-detecção foi baseada na amplitude do sinal de tensão do LED receptor e o tempo
-em que o usuário ficava de olho fechado, evitando que o sistema identificasse um
-clique de involuntário quando a pessoa piscasse de forma natural. Esse acionador
-construído para realizar o clique de um \textit{mouse} é bastante interessante,
-porém, como descrito em~\cite{Batista17}, onde foi elaborado um acionador que
-utiliza esse mesmo princípio de funcionamento, pode acarretar uma série de
-reconhecimentos equivocados de clique devido o sensor utilizado ser bastante
-influenciado pelas condições do ambiente, como iluminação de lâmpadas
-fluorescentes e do sol.
+sensores ópticos: um LED (do inglês \textit{light emitting diode}) infravermelho
+emissor e um receptor. Os sensores foram posicionados bem próximos a um dos
+olhos do usuário e através do valor da tensão no LED infravermelho receptor foi
+possível identificar se a pessoa estava de olho aberto ou fechado. Quando o
+usuário está o olho aberto , o sinal infravermelho refletido no olho gera uma
+tensão bem abaixo da tensão percebida quando a pessoa está com o olho fechado.
+Com isso, foi possível detectar os eventos de clique identificando os piscar dos
+olhos. A detecção foi baseada na amplitude do sinal de tensão do LED receptor e
+no tempo em que o usuário ficava de olho fechado, evitando que o sistema
+identificasse um clique de involuntário quando a pessoa piscasse de forma
+natural. Esse acionador construído para realizar o clique de um \textit{mouse} é
+bastante interessante, porém, como descrito em~\cite{Batista17}, onde foi
+elaborado um acionador que utiliza esse mesmo princípio de funcionamento, pode
+acarretar uma série de reconhecimentos equivocados de clique devido o sensor
+utilizado ser bastante influenciado pelas condições do ambiente, como iluminação
+de lâmpadas fluorescentes e do sol.
 
-O método proposto em~\cite{Karimullah02} utilizou o reconhecimento de voz para
-controlar o ponteiro do \textit{mouse} e o evento de clique simples. Para a
-movimentação do ponteiro, desenvolveu-se o reconhecimento para cinco comandos: \textit{move
-left, move right, move up, move down} e \textit{stop}, para mover o cursor para
-esquerda, direita, cima, baixo e parar o cursor, respectivamente. Quando o
-usuário realiza um comando para mover o cursor, \textit{move right}, por 
-exemplo, o ponteiro começa a se mover a 20 \textit{pixels} por segundo na
-direção dado no comando e só para de se movimentar quando for reconhecido o
-camando \textit{stop}. Em relação ao evento de clique, foi implementado apenas o
-clique simples do \textit{mouse}, sendo necessário realizar o comando de voz 
-\textit{click} para que o sistema emule essa função. O trabalho proposto é
-bastante interessante, mas pode apresentar problemas, por exemplo, caso o usuário
-desejar mover o cursor para uma determinada área que esteja muito próxima da
-posição atual do ponteiro e não houver tempo suficiente entre os comandos de
-mover e parar, o cursor pode não ficar exatamente sobre a área desejada.
-Contudo, se a função de clique proposta pelo autor for combinada com outros
-métodos alternativos de controle de \textit{mouse}, o tempo de realização das 
-tarefas que envolvem o clique poderia ser mais otimizado.
+O método proposto em~\cite{Karimullah02} utilizou o reconhecimento de voz em
+inglês para controlar o ponteiro do \textit{mouse} e o evento de clique simples.
+Para a movimentação do ponteiro, desenvolveu-se o reconhecimento para cinco
+comandos: \textit{move left, move right, move up, move down} e \textit{stop},
+para mover o cursor para esquerda, direita, cima, baixo e parar o cursor,
+respectivamente. Quando o usuário realiza um comando para mover o cursor,
+\textit{move right}, por exemplo, o ponteiro começa a se mover a 20
+\textit{pixels} por segundo na direção dado no comando e só para de se
+movimentar quando for reconhecido o camando \textit{stop}. Em relação ao evento
+de clique, foi implementado apenas o clique simples do \textit{mouse}, sendo
+necessário realizar o comando de voz \textit{click} para que o sistema emule
+essa função. O trabalho proposto é bastante interessante, mas pode apresentar
+problemas, por exemplo, caso o usuário desejar mover o cursor para uma
+determinada área que esteja muito próxima da posição atual do ponteiro e não
+houver tempo suficiente entre os comandos de mover e parar, o cursor pode não
+ficar exatamente sobre a área desejada. Outro grande problema nessa abordagem é
+movimentar o cursor na diagonal, pois o usuário é forçado a realizar muitos
+comandos de para conseguir posicionar o \textit{mouse} na área desejada.   
 
-Há trabalhos que utilizam acionadores baseados em sinais obtidos por
-eletromiografia (EMG) --- um método de registro da atividade de um músculo quando
-realiza contração~\cite{Amadio07} --- para implementar a função de clique.
+Há trabalhos que, para implementar a função de clique, utilizam acionadores
+baseados em sinais obtidos por eletromiografia (EMG), um método de registro da
+atividade de um músculo quando realiza contração~\cite{Amadio07}.
 Em~\cite{Pinheiro12}, por exemplo, foi implementado a função de clique simples e
 duplo através de sinais de EMG. Os eletrodos que capturam os sinais elétricos
-foram colocados no músculo frontal. A Figura~\ref{fig:frontal} mostra a
-localização do músculo frontal. Para o clique simples, basta o usuário levantar
-as sobrancelhas. Já para o clique duplo, a sobrancelha deve ser levantada duas
+foram colocados no músculo frontal. conferme mostrado na
+Figura~\ref{fig:frontal} Para o clique simples, basta o usuário levantar as
+sobrancelhas. Já para o clique duplo, a sobrancelha deve ser levantada duas
 vezes de forma consecutiva. Assim, o sinal elétrico capturado pelo circuito de
-EMG é convertido nesses dois eventos de clique.
-
+EMG, quando os músculos da testa são contraídos, é convertido nesses dois
+eventos de clique.
+  
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{fig/frontal}
@@ -341,30 +328,51 @@ EMG é convertido nesses dois eventos de clique.
 	\label{fig:frontal}
 \end{figure}
 
-Já em~\cite{Kaushik12} foi proposto um acionador que permitia controlar o
-movimento do ponteiro do mouse e as funções de clique esquerdo e
-direito, através de EMG e mecanomiografia (MMG). A MMG, é uma técnica
-não-invasiva que registra as vibrações ou sons produzidos pelo músculo
-esquelético ao se contrair~\cite{Vaz99}. Os eletrodos de EMG foram colocados nos
-músculo masseter e risório, mostrados na Figura~\ref{fig:masseter} e na
-Figura~\ref{fig:risorio}, respectivamente. %Para o MMG foi utilizado um
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}{.5\textwidth}
-        \centering
-        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/masseter}
-        \caption{Músculo masseter.}
-        \label{fig:masseter}
-    \end{minipage}%
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/risorio}
-        \caption{Músculo risório}
-        \label{fig:risorio}
-    \end{minipage}
+Já em~\cite{Kaushik12}, foi proposto um acionador que permitia controlar o
+movimento do ponteiro do mouse e as funções de clique esquerdo e direito,
+através de EMG e mecanomiografia (MMG). A MMG, é uma técnica não-invasiva que
+registra as vibrações ou sons produzidos pelo músculo esquelético ao se
+contrair~\cite{Vaz99}. Os eletrodos de EMG foram colocados nos músculo masseter
+e risório, localizados na lateral da face, mostrados nas
+Figuras~\ref{fig:masseter} e~\ref{fig:risorio}, respectivamente. 
+
+%Parao MMG foi utilizado um
+
+%\begin{figure}[h!]
+%    \centering
+%    \begin{minipage}{.5\textwidth}
+%        \centering
+%        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/masseter}
+%        \caption{Músculo masseter.}
+%        \label{fig:masseter}
+%    \end{minipage}%
+%    \begin{minipage}{0.5\textwidth}
+%        \centering
+%        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/risorio}
+%        \caption{Músculo risório}
+%        \label{fig:risorio}
+%    \end{minipage}
+%\end{figure}
+\begin{figure}
+\centering
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, height=0.2\textheight]{fig/masseter}
+  \caption{Músculo masseter.}
+  \label{fig:masseter}
+\end{subfigure}%
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, height=0.2\textheight]{fig/risorio}
+  \caption{Músculo risóro.}
+  \label{fig:risorio}
+\end{subfigure}
+\caption{Músculos localizados na lateral da face.}
+\label{fig:test}
 \end{figure}
-Para o MMG foi utilizado um Piezoelétrico --- um transdutor que sob estresses
-mecânicos, como vibrações e compressões, gera sinais elétricos --- que foi
+
+Para o MMG, foi utilizado um piezo --- um transdutor que sob estresses
+mecânicos, como vibrações e compressões, gera sinais elétricos --- o qual foi
 colocado no músculo platisma localizado no pescoço, como mostrado na
 Figura~\ref{fig:platisma}. As palavras \textit{up, down, left} e \textit{right}
 foram usadas para controlar o ponteiro do \textit{mouse}. Já para a função de
@@ -380,33 +388,27 @@ clique esquerdo e direito, foram utilizadas as palavras \textit{left click} e
 O trabalho~\cite{Simpson08} realizou o controle do ponteiro através dos
 movimentos da cabeça e utilizou um acionador muito interessante que
 utilizava os sinais de um acelerômetro para realizar os eventos de clique. O
-sensor acelerômetro foi posicionado atrás da orelha, de modo semelhante como
-ficam posicionados alguns aparelhos auditivos que ajudam pessoas que possuem
+sensor de aceleração foi posicionado atrás da orelha, de modo semelhante como
+ficam posicionados alguns aparelhos que ajudam pessoas que possuem
 dificuldade de audição a melhorar sua capacidade auditiva. Esse acionador é
 dividido em dois módulos: transmissor e receptor. O módulo transmissor é o que
 fica, de fato, posicionado atrás da orelha do usuário. Já o receptor fica
-conectado diretamente no computador via USB. Os módulos se comunicam entre si
-utilizando sinais de rádiofrequência. Para ativar a função de clique, o usuário
-deve realizar uma pressão entre os dentes superiores e inferiores, de forma
-semelhante como funciona a mastrigação. Portanto, quando o usuário realiza essa
-pressão entre os dentes, é enviado um sinal do módulo transmissor, para o
-receptor que, por sua vez, passa o comando referente ao clique para o computador
-via USB. O sensor é capaz de distinguir o comando de clique através da pressão
-entre os dentes, da vibração causada no sensor quando o usuário movimenta a
-cabeça e até mesmo da vibração causada pelo ato de abrir a boca ao falar ou
-bocejar. Isso evita que cliques sejam detectados de forma equivocada, tornando o
-acionador mais confiável para o função do clique.
+conectado diretamente no computador via USB. Os módulos se comunicam utilizando
+sinais de rádiofrequência. Para ativar a função de clique, o usuário deve
+realizar uma pressão entre os dentes superiores e inferiores (oclusão).  O
+sensor é capaz de distinguir o comando de clique através da pressão entre os
+dentes, da vibração causada no sensor quando o usuário movimenta a cabeça e até
+mesmo da vibração causada pelo ato de abrir a boca ao falar ou bocejar. Isso
+evita que cliques sejam detectados de forma equivocada, tornando o acionador
+mais confiável para o função do clique.
 
-Já em~\cite{Antunes16} foi utilizado os movimentos da cabeça capturados por uma 
-\textit{webcam} para controlar o ponteiro do mouse, sendo que, para o evento de
-clique, foi utilizado o auxílio de um acionador baseado em pressão. O acionador
-é do tipo pedal e é bem semelhante aos pedais utilizados por guitarristas para
-realizar distorções em notas musicais produzidas pela guitarra. O acionador
-possui uma comunicação direta com o computador através da tecnologia Bluetooth.
-Para realizar um clique no computador, o usuário deve pressionar com
-os pés o acionador. Quando o acionador é pressionado, o comando de clique é
-enviado via Bluetooth para o computador.  Com isso, uma pessoa que tenha os
-movimentos dos membros inferiores preservados, consegue utilizar a função de
+No trabalho desenvolvido em~\cite{Antunes16}, os movimentos da cabeça capturados
+por uma \textit{webcam} foram utilizados para controlar o ponteiro do mouse. Já
+o evento de clique é realizado com auxílio de um acionador baseado em pressão,
+do tipo pedal, bem semelhante aos pedais utilizados por guitarristas para
+realizar distorções em notas musicais. O acionador possui uma comunicação direta
+com o computador através da tecnologia Bluetooth. Com isso, uma pessoa que tenha
+os movimentos dos membros inferiores preservados, consegue utilizar a função de
 clique no computador sem a necessidade de utilizar a mãos. 
 
 Como visto até agora, existem diversos tipos de acionadores construídos com a
@@ -441,24 +443,26 @@ de forma independente, ajudando na inclusão digital e social dessa pessoa.
 
 O objetivo geral do projeto é construir um protótipo de acionador externo
 baseado e sopro que ajude as PCD a controlarem de forma independente os eventos
-de clique do \textit{mouse}. A principio, como prova de conceito, será possível
-controlar os cliques apenas em sistemas operacionais Linux, como o Ubuntu e seus
-derivados. No entanto, o sistema projetado pode ser ampliando para os sistemas
-operacionais Windows e MacOS para atender um maior número de potenciais usuários
-do produto. É importante também que esse produto seja de baixo custo e que todo
-o projeto seja livremente disponibilizado, para que qualquer pessoa que tenha
-acesso a esse projeto, se desejar, possa construir por conta própria seu
+de clique do \textit{mouse} e também dispositivos de propósito geral que
+necessitam de uma interação através de botão ou teclado. A princípio, como prova
+de conceito, será possível controlar os cliques, com o auxílio de um
+\textit{software driver}, apenas em sistemas operacionais Linux, como o Ubuntu e
+seus derivados. No entanto, o sistema projetado pode ser ampliando para os
+sistemas operacionais Windows e MacOS para atender um maior número de potenciais
+usuários do produto. É importante também que esse produto seja de baixo custo e
+que todo o projeto seja livremente disponibilizado, para que qualquer pessoa que
+tenha acesso a esse projeto, se desejar, possa construir por conta própria seu
 acionador, aumentando assim, o número de pessoas beneficiadas por este trabalho.
 
-O protótipo deve ser colocado em uma posição próxima a boca do usuário com o auxílio
-de um \textit{headset} modificado que servirá de suporte para ajudar o acionador
-a ficar em uma posição ideal para que o usuário consiga realizar o sopro sem
-dificuldades. A interface de comunicação do acionador com o computador será o
-P2 Jack 3.5~mm para que a pessoa possa utilizar o mesmo acionador, que foi
-projetado para usar a função de clique de um \textit{mouse}, em outro tipo de
-contexto, como em brinquedos que precisam de um tipo de acionamento externo. Um
-\textit{software} será desenvolvido para capturar os sinais da interface P2 Jack
-e convertê-los em ações de clique no computador.
+%O protótipo deve ser colocado em uma posição próxima a boca do usuário com o auxílio
+%de um \textit{headset} modificado que servirá de suporte para ajudar o acionador
+%a ficar em uma posição ideal para que o usuário consiga realizar o sopro sem
+%dificuldades. A interface de comunicação do acionador com o computador será o
+%P2 Jack 3.5~mm para que a pessoa possa utilizar o mesmo acionador, que foi
+%projetado para usar a função de clique de um \textit{mouse}, em outro tipo de
+%contexto, como em brinquedos que precisam de um tipo de acionamento externo. Um
+%\textit{software} será desenvolvido para capturar os sinais da interface P2 Jack
+%e convertê-los em ações de clique no computador.
 
 Testes com o protótipo serão aplicados a voluntários para verificar o potencial
 do produto e verificar possíveis desvantagens para futuras melhorias.
@@ -469,7 +473,6 @@ Os objetivos específicos podem ser:
 i) estudo e implementação das ferramentas que constituem acionador;
 ii) estudo de APIs para criação do \textit{software};
 iii) teste com voluntários;
-iv) resultados.
 
 Uma breve descrição sobre cada tópico é feita a seguir.
 
@@ -479,9 +482,8 @@ Uma breve descrição sobre cada tópico é feita a seguir.
 	\item Estudo e implementação ferramentas que constituem o acionador: \vspace{-.2cm}
 	\begin{itemize}
 		%\setlength\itemsep{-.1cm}
-		\item Estudo do efeito piezoelétrico;
-		\item Estudo de circuito comparador com amplificadores operacionais;
-		\item Construção circuito protótipo do acionador.
+		\item Estudo de componentes eletrônicos sensíveis ao fluxo de ar
+provocados pela ação de sopro.
 	\end{itemize}
 
 	\item Estudo de APIs para a criação do \textit{software}: \vspace{-.2cm}
@@ -489,29 +491,24 @@ Uma breve descrição sobre cada tópico é feita a seguir.
 		%\setlength\itemsep{-.1cm}
 		\item Estudo de APIs para captura de sinais da interface P2 Jack;
 		\item Estudo de APIs que permitam manipular os eventos de clique;
-		\item Implementação do \textit{software}.
+		%\item Implementação do \textit{software}.
 	\end{itemize}
 
 	\item Testes com voluntários: \vspace{-.2cm}
 	\begin{itemize}
 		%\setlength\itemsep{-.1cm}
-		\item Cenário de testes compostos pelo método proposto e outro método alternativo para os eventos de clique;
-		\item Aplicação de um questionário capaz de quantificar atributos qualitativos do sistema.
+		\item Definição de um cenário de testes compostos pelo método proposto 
+		e outro método alternativo para os eventos de clique;
+		\item Aplicação de um questionário capaz de quantificar atributos 
+		qualitativos do sistema.
 	\end{itemize}
 
-	\item Resultados: \vspace{-.1cm}
-	\begin{itemize}
-		%\setlength\itemsep{-.1cm}
-		\item Análise comparativa entre o método proposto e outro método alternativo de clique;
-		\item vantagens e desvantagens do acionador;
-		\item Indicação de trabalhos futuros.
-	\end{itemize}
 
 \end{enumerate}
 
 \end{subsection}
 
-\section{Síntese de Conteúdo}
+\section{Síntese de Conteúdos}
 
 Este capítulo fez uma breve introdução sobre as motivações que levaram ao
 desenvolvimento do projeto além de mostrar os objetivos do trabalho.
@@ -530,14 +527,14 @@ para emulação de cliques do \textit{mouse}.
 	Neste capítulo, as atividades realizadas para a construção do projeto serão
 	detalhadas. Serão descritos com detalhes os procedimentos utilizados
 	para que o acionador construído pudesse se comunicar com o computador
-	através da interface P2 Jack com o auxílio do \textit{software} desenvolvido
+	através da interface P2 Jack com o auxílio do \textit{software} desenvolvido,
 	o qual é capaz de capturar os sinais do P2 Jack e convertê-los em ações de
 	clique.
 	
 	\item[Capítulo 4.] Ambiente de Teste e Resultados. 
 	O sistema foi testado com algumas pessoas, as quais forneceram um
-	\textit{feedback} através de um questionário de qualidade baseado na escala
-	Likert.  Os detalhes sobre a metodologia dos testes aplicados aos voluntários e
+	\textit{feedback} através de um questionário de qualidade baseado em uma escala
+	quantitativa.  Os detalhes sobre a metodologia dos testes aplicados aos voluntários e
 	os resultados obtidos e avaliados. Detalhes sobre as falhas cometidas e
 	dificuldades gerais encontradas durante o projeto também serão relatados neste
 	capítulo.
