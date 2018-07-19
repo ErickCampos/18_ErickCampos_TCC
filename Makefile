@@ -8,4 +8,4 @@ all:
 	make clean
 
 clean:
-	rm -f *.aux *.bbl *.blg *.dvi *.log *.out *.toc *.lo*
+	rm -f *.aux *.bbl *.blg *.dvi *.log *.out *.toc *.lo* 

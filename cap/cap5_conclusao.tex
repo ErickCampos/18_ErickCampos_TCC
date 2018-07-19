@@ -7,28 +7,28 @@ garantir que o projeto seja de baixo custo, um \textit{software} foi desenvolvid
 para comunicar o dispositivo proposto com o computador através da interface de
 áudio, eliminando a possibilidade de utilizar um microcontrolador para realizar
 essa tarefa. O código fonte do \textit{software} e o projeto completo do
-\textit{hardware} estão disponíveis ao público no GitHub~\cite{ErickGit}.
+\textit{hardware} estão disponíveis abertamente público no 
+GitHub~\cite{ErickGit}.
 
-Com base na opinião dos voluntários e no menor numero de erros de cliques
+Com base na opinião dos voluntários e no menor número de erros de cliques
 realizados, pode-se concluir que o protótipo desenvolvido neste trabalho é uma
 alternativa melhor que o \textit{dwell time} para executar a ação
 de clique. Verificou-se que o dispositivo baseado em sopro proposto oferece mais
 liberdade para os usuários realizarem tarefas como assistir a um vídeo ou
-navegar em um \textit{site} de notícias apesar das limitações impostas pelo
+navegar em um \textit{site} de notícias, apesar das limitações impostas pelo
 \textit{software} eViacam ao tentar alcançar os cantos da tela e posicionar o
-cursor no alvo correto em itens que se alteram dinamicamente conforme o ponteiro
-passa sobre esses itens, respectivamente.
+cursor em itens que se alteram dinamicamente conforme o ponteiro se move.
 
 É importante mencionar que o protótipo desenvolvido foi inspirado em diversos
 acionadores externos que têm como saída o conector de áudio P2 Jack. Esses
 dispositivos são utilizados em vários contextos diferentes para ser um
-instrumento de interação que geralmente substitui botões ou teclas, que muitas
-vezes são uma barreira para as PCD. Portanto o dispositivo projetado neste
+instrumento de interação, geralmente substituindo botões ou teclas, que muitas
+vezes são uma barreira para as PCD. Portanto, o dispositivo projetado neste
 trabalho pode ser utilizado como um ferramenta de propósito geral no contexto de
-Tecnologia Assistiva para ajudar as PCD realizarem interações de forma
-independente com outros dispositivos. Além disso, pode ser uma boa alternativa
-aos acionadores externos comercializados, pois a maioria desses dispositivos
-possuem um alto preço no mercado.
+TA para ajudar PCD a realizarem interações de forma mais
+independente com outros dispositivos. Além disso, o dispositivo proposto pode
+ser uma boa alternativa aos acionadores externos comercializados, pois a maioria
+desses dispositivos possuem um alto preço no mercado.
 
 \begin{section}{Trabalhos Futuros}
 
@@ -39,56 +39,55 @@ convertê-los em eventos de cliques foi implementado apenas para plataformas
 baseadas em Linux. É necessário desenvolver um software capaz de ser executado
 no Windows também, provavelmente utilizando a biblioteca de \textit{stream} de
 áudio ASIO que possui suporte do PortAudio. Para sistemas Android, por outro
-lado, a classe \emph{KeyEvent} tem uma implementação nativa para capturar os
+lado, a classe \texttt{KeyEvent} tem uma implementação nativa para capturar os
 cliques do botão do fone de ouvido através da \textit{flag} de evento
-\emph{KEYCODE\_HEADSETHOOK}, fazendo com que o \textit{software} que captura os
-dados de áudio não seja mais necessário.
+\texttt{KEYCODE\_HEADSETHOOK}, fazendo com que um \textit{software} especial
+para capturar dados de áudio não seja mais necessário.
 
 Para evitar os cliques involuntários causados pelo \textit{headset} utilizado
 como suporte para o dispositivo baseado em sopro, uma boa alternativa seria
 utilizar uma solução semelhante a~\cite{ok}, onde um tubo de PVC fica fixo na
-frente do usuário. A outra extremidade do tubo seria colocado em cima do
+frente do usuário. A outra extremidade do tubo seria colocada em cima do
 transdutor piezoelétrico. Dessa forma, choques acidentais com o dispositivo de
 sopro seriam evitados, o que resultaria na diminuição dos casos de cliques
-involuntários. Contudo, ao utilizar essa solução será necessário substituir o
+involuntários. Contudo, ao utilizar essa solução, seria necessário substituir o
 programa que realiza o controle do cursor do \textit{mouse}. O ideal seria
 utilizar um \textit{software} que realiza o controle do ponteiro através dos
-movimentos dos olhos, pois o tubo de PCV deverá fixo, impossibilitando o uso de
+movimentos dos olhos, pois o tubo de PVC ficará fixo, impossibilitando o uso de
 métodos que utilizem os movimentos da cabeça do usuário como controle do cursor
 do \textit{mouse}. Uma segunda alternativa seria construir uma espécie de
-capacete qe poderia ser construído utilizando impressoras 3D. Esse capacete
-ficaria posicionado na cabeça do usuário, porém essa solução poderia causar
-desconforto nos usuários.  
+capacete que poderia ser construído utilizando impressoras 3D, porém essa 
+solução poderia aumentar o custo da ferramenta.  
 
 Também é necessário investigar algumas possibilidades de sensores a serem
 utilizados como alternativa ao piezo. Como o funcionamento desse transdutor é
 causado por estresses mecânicos, qualquer choque mecânico --- a vibração causada
 pela movimentação rápida da cabeça, por exemplo --- pode ser suficiente para
-ativar o evento de clique. Dispositivos como ~\cite{ok} utilizam  um microfone
+ativar o evento de clique. Dispositivos como~\cite{Sip} utilizam  um microfone
 de eletreto como sensor para detectar a ação de sopro, então esse sensor pode
 ser uma boa solução para substituir o piezo. A desvantagem de usar microfones de
-eletreto é que eles são sensíveis a fala, um fato que não se confirma com o
-dispositivo proposto neste trabalho que não permite a ativação do clique através
-da pressão do ar produzida pela voz humana. Contudo, alguns filtros analógicos
+eletreto é a sensibilidade à fala, um fato que não se confirma com o
+dispositivo proposto neste trabalho, que não permite a ativação do clique através
+da pressão do ar produzida pela voz humana. Entretanto, alguns filtros analógicos
 poderiam ser utilizados para garantir a confiabilidade do microfone de eletreto
 utilizado como sensor de sopro. 
 
 Outra possibilidade seria usar um sensor de pressão atmosférica (barômetro) para
 melhorar a detecção de sopro. O sensor BMP180~\cite{bmp180} é amplamente
 utilizado em projetos eletrônicos devido seu baixo custo e facilidade de uso.
-Portanto esse sensor poderia ser uma boa alternativa ao piezo.
+Portanto, esse sensor poderia ser uma boa alternativa ao piezo.
 
-Seria interessante utilizar o software desenvolvido em conjunto com outros tipos
-de interação não convencional, a fim de expandir as possibilidades de interação,
-tornando o dispositivo multimodal. Acionadores  que utilizam circuitos
-eletromiográficos podem ser usados como um método alternativo de clique, pois
-há diversos trabalhos que mostram a eficácia deste tipo de método para tarefas
-que demandam um funcinamento de lógica binário. Métodos baseados em aproximação
-como o acionador construído em~\cite{Batista17} e até mesmo em dispositivos
-que necessitam de contato físico como~\cite{ok} poderiam ser utilizados como
-método de interação. Dessa forma, o usuário seria capaz de escolher o melhor
-método de interação que se adpta às suas necessidades, o que acabaria ajudando
-um maior número de deficiências.
+%Seria interessante utilizar o software desenvolvido em conjunto com outros tipos
+%de interação não convencional, a fim de expandir as possibilidades de interação,
+%tornando o dispositivo multimodal. Acionadores  que utilizam circuitos
+%eletromiográficos podem ser usados como um método alternativo de clique, pois
+%há diversos trabalhos que mostram a eficácia deste tipo de método para tarefas
+%que demandam um funcinamento de lógica binário. Métodos baseados em aproximação,
+%como o acionador construído em~\cite{Batista17}, e até mesmo em dispositivos
+%que necessitam de contato físico, como~\cite{JellyBean}, poderiam ser utilizados como
+%método de interação. Dessa forma, o usuário seria capaz de escolher o
+%método de interação que melhor se adapta às suas necessidades, o que acabaria 
+%abrangendo um maior número de deficiências atendidas.
 
 \end{section}
 
