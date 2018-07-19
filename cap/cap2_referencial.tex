@@ -20,9 +20,9 @@ elétricos que são amplificados posteriormente por um circuito. %Muitas vezes
 Além disso, há certos transdutores que são capazes de converter mais de uma
 grandeza física, como é o caso do transdutor piezoelétrico. Esse transdutor
 opera sob o fenômeno físico conhecido como piezoeletricidade e é bastante
-utilizado em diversas aplicações diferentes. Seu principio de funcionamento é
-dividido em efeito piezoelétrico direto e reverso, os quais serão brevemente 
-descritos a seguir.
+utilizado em diversas aplicações. Seu principio de funcionamento é dividido em
+efeito piezoelétrico direto e reverso, os quais serão brevemente descritos a
+seguir.
   
 \begin{subsection}{Efeito Piezoelétrico Direto}
 
@@ -53,11 +53,11 @@ A Figura~\ref{fig:direto} mostra o princípio de funcionamento do efeito
 piezoelétrico direto. Um material piezoelétrico --- um cristal de quartzo, por
 exemplo --- é posicionado entre duas placas de metal. Para ocorrer a geração de
 energia elétrica, é necessário algum tipo de estresse mecânico no material, como
-compressão ou vibração. Quando as placas de metal são pressionadas ocorre uma
+compressão ou vibração. Quando as placas de metal são pressionadas, ocorre uma
 diferença de potencial elétrico na superfície das placas como consequência do
 chamado de efeito piezoelétrico direto.  É possível inclusice armazenar a
 energia gerada pela compressão do material piezoelétrico e utilizá-la para
-alimentar circuitos elétricos, ap invés de usar baterias~\cite{twitter}. 
+alimentar circuitos elétricos, ao invés de usar baterias~\cite{twitter}. 
 
 \end{subsection}
 
@@ -88,12 +88,12 @@ frequência audível ao ser humano).
 Muitos aparelhos eletrônicos utilizam o efeito piezoelétrico reverso. Os sons de
 sinalizações emitidos por computadores ao serem ligados (\textit{beeps}) ou
 quando há algum tipo de problema no funcionamento no computador, são gerados por
-um dispositivo chamado \textit{buzzer}, o que é um bom exemplo de utilização do
+um dispositivo chamado \textit{buzzer}, o qual é um bom exemplo de utilização do
 efeito piezoelétrico reverso.  Até mesmo alguns sonares utilizam o princípio
 desse fenômeno da piezoeletricidade, onde é aplicado uma tensão modulada por PWM
 (do inglês \textit{pulse with modulation}) em um material piezoelétrico que
 emite um sinal ultrassom. Alguns desses instrumentos ultrassônicos são
-utilizados na área médica para realização de cortes em cirurgias, como a
+utilizados na área médica na realização de cortes em cirurgias, como a
 maxilofacial onde é necessário realizar cortes em tecidos
 ósseos~\cite{Carvalho17}. 
  
@@ -117,18 +117,18 @@ processamento de sinais~\cite{Richard2000}.
 	\end{minipage}
 \end{figure}
 
-O operador operacional ilustrado na Figura~\ref{fig:opamp} possui dois terminais
-de alimentação, duas entradas, inversora e não inversora ($V_{-}$ e $V_{+}$), e
-uma saída. A entrada não inversora é convencionalmente representada pelo símbolo
-``+'' e a entrada inversora é representada pelo símbolo ``-''. Quando é aplicado
-um sinal na entrada não inversora, o sinal na saída possui a mesma fase do sinal
-de entrada. Por outro lado, quando o sinal é aplicado na entrada inversora, o
-sinal de saída possui uma fase contrária ao sinal de entrada. É importante
-ressaltar que alguns autores omitem a representação dos terminais de alimentação
-por considerarem desnecessários e tenderem a sobrecarregar visualmente os
-esquemas de circuitos, tornando-os mais difíceis de serem interpretados. Contudo
-fica subentendido que os terminais de alimentação fazem parte do circuito,
-embora muitas vezes não sejam mostrados.
+O amplificador operacional ilustrado na Figura~\ref{fig:opamp} possui dois
+terminais de alimentação, duas entradas, inversora e não inversora ($V_{-}$ e
+$V_{+}$), e uma saída. A entrada não inversora é convencionalmente representada
+pelo símbolo ``+'' e a entrada inversora é representada pelo símbolo ``-''.
+Quando um sinal é aplicado na entrada não inversora, o sinal na saída possui a
+mesma fase do sinal de entrada. Por outro lado, quando o sinal é aplicado na
+entrada inversora, o sinal de saída possui uma fase contrária ao sinal de
+entrada. É importante ressaltar que alguns autores omitem a representação dos
+terminais de alimentação por considerarem desnecessários e tenderem a
+sobrecarregar visualmente os esquemas de circuitos, tornando-os mais difíceis de
+serem interpretados. Contudo fica subentendido que os terminais de alimentação
+fazem parte do circuito, embora muitas vezes não sejam mostrados.
 
 A partir de várias combinações de resistores nos terminais do amplificador
 operacional, é possível executar funções muito úteis com os sinais de entrada, 
@@ -170,9 +170,9 @@ Enquanto a tensão de referência for maior que o sinal da entrada não inversor
 entrada não inversora é maior que a tensão de referência, a saída  tende para a
 magnitude da tensão utilizada como alimentação do amplificador operacional
 ($V_{cc}$). Por exemplo, se o amplificador for alimentado com 15~V a saída desse
-componente se aproximaria de 15~V, porém nunca seria 15~V. Idealmente, o valor
-de saída deveria ser exatamente 15~V, contudo na prática isso não
-acontece devido a diversos fatores físicos do componente.
+componente se aproximaria de 15~V, porém nunca chegaria a essa magnitude de
+tensão. Idealmente, o valor de saída deveria ser exatamente 15~V, porém na
+prática isso não acontece devido a diversos fatores físicos do componente.
 
 \begin{figure}[!h]
 	\centering
@@ -183,7 +183,7 @@ acontece devido a diversos fatores físicos do componente.
 	\label{fig:comparador2}
 	\end{minipage}
 \end{figure}
-
+\break
 Já a Figura~\ref{fig:comparador2} mostra um comparador de tensão utilizando a
 configuração inversora. Nessa configuração, também é utilizada uma tensão de
 refêrencia, porém é colocada na entrada não inversora. O comportamento dos sinais
@@ -202,7 +202,7 @@ utilizando a configuração inversora é mostrado na Figura~\ref{fig:sinal2}.
 
 A configuração de comparador inversor ocorre, como o próprio nome sugere, um
 comportamento oposto ao comparador não inversor. Enquanto a tensão de referência
-é maior que a tensão da entrada a saída tende para a magnitude da tensão de
+é maior que a tensão da entrada, a saída tende para a magnitude da tensão de
 alimentação do operador operacional. Já quando ocorre o contrário,  a tensão da
 saída tende para 0~V.
 
@@ -217,11 +217,11 @@ guitarra para uma caixa acústica amplificada. Geralmente, utiliza-se o conector
 P10 para realizar a transmissão de áudio da guitarra para a caixa acústica. Já
 para fones de ouvidos, o conector P2 é mais comumente utilizado. Segundo uma
 matéria disponível na BBC News~\cite{BBC}, o conector P2 é utilizado desde o
-século XIX, que serviam para conectar e desconectar conexões em painés
-telefônicos antigos.  Os conectores mais utilizados são os conectores TS e TRS,
-também conhecidos como conectores Jack, que serão brevemente descritos a
-seguir.  
-
+século XIX, mas nessa época eram mais utilizados para conectar e desconectar 
+conexões em painés telefônicos antigos. Os conectores mais utilizados são os 
+conectores TS e TRS, também conhecidos como conectores Jack, que serão 
+brevemente descritos a seguir.  
+\newpage
 O TS é um conector utilizado para transmitir sinais analógicos e são mais
 utilizados natransmissão de áudio. Esse conector é chamado de TS por ser as
 iniciais das palavras Tip e Sleeve. Há diversos tamanhos de
@@ -277,7 +277,8 @@ pino Sleeve, ou GND, é a referência do conector. O pino Ring, também chamado 
 Right (canal direito da transmissão) é o  pino central do conector. Já Tip,
 pino localizado no final do conector, também é conhecido por Left, pois é 
 responsável por transmitir um sinal pelo canal esquerdo.
-  
+
+\break 
 É possível transformar um conector TRS em TS, ou seja, transformar um conector
 estéreo em mono. Para isso, é necessário realizar um curto-circuito entre os
 pinos Ring e Tip do conector estéreo. Quando um sinal é enviado para o Ring e
@@ -304,15 +305,15 @@ o desenvolvedor tem que adquirir uma assinatura que pode ser mensal ou anual. Os
 valores dessa assinatura variam de R\$~52,91 a
 R\$~3.227,40~\cite{EagleAssinatura}. 
  
-Existem ferramentas EDA que são de código aberto e totalmente gratuitas. O
-Kicad~\cite{kicad} é o  \textit{software} de código aberto e gratuito mais
-utilizado entre os desenvolvedores. Essa ferramenta oferece recursos necessários
-para o desenvolvimento de quase todo tipo de projeto. Obviamente, devido à vasta
-quantidade de componentes eletrônicos existentes no mundo, não existem
-bibliotecas para todos os componentes possíveis. Contudo, há a possibilidade
-de desenvolvimento de bibliotecas próprias sendo possível disponibilizá-las em
-repositórios gratuitos, como o GitHub~\cite{github}, para que qualquer pessoa
-possa utilizá-la em projetos pessoais.  
+No entanto, existem ferramentas EDA que são de código aberto e totalmente
+gratuitas. O Kicad~\cite{kicad} é o  \textit{software} de código aberto e
+gratuito mais utilizado entre os desenvolvedores. Essa ferramenta oferece
+recursos necessários para o desenvolvimento de quase todo tipo de projeto.
+Obviamente, devido à vasta quantidade de componentes eletrônicos existentes no
+mundo, não existem bibliotecas para todos os componentes possíveis. Contudo, há
+a possibilidade de desenvolvimento de bibliotecas próprias, sendo possível
+disponibilizá-las em repositórios gratuitos, como o GitHub~\cite{github}, para
+que qualquer pessoa possa utilizá-la em projetos pessoais.  
 \end{section}
 
 
@@ -350,11 +351,13 @@ código aberto, multiplataforma, que permite escrever programas em C/C++ para
 realizar gravação e reprodução de áudios. A Figura~\ref{fig:portaudio} mostra a
 arquitetura do PortAudio para sistemas Linux e Windows.
 
+~
+
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/portaudio}
+	\includegraphics[width=0.75\linewidth]{fig/portaudio}
 	\caption{Arquitetura do PortAudio.}
 	\label{fig:portaudio}
 	\end{minipage}
@@ -390,7 +393,7 @@ FIgura~\ref{fig:x11}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/X11}
+	\includegraphics[width=0.6\linewidth]{fig/X11}
 	\caption{Arquitetura do modelo cliente-servidor do X11.}
 	\label{fig:x11}
 	\end{minipage}
