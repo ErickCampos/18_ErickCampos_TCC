@@ -1,7 +1,7 @@
 \begin{chapter}{Introdução}
-
+\vspace{-0.5cm}
 \section{Contextualização}
-
+%página 1
 Grande parte das tecnologias disponíveis no mercado já estão economicamente
 acessíveis para uma grande parte da população. O uso de dispositivos
 eletrônicos, como os \textit{smatphones} e os computadores pessoais, para o
@@ -29,8 +29,9 @@ membros superiores, o que inclui também pessoas com problemas em habilidades
 motoras finas, por exemplo, fraqueza dos dedos, cujas limitações se concentram
 no manuseio de objetos físicos. Nesse sentido, as interações não-convencionais
 devem ser exploradas a fim de evitar que pessoas com deficiência motora sejam
-digitalmente excluídas. %ok 
+digitalmente excluídas.  
 
+%página 2
 Interações não-convencionais, por definição, ocorrem quando o usuário é capaz de
 se comunicar com um sistema computacional utilizando um dispositivo de
 comunicação não tão comum, como câmeras, microfones, ou qualquer outro tipo de
@@ -40,13 +41,13 @@ digitação. Nesse caso, o dispositivo de entrada utilizado como método
 convencional para realizar a digitação (normalmente um teclado) precisa ser
 substituído por um microfone. Outro bom exemplo é a utilização de uma
 \textit{webcam} para capturar os movimentos a cabeça do usuário e convertê-los
-em comandos de controle de um televisor, como em~\cite{Batista17}. Dessa forma
-tais equipamentos, são utilizados, portanto, como tecnologias assistivas, pois
+em comandos de controle de um televisor, como em~\cite{Batista17}. Dessa forma,
+tais equipamentos são utilizados, portanto, como tecnologias assistivas, pois
 elas podem ser a única forma para que pessoas com deficiência motora dos
 membros superiores possam interagir de forma autônoma com dispositivos
 eletrônicos. %ok
  
-A Tecnologia Assistiva é um campo do conhecimento de característica
+A Tecnologia Assistiva (TA) é um campo do conhecimento de característica
 interdisciplinar dedicado a aumentar a independência e mobilidade de pessoas
 com deficiência (PCD), englobando produtos, metodologias, práticas e serviços
 que objetivam promover sua autonomia, qualidade de vida e inclusão
@@ -62,7 +63,7 @@ próprio consentimento~\cite{UN07}. %ok
 
 Através da TA é possível reduzir as dificuldades vivenciadas por pessoas que
 necessitam de soluções que não as deixem à margem da utilização de aparelhos
-eletrônicos. Visando diminuir a exclusão digital imposta às (PCD) pela
+eletrônicos. Visando diminuir a exclusão digital imposta às PCD pela
 dificuldade ou total incapacidade para manipular certos equipamentos, a
 acessibilidade é vista como elemento fundamental para elevar a autoestima e o
 grau de independência dessas pessoas. Além disso, as soluções apresentadas
@@ -71,28 +72,35 @@ controle de equipamentos torna-se mais prático, confortável e
 natural~\cite{Wechsung09}. %ok
 
 Nesse sentido, este trabalho buscou desenvolver um acionador externo baseado em
-sopro para a realizar a ação de clique, ajudando PCD que não conseguem utilizar
-o \textit{mouse} por algum tipo de limitação física. O dispositivo será capaz de
-realizar uma comunicação direta com o computador utilizando a interface de
-áudio P2 Jack com o auxílio de um \textit{software}, pois não é possível 
-utilizar alguma função do \textit{mouse} através da interface de áudio do
-computador. Dessa forma então, a utilização da interface USB, que necessita de
-um microcontrolador para realizar a comunicação entre o dispositivo e
-computador, não será necessário, o que resulta na diminuição do custo de
-produção do acionador externo proposto. 
+sopro, que foi utilizado como método não-convencional para realizar a ação de
+clique do \textit{mouse} . O dispositivo é capaz de realizar uma comunicação
+direta com o computador utilizando a interface de áudio P2 Jack, com o auxílio
+de um \textit{software} responsável por capturar os sinais de entrada da
+interface de áudio e convertê-los em eventos de clique. Dessa forma, a
+utilização da interface USB, que necessita de um microcontrolador para realizar
+a comunicação entre o dispositivo e computador, não foi necessário, o que
+resultou na diminuição do custo de produção do acionador externo proposto. 
 
+Os usuários-alvo em potencial são pessoas com limitações motoras dos membros
+superiores, e que tenham o cognitivo preservado. A ideia é que esse público
+consiga realizar, através do sopro, os eventos de clique do \textit{mouse},
+descartando a necessidade de utilizar as mão para realizar essa ação. Vale
+ressaltar que todas as interfaces de programação e pacotes de \textit{software}
+utilizados para a criação do dispositivo proposto neste trabalho são
+\textit{open-source} ou encontram-se disponíveis livremente na Internet.
 
+%página 3
 \section{Justificativa}
 
 Segundo dados da Organização Mundial de Saúde (WHO, do inglês \textit{World
 Health Organization}), aproximadamente 15\% da população mundial possui algum
 tipo de deficiência~\cite{WHO15}. Esse número é realmente expressivo, pois
 revela que, em uma população de 7,6 bilhões de pessoas, cerca de um sétimo
-(1~bilhão de pessoas) é portadora de deficiência. A WHO também afirma que, em
-2013, 80\% das pessoas com deficiência viviam em países ainda em
+(1~bilhão de pessoas) é portadora de deficiência. A WHO também afirma que,
+em 2013, 80\% das pessoas com deficiência viviam em países ainda em
 desenvolvimento, o que sugere que o predomínio da condição de deficiência está
 bastante relacionado com a situação econômica dos países.
-
+  
 No Brasil, segundo o censo realizado em 2010 pelo Instituto Brasileiro de
 Geografia e Estatística (IBGE), aproximadamente 23,9\% da população (cerca de
 uma entre quatro pessoas, um total de 46~milhões de habitantes) declarou ter
@@ -104,17 +112,18 @@ Tabela~\ref{tab:ibge} mostra o perfil da população brasileira com deficiência
 \centering
 \caption{Perfil da população brasileira com deficiência.}
 \label{tab:ibge}
-\def\arraystretch{1.25}
+%\vspace{-0.25cm}
+\def\arraystretch{1}
 \begin{tabular}{lccr}
 	\hline
 	\hline
 	\textbf{Deficiência} & \textbf{Descrição} & \textbf{Número de Pessoas} &
 \textbf{Porcentagem} \\
 	\hline
-	Visual    & Cegueira ou dificuldades gerais   & 35.774.392  & 18,754 \%  \\
-	\textbf{Motora}    & \textbf{Paralisia ou dificuldades gerais}  & \textbf{13.265.599}  & \textbf{6,95 \%} \\
-	Auditiva  & Surdez ou dificuldades gerais     & 9.717.318   &  5,094 \%  \\
-	Cognitiva & Problemas mentais ou intelectuais & 2.611.536   &  1,369 \%  \\ 
+	Visual    & Cegueira ou dificuldades gerais   & 35.774.392  & 18,754\%  \\
+	\textbf{Motora}    & \textbf{Paralisia ou dificuldades gerais}  & \textbf{13.265.599}  & \textbf{6,95\%} \\
+	Auditiva  & Surdez ou dificuldades gerais     & 9.717.318   &  5,094\%  \\
+	Cognitiva & Problemas mentais ou intelectuais & 2.611.536   &  1,369\%  \\ 
 	\hline
 	\hline
 \end{tabular}
@@ -125,40 +134,42 @@ cadeiras de rodas e \textit{software} que facilitam a utilização de
 computadores, uma grande parcela das PCD ainda não têm acesso a essas
 ferramentas. A Organização Mundial de Saúde estima que, em países
 subdesenvolvidos, por exemplo, apenas 15\% das PCD têm acesso a essas Tecnologias
-Assistivas\cite{WHO15}. Um fator que pode contribuir para esse cenário são os
+Assistivas~\cite{WHO15}. Um fator que pode contribuir para esse cenário são os
 altos preços de algumas dessas tecnologias. 
 
 \subsection{Acionadores Externos}
 
-Acionadores externos, dispositivos de entrada que permitem as PCD a utilizarem
+Acionadores externos, dispositivos que permitem as PCD a utilizarem
 equipamentos ativados normalmente por botões ou teclados~\cite{tecla}, são um
 grande exemplo de ferramentas voltadas para TA que não são acessíveis
 economicamente para grande parte da população. Apesar de existirem uma grande 
-variedade de tipos e funcionalidades, a média de preço dos acionadores externos
+variedade de tipos e funcionalidades, a média de dos acionadores externos
 é bastante alta. A Tabela~\ref{tab:acionadores} mostra os valores comerciais 
-de alguns  acionadores externos disponíveis no mercado. 
- 
+de alguns  acionadores externos. 
+
 \begin{table}[!h]
 \centering
 \caption{Acionadores externos comerciais.}
 \label{tab:acionadores}
-\def\arraystretch{1.25}
-\begin{tabular}{ccp{3cm}cp{3cm}}
+%\vspace{-0.25cm}
+\def\arraystretch{1.05}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{tabular}{ccC{3cm}cC{3cm}}
 	\hline
 	\hline
 	\textbf{Nome} & \textbf{Ref.} & \textbf{Método de acionamento} & \textbf{Comunicação} & \textbf{Custo (USD)} \\
 	\hline
-	Big Candy Corni        &~\cite{CandyCorn}        & Aproximação     & P2 Jack      & 215              \\
-	Pal Pad                &~\cite{PalPad}           & Pressão         & P2 Jack      &  48 à 61         \\
+	Big Candy Corn        &~\cite{CandyCorn}        & Aproximação     & P2 Jack      & 215              \\
+	%Pal Pad                &~\cite{PalPad}           & Pressão         & P2 Jack      &  48 à 61         \\
 	Jelly Bean             &~\cite{JellyBean}        & Pressão         & P2 Jack      &   65             \\
-	Chin Switch            &~\cite{Chin}             & Pressão         & P2 Jack      & 220              \\
+	%Chin Switch            &~\cite{Chin}             & Pressão         & P2 Jack      & 220              \\
 	Micro Light            &~\cite{MicroLight}       & Toque           & P2 Jack      & 85               \\ 
 	HoneyBee               &~\cite{HoneyBee}         & Aproximação     & P2 Jack      & 149              \\
 	AbleNet string Switch  &~\cite{StringSwitch}     & Puxa corda      & P2 Jack      & 65               \\
 	Blue2 Switch           &~\cite{Blue2}            & Pressão         & Bluetooth    & 185              \\
-	Savant Elite2          &~\cite{SavantElite2}     & Pressão         & USB          & 38 à 181         \\
+	%Savant Elite2          &~\cite{SavantElite2}     & Pressão         & USB          & 38 à 181         \\
 	Foot Pedal             &~\cite{FootPedal}        & Pressão         & USB          & 267              \\
-	Foot Switch            &~\cite{FootSwitch}       & Pressão         & USB          & 26               \\
+	%Foot Switch            &~\cite{FootSwitch}       & Pressão         & USB          & 26               \\
 	Sip/Puff Switch        &~\cite{SipPuff}          & Sopro ou sucção & USB          & 319              \\  
 	
 	\hline
@@ -167,29 +178,28 @@ de alguns  acionadores externos disponíveis no mercado.
 \end{table}
 
 Acionadores que possuem como saída de comunicação o P2 Jack,
-como~\cite{CandyCorn}, ~\cite{PalPad}, ~\cite{JellyBean}, ~\cite{Chin}, ~\cite{
-MicroLight}, ~\cite{HoneyBee} e~\cite{StringSwitch}, são mais utilizados como
-chaves para um determinado circuito, como que mostra a ativação da fala
-programada de uma boneca através do pressionamento de um
-acionador~\cite{ATswitchYT}. %Como forma de controle de uma determinada função do
-%computador --- como o clique de um \textit{mouse} --- através de um acionador
-%externo, não foi encontrado nenhum dispositivo que utiliza a comunicação P2 Jack
-%conectado diretamente no computador que realiza essa tarefa. 
-É possível controlar o clique de um mouse com a comunicação P2 Jack, mas é
-necessário o auxílio de um \textit{mouse}, como~\cite{MouseJack}, mostrado na
-Figura~\ref{fig:mouse}, que possua uma adaptação que receba como entrada o P2
-Jack de um acionador. 
-Já para acionadores, como~\cite{Blue2}, ~\cite{SavantElite2}, ~\cite{FootPedal},
-~\cite{FootSwitch} e ~\cite{SipPuff}, que possuem comunicação Bluetooth ou USB,
-conseguem realizar o controle dos evento de clique de \textit{mouse} facilmente
-sem o auxílio de outros dispositivos, bastando apenas realizar uma pequena
-configuração no próprio acionador. Todavia, no caso do Bluetooth, é necessário
-um computador que possua suporte a tecnologia Bluetooth, e, inicialmente, é
-fundamental realizar o pareamento do \textit{mouse} no computador para conseguir
-realizar as funções de clique com o acionador. Já no caso do USB, a interface é 
-realizada somente com o auxílio de um microcontrolador que possui a função de 
-implementar o protocolo de comunicação entre o acionador e o sistema operacional
-do computador.
+como~\cite{CandyCorn}, ~\cite{JellyBean},~\cite{MicroLight}, ~\cite{HoneyBee}
+e~\cite{StringSwitch}, são mais utilizados como chaves para um determinado
+circuito, como a ativação da fala programada de uma boneca através do
+pressionamento de um acionador~\cite{ATswitchYT}. %Como forma de controle de uma
+%determinada função do %computador --- como o clique de um \textit{mouse} ---
+%através de um acionador %externo, não foi encontrado nenhum dispositivo que
+%utiliza a comunicação P2 Jack %conectado diretamente no computador que realiza
+%essa tarefa.  
+É possível controlar o clique de um mouse com a comunicação P2
+Jack, mas é necessário o auxílio de um \textit{mouse}, como~\cite{MouseJack},
+mostrado na Figura~\ref{fig:mouse}, que possua uma adaptação que receba como
+entrada o P2 Jack de um acionador.  Já para acionadores,
+como~\cite{Blue2},~\cite{FootPedal} e ~\cite{SipPuff}, que possuem comunicação
+Bluetooth ou USB, conseguem realizar o controle dos evento de clique de
+\textit{mouse} facilmente sem o auxílio de outros dispositivos, bastando apenas
+realizar uma pequena configuração no próprio acionador. Todavia, no caso do
+Bluetooth, é necessário um computador que possua suporte a tecnologia Bluetooth,
+e, inicialmente, é fundamental realizar o pareamento do \textit{mouse} no
+computador para conseguir realizar as funções de clique com o acionador. Já no
+caso do USB, a interface é realizada somente com o auxílio de um
+microcontrolador que possui a função de implementar o protocolo de comunicação
+entre o acionador e o sistema operacional do computador.
 
 \begin{figure}[!h]
 	\centering
@@ -206,10 +216,11 @@ puxada, os pinos de referência e saída do P2 Jack são curto-circuitados,
 ``simulando'', no P2 Jack, os mesmos estados de aberto e fechado da chave de fim
 de curso. Realizando pesquisas em sites como
 MercadoLivre\footnote{\url{https://www.mercadolivre.com.br/}}, é possível
-encontrar a unidade de uma chave similar a utilizada nesse acionador custando
-cerca de R\$ 2,50. Já o pino de P2 jack custa cerca de R\$ 1. Com esses dois
-materiais é possível construir um acionador semelhante ao discutido custando
-menos de R\$ 10, valor bem abaixo dos U\$ 65 cobrado por esse acionador. %ok
+encontrar a unidade de uma chave similar a utilizada nesse acionador externo
+custando cerca de R\$ 2,50. Já o pino de P2 jack custa cerca de R\$ 1. Com esses
+dois materiais é possível construir um acionador semelhante ao discutido
+custando menos de R\$ 10, valor bem abaixo dos U\$ 65 cobrado por esse
+acionador. %ok
 
 Na atual crise em que o Brasil se encontra, uma família de baixa renda, por
 exemplo, dificilmente iria adquirir um acionador externo devido ao elevado custo
@@ -226,7 +237,7 @@ Nesse sentido, esta pesquisa tem como intuito apresentar uma solução para
 diminuir a exclusão digital vivenciada pelas PCD, que muitas vezes não conseguem
 utilizar aparelhos eletrônicos, como \textit{smartphones} e computadores
 \textit{desktop}, devido a limitação de recursos que os adaptem às suas
-necessidades. Além disso a solução proposta, apesar de ser voltada para o uso de
+necessidades. Além disso, a solução proposta, apesar de ser voltada para o uso de
 uma determinada função em sistemas computacionais, pode ser utilizada em outros
 dispositivos que necessitem de uma interação através do pressionamento de um
 botão, como ligar ou desligar televisores. Como grande parte dos acionadores
@@ -250,12 +261,14 @@ função,  é utilizada o \textit{dwell time}, um método que utiliza um tempo
 específico em segundos em que o ponteiro do mouse fica sobre um determinada área
 da tela para realizar  o clique. Todavia, tal técnica obriga o usuário a ficar
 com a cabeça ou com os olhos parados em uma determinada posição por algum tempo
-para que a função de clique seja ativada, gerando um certo incômodo no usuário%,
+para que a função de clique seja ativada, gerando um certo incômodo no usuário.
+%,
 %além de, naturalmente, aumentar o tempo de utilização a medida em que o número
 %de tarefas realizadas também aumentar.
 
-Outro problema recorrente do \textit{dwell time} é que naturalmente o tempo de
-utilização aumenta a medida que o número de tarefas também aumenta. Devido isso,
+Outro problema recorrente do \textit{dwell time} é esse método naturalmente
+demanda mais tempo, em comparação com o método convencional de clique, 
+para executar uma tarefa. Devido isso,
 há diversas pesquisas que tentam solucionar esses problemas do \textit{dwell
 time} através de métodos alternativos para a emulação do clique do
 \textit{mouse}.  Em~\cite{Aanand18} foi proposto um algoritmo chamado de
@@ -269,15 +282,15 @@ o clique está para ser realizado através da mudança de cor do cursor do
 virtual, a cor do ponteiro ficará mudando ao longo do tempo. Quando o ponteiro
 estiver em uma determinada cor, a função de clique será chamada, além de ser
 ativado um som de estalo (clique). Com isso a pessoa tem uma noção mais precisa do
-tempo para realizar o clique, mas o tempo de execução dessa função continua 
+tempo para realizar o clique, porém o tempo de execução dessa função continua 
 sendo um problema.
 
 O trabalho proposto em~\cite{Skim10} utiliza um acionador baseado em dois
-sensores ópticos: um LED (do inglês \textit{light emitting diode}) infravermelho
-emissor e um receptor. Os sensores foram posicionados bem próximos a um dos
+componentes ópticos: um LED (do inglês \textit{light emitting diode}) infravermelho
+emissor e um receptor. Os LEDs foram posicionados bem próximos a um dos
 olhos do usuário e através do valor da tensão no LED infravermelho receptor foi
 possível identificar se a pessoa estava de olho aberto ou fechado. Quando o
-usuário está o olho aberto , o sinal infravermelho refletido no olho gera uma
+usuário está de olho aberto , o sinal infravermelho refletido no olho gera uma
 tensão bem abaixo da tensão percebida quando a pessoa está com o olho fechado.
 Com isso, foi possível detectar os eventos de clique identificando os piscar dos
 olhos. A detecção foi baseada na amplitude do sinal de tensão do LED receptor e
@@ -314,7 +327,7 @@ baseados em sinais obtidos por eletromiografia (EMG), um método de registro da
 atividade de um músculo quando realiza contração~\cite{Amadio07}.
 Em~\cite{Pinheiro12}, por exemplo, foi implementado a função de clique simples e
 duplo através de sinais de EMG. Os eletrodos que capturam os sinais elétricos
-foram colocados no músculo frontal. conferme mostrado na
+foram colocados no músculo frontal, conforme mostrado na
 Figura~\ref{fig:frontal} Para o clique simples, basta o usuário levantar as
 sobrancelhas. Já para o clique duplo, a sobrancelha deve ser levantada duas
 vezes de forma consecutiva. Assim, o sinal elétrico capturado pelo circuito de
@@ -330,7 +343,7 @@ eventos de clique.
 
 Já em~\cite{Kaushik12}, foi proposto um acionador que permitia controlar o
 movimento do ponteiro do mouse e as funções de clique esquerdo e direito,
-através de EMG e mecanomiografia (MMG). A MMG, é uma técnica não-invasiva que
+através de EMG e mecanomiografia (MMG). A MMG é uma técnica não-invasiva que
 registra as vibrações ou sons produzidos pelo músculo esquelético ao se
 contrair~\cite{Vaz99}. Os eletrodos de EMG foram colocados nos músculo masseter
 e risório, localizados na lateral da face, mostrados nas
@@ -338,21 +351,6 @@ Figuras~\ref{fig:masseter} e~\ref{fig:risorio}, respectivamente.
 
 %Parao MMG foi utilizado um
 
-%\begin{figure}[h!]
-%    \centering
-%    \begin{minipage}{.5\textwidth}
-%        \centering
-%        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/masseter}
-%        \caption{Músculo masseter.}
-%        \label{fig:masseter}
-%    \end{minipage}%
-%    \begin{minipage}{0.5\textwidth}
-%        \centering
-%        \includegraphics[width=0.91\linewidth, height=0.2\textheight]{fig/risorio}
-%        \caption{Músculo risório}
-%        \label{fig:risorio}
-%    \end{minipage}
-%\end{figure}
 \begin{figure}
 \centering
 \begin{subfigure}{.4\textwidth}
@@ -375,12 +373,14 @@ Para o MMG, foi utilizado um piezo --- um transdutor que sob estresses
 mecânicos, como vibrações e compressões, gera sinais elétricos --- o qual foi
 colocado no músculo platisma localizado no pescoço, como mostrado na
 Figura~\ref{fig:platisma}. As palavras \textit{up, down, left} e \textit{right}
-foram usadas para controlar o ponteiro do \textit{mouse}. Já para a função de
-clique esquerdo e direito, foram utilizadas as palavras \textit{left click} e
-\textit{right click}, respectivamente.
+foram usadas para mover o ponteiro do \textit{mouse} para cima, baixo, esquerda
+e direito, respectivamente. Já para a função de clique esquerdo e direito, foram
+utilizadas as palavras \textit{left click} e \textit{right click},
+respectivamente. Entretanto, assim como~\cite{Karimullah02}, é preciso realizar
+vários comandos para mover o cursor nas diagonais, por exemplo.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{fig/platisma}
+	\includegraphics[width=0.45\textwidth]{fig/platisma}
 	\caption{Músculo platisma.}
 	\label{fig:platisma}
 \end{figure}
@@ -388,19 +388,19 @@ clique esquerdo e direito, foram utilizadas as palavras \textit{left click} e
 O trabalho~\cite{Simpson08} realizou o controle do ponteiro através dos
 movimentos da cabeça e utilizou um acionador muito interessante que
 utilizava os sinais de um acelerômetro para realizar os eventos de clique. O
-sensor de aceleração foi posicionado atrás da orelha, de modo semelhante como
-ficam posicionados alguns aparelhos que ajudam pessoas que possuem
-dificuldade de audição a melhorar sua capacidade auditiva. Esse acionador é
-dividido em dois módulos: transmissor e receptor. O módulo transmissor é o que
-fica, de fato, posicionado atrás da orelha do usuário. Já o receptor fica
-conectado diretamente no computador via USB. Os módulos se comunicam utilizando
-sinais de rádiofrequência. Para ativar a função de clique, o usuário deve
-realizar uma pressão entre os dentes superiores e inferiores (oclusão).  O
-sensor é capaz de distinguir o comando de clique através da pressão entre os
-dentes, da vibração causada no sensor quando o usuário movimenta a cabeça e até
-mesmo da vibração causada pelo ato de abrir a boca ao falar ou bocejar. Isso
-evita que cliques sejam detectados de forma equivocada, tornando o acionador
-mais confiável para o função do clique.
+sensor de aceleração foi posicionado atrás da orelha do usuário, de modo
+semelhante como ficam posicionados alguns aparelhos que ajudam pessoas que
+possuem dificuldade de audição a melhorar sua capacidade auditiva. Esse
+acionador é dividido em dois módulos: transmissor e receptor. O módulo
+transmissor é o que fica, de fato, posicionado atrás da orelha do usuário. Já o
+receptor fica conectado diretamente no computador via USB. Os módulos se
+comunicam utilizando sinais de rádiofrequência. Para ativar a função de clique,
+o usuário deve realizar uma pressão entre os dentes superiores e inferiores
+(oclusão).  O sensor é capaz de distinguir o comando de clique através da
+pressão entre os dentes, da vibração causada no sensor quando o usuário
+movimenta a cabeça e até mesmo da vibração causada pelo ato de abrir a boca ao
+falar ou bocejar. Isso evita que cliques sejam detectados de forma equivocada,
+tornando o acionador mais confiável para o função do clique.
 
 No trabalho desenvolvido em~\cite{Antunes16}, os movimentos da cabeça capturados
 por uma \textit{webcam} foram utilizados para controlar o ponteiro do mouse. Já
@@ -411,33 +411,69 @@ com o computador através da tecnologia Bluetooth. Com isso, uma pessoa que tenh
 os movimentos dos membros inferiores preservados, consegue utilizar a função de
 clique no computador sem a necessidade de utilizar a mãos. 
 
+O FlipMouse, descrito em~\cite{Aigner16}, permite que uma pessoas controle o
+cursor do \textit{mouse}, bem como a função de clique. Um módulo
+\textit{joystick} e seu \textit{switch} são utilizados para mover o cursor e 
+realizar o clique esquerdo, respectivamente. Já o clique direito do
+\textit{mouse} é realizado com um auxílio de um microfone de eletreto que é
+responsável por detectar o sopro realizado pelo usuário. A comunicação entre o
+FlipMouse e o computador é estabelecida através da interface USB com o auxílio
+de um microcontrolador que gerencia o protocolo de comunicação exigida pela
+interface USB.
+
 Como visto até agora, existem diversos tipos de acionadores construídos com a
 finalidade de serem utilizados como método alternativo para o clique do
-\textit{mouse}.  Contudo, dentre a literatura consultada, não foi encontrado
-nenhuma pesquisa na área acadêmica que utilizasse um acionador baseado em sopro
-como interface para gerar comandos de clique para serem emulados no computador.
-Até existem produtos no mercado com a proposta de controlar os eventos de
+\textit{mouse}.  Contudo, dentre a literatura consultada, apenas o FlipMouse
+desenvolveu um dispositivo que permite realizar algum evento de clique através
+do sopro do usuário. Até existem pesquisas na área acadêmica que desenvolveram
+acionadores baseados em sopro, como~\cite{Thaller13},~\cite{Mougharbel13}
+e~\cite{Filho14}, porém nenhum desses dispositivos são utilizados como interface
+para gerar comandos de clique para serem emulados no computador. Já acionadores
+que conseguem controlar alguma funcionalidade do \textit{mouse}, 
+como os descritos anteriormente,  realizam a comunicação com o computador 
+através da interface USB ou Bluetooth, aumentando o custo de desenvolvimento do
+dispositivo. Os acionadores que possuem o P2 Jack como interface de comunicação 
+não conseguem controlar uma função do \textit{mouse} diretamente através da
+interface de áudio do computador. Um \textit{software driver} para capturar os
+sinais de áudio e convertê-los em eventos de clique, por exemplo, seria
+necessário e uma proposta semelhante a essa não foi encontrada.    
+
+Existem produtos no mercado com a proposta de controlar os eventos de
 clique através do sopro, como o acionador Sip/Puff Switch~\cite{SipPuff} e o
 IntegraMouse~\cite{IntegraMouse} --- um produto que permite controlar o ponteiro do
 \textit{mouse} e realizar cliques no computador, através dos movimentos da boca
 e de sopro, respectivamente. Entretanto, o Sip/Puff Switch custa cerca
 de U\$ 319, já o IntegraMouse está custando em média \euro 2000. Esses preços
-são extremamanete altos para pessoas de baixo poder aquisitivo. Esse alto preço
+são extremamente altos para pessoas de baixo poder aquisitivo. Esse alto preço
 contribui bastante para que esse tipo de TA não seja
 amplamente difundida, contribuindo para o aumento da exclusão digital imposta às
 PCD.
 
+%Diante de tais circunstâncias, este trabalho tem como finalidade apresentar  uma
+%solução para diminuir a exclusão digital vivenciada por PCD, as quais estão à
+%margem do mundo eletrônico por conta da ausência de recursos que adaptem os
+%dispositivos às suas necessidades. Sendo assim, um acionador externo baseado em
+%sopro facilitaria o uso das funções de clique do \textit{mouse} para tarefas
+%executadas no computador e essa ferramenta seria utilizada em conjunto, por
+%exemplo, com um \textit{software} que capture imagens do rosto do usuário em
+%tempo real através de uma \textit{webcam} para controlar o movimento do cursor
+%do \textit{mouse} ao longo do monitor. Dessa forma, uma pessoa que antes não
+%conseguia utilizar um computador, poderá realizar várias tarefas no computador
+%forma independente, ajudando na inclusão digital e social dessa pessoa.
+
 Diante de tais circunstâncias, este trabalho tem como finalidade apresentar  uma
-solução para diminuir a exclusão digital vivenciada por PCD, as quais estão à
-margem do mundo eletrônico por conta da ausência de recursos que adaptem os
-dispositivos às suas necessidades. Sendo assim, um acionador externo baseado em
-sopro facilitaria o uso das funções de clique do \textit{mouse} para tarefas
-executadas no computador e essa ferramenta seria utilizada em conjunto, por
-exemplo, com um \textit{software} que capture imagens do rosto do usuário em
-tempo real através de uma \textit{webcam} para controlar o movimento do cursor
-do \textit{mouse} ao longo do monitor. Dessa forma, uma pessoa que antes não
-conseguia utilizar um computador, poderá realizar várias tarefas no computador
-de forma independente, ajudando na inclusão digital e social dessa pessoa.
+solução de baixo custo para diminuir a exclusão digital vivenciada por PCD, 
+as quais estão à margem do mundo eletrônico por conta da ausência de recursos 
+que adaptem os dispositivos às suas necessidades. Para isso, foi desenvolvido 
+um acionador externo baseado em sopro capaz de realizar o clique do 
+\textit{mouse} do computador. A comunicação entre o acionador e o computador é
+realizada através da interface de áudio, com o auxílio de um \textit{software}
+que possui a função de capturar os sinais do acionador pela entrada de áudio do
+computador e convertê-los em clique. O dispositivo desenvolvido deve ser
+utilizado em conjunto com alguma ferramenta alternativa de controle do ponteiro 
+do \textit{mouse}, como as aplicações que utilizam os movimentos da cabeça
+do usuário para realizar essa função. 
+
 
 \section{Objetivos}
 
@@ -464,8 +500,8 @@ acionador, aumentando assim, o número de pessoas beneficiadas por este trabalho
 %\textit{software} será desenvolvido para capturar os sinais da interface P2 Jack
 %e convertê-los em ações de clique no computador.
 
-Testes com o protótipo serão aplicados a voluntários para verificar o potencial
-do produto e verificar possíveis desvantagens para futuras melhorias.
+%Testes com o protótipo serão aplicados a voluntários para verificar o potencial
+%do produto e verificar possíveis desvantagens para futuras melhorias.
 
 \begin{subsection}{Objetivos Específicos}
 
