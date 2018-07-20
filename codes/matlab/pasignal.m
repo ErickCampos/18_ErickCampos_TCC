@@ -8,7 +8,7 @@ pasamps = pasamps(29000:60999);
 ax = gca;
 plot(pasamps, 'b-', 'linewidth', 4);
 set(gca, 'XTick', 0:4000:32000);
-xl = xlabel('Número de amostras','fontsize', 24);
+xl = xlabel('Amostras','fontsize', 24);
 yl = ylabel('Amplitude','fontsize', 24);
 grid;
 xlim([0 32000]);
