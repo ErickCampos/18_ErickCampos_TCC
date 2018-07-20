@@ -46,6 +46,17 @@
 
 \usepackage{siunitx} %símbolo OHM
 
+% \begin{casso}
+% https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+\usepackage{titlesec}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+% \end{casso}
+
 %\usepackage[backend=bibtex8]{biblatex}
 %\makeatletter
 %\providecommand\@enumctr{}
