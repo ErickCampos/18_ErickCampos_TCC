@@ -229,7 +229,7 @@ Figura~\ref{fig:suporte}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.45\linewidth]{fig/erick}
+	\includegraphics[width=0.60\linewidth]{fig/erick}
 	\caption{Usuário testando o acionador baseado em sopro em conjunto com o
 suporte de sustentação desenvolvido.} %Note que o LED de \textit{status} fica no campo de visão
 %do usuário. Sendo assim, o suporte não compromete a visualização do LED que
@@ -249,10 +249,90 @@ cada tamanho de cabeça.
 
 \end{section}
 
-\begin{section}{Software}
-\textcolor{red}{escrever aqui sobre o software}
-\end{section}
+% casso ------------------------------------------------------------------------
+\begin{section}{Interface de \textit{Software} entre o Acionador e o Computador}
+Com a parte de \textit{hardware} finalizada, o dispositivo proposto somente
+seria capaz de se comunicar com o computador após o desenvolvimento de um
+\textit{driver} de \textit{software}. Em outras palavras, a funcionalidade
+\textit{plug-and-play} de um equipamento USB, por exemplo, não iria funcionar
+com a entrada de áudio P2, o que significa que o sistema operacional não
+reconheceria o sensor de sopro como um dispositivo de \textit{mouse}. No
+entanto, como o único propósito da interface \textit{jack} em computadores
+\textit{desktop} é lidar com entrada e saída de áudio, foi possível utilizar a
+biblioteca PortAudio~\cite{portaudio} para gravar áudio e simplesmente
+``fingir'' que que o emulador de clique do \textit{mouse} era um microfone. Já
+que os dados são transmitidos para o computador através do canal
+\textit{sleeve}, enquanto os pinos \textit{tip} e \textit{ring} do conector TRS
+são responsáveis por receber os dados do sensor piezoelétrico; os três canais
+foram curto-circuitados para garantir que a informação analógica fosse
+transmitida do sensor para o computador.
 
+A Figura~\ref{fig:pa_signal} mostra um sinal de áudio gravado com o disco piezo
+durante um sopro. A biblioteca PortAudio foi configurada para amostrar os dados
+a uma frequência de 8~kHz em um canal simples (mono), com 16~bits por amostra. A
+mudança na tensão do piezo é transferida diretamente para ambos os canais
+direito e esquerdo do conector TRS, o que resulta em um pico positivo e um
+negativo entre as amostras 12.000 e 20.000.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.80\linewidth]{fig/pa_signal}
+	\caption{Sinal de áudio gravado durante um sopro sobre o disco
+	piezoelétrico. Os picos são referentes aos canais direito (\textit{ring}) e
+	esquerdo (\textit{tip}) da interface \textit{jack} de 3,5~mm,
+	respectivamente.}
+	\label{fig:pa_signal}
+\end{figure}
+\vspace{-0.75cm}
+
+Com o objetivo de separar um sopro de um ``não-sopro'' durante a análise do
+sinal de áudio, um simples limiar (\textit{threshold}) baseado na amplitude da
+magnitude do sinal foi suficiente para fazer a distinção. O valor do limiar foi
+definido em 1000. Porém, como a análise de uma única amostra acabaria por
+reconhecer ruídos como sopros com mais frequência, uma estratégia de janelamento
+foi adotada, a qual consiste em analisar um valor de amplitude a cada 1000
+amostras, conforme mostrado na Figura~\ref{fig:pa_thresh}.
+
+Tomando o teste 1 como exemplo, em vermelho, como o valor analisado na amostra
+de número 500 é maior do que o \textit{threshold} estabelecido, a próxima
+verificação ocorrerá na amostra número 1000 ao invés da amostra 1500. Como a
+amostra conseguinte também é maior que o limiar, a próxima verificação ocorre na
+amostra de número 1250, pois o tamanho do passo reduz de 500 para 250. A análise
+continua, sempre reduzindo o tamanho da janela pela metade, até que uma quinta
+amostra maior que o \textit{threshold} seja encontrada em sequência. Finalmente,
+o algoritmo pode considerar tal evento como um sopro e, a fim de evitar a
+execução de mais de um clique com o mesmo sopro, a análise fica em estado de
+espera por 1~segundo, ignorando as 8000~amostras seguintes. Vale ressaltar que
+tanto o tamanho da janela quanto o número de amostras maiores que o limiar podem
+ser configurados a fim de ajustar a precisão do dispositivo. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.00\linewidth]{fig/pa_thresh}
+	\caption{Exemplo de funcionamento do algoritmo desenvolvido para identificar
+	o sopro quando o sensor piezoelétrico é utilizado no lugar do microfone. A
+	técnica de janelamento é utilizada para identificar cinco valores
+	consecutivos de amplitude que são maiores do que um \textit{threshold}
+	estipulado. O volume do microfone foi mantido sem amplificação.}
+	\label{fig:pa_thresh}
+\end{figure}
+%\vspace{-0.75cm}
+
+Já no teste 2, em cor preta, a análise que começa na amostra de número 2000
+ocasionalmente ocorre próxima à transição entre os picos do sinal, o que
+eventualmente resulta em um valor de amostra menor do que o \textit{threshold}
+antes de se chegar à quinta amostra. Nesse caso, o tamanho da janela (que estava
+em 250) é restaurado 1000 e a busca continua a partir da amostra de número 3750.
+Graças ao segundo pico do sinal, a identificação do sopro pode ser recuperada
+pelo algoritmo, como mostrado no teste 3, em cor magenta. 
+
+O evento de clique esquerdo do mouse, por sua vez, é realizado através da API da
+biblioteca Xlib~\cite{xlib}. Basicamente, o foco do ponteiro do mouse é ajustado
+para a janela em plano mais fundo através da função \texttt{XQueryPointer}, e
+então os eventos \texttt{ButtonPress} e \texttt{ButtonRelease} são chamados em
+sequência para pressionar e liberar o botão esquerdo do dispositivo
+(\texttt{Button1}), respectivamente.
+\end{section}
 
 \begin{section}{Controle do Cursor do \textit{Mouse}}
 
@@ -272,7 +352,7 @@ entanto, esse método de clique pode ser desabilitado, o que deixa a
 possibilidade de utilizar o acionador externo baseado em sopro para realizar a
 função de clique. A aba de configuração do clique no eViacam, mostrada na
 Figura~\ref{fig:click}, também permote definir o tempo de ativação do clique, no
-caso do \textit{dwell time}, que é estabelecido como 10~ds(ou seja, 1 segundo)
+caso do \textit{dwell time}, que é estabelecido como 10~ds (ou seja, 1 segundo)
 como tempo padrão. 
 
 \begin{figure}[!h]
