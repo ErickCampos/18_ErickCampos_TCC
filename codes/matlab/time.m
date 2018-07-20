@@ -10,7 +10,10 @@ g_blow = [64 37 158 47 42 84 78 67 105 73]/60;   %G1 Blow Switch
 y_dwell = [73 46 66 119 98 125 39 86 53 64]/60;       %YouTube Dwell
 g_dwell = [117 73 289 143 150 165 102 88 107 144]/60; %G1 Blow Switch 289-->582
 
-e = boxplot([y_blow' y_dwell' g_blow' g_dwell'], 'symbol', 'kx','outlierSize', 8);
+e = boxplot([y_blow' y_dwell' g_blow' g_dwell'], 'symbol', 'kx','outlierSize', 8, 'medianstyle', 'line');
+h = findobj(e,'tag','Median');
+set(h,'linestyle','--');
+
 %title('\fontsize{20}Blow Switch');
 grid on;
 

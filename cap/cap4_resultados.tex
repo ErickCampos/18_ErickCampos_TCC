@@ -1,6 +1,6 @@
 \begin{chapter}{Testes e Resultados}
 
-Neste capítulo mostra o perfil dos participantes que aceitaram realizar os
+Neste capítulo é mostrado o perfil dos participantes que aceitaram realizar os
 testes com o protótipo desenvolvido neste trabalho, bem como o ambiente onde os
 testes ocorreram e as tarefas elaboradas para serem realizadas pelos
 participantes.  Por último serão apresentados os resultados quantitativos e
@@ -22,7 +22,7 @@ trabalho. Após a aceitação do participante, o trabalho desenvolvido foi entã
 apresentado verbalmente, demonstrando a motivação do estudo, todos os objetivos,
 a estimativa do tempo de duração do teste e as etapas de cada tarefa que
 seria realizada. 
- 
+
 Logo após a apresentação do trabalho, o voluntário deveria ler o TCLE (Termo de
 Consentimento Livre e Esclarecido), onde foi estabelecido que, ao assinar o
 termo, o participante declarava estar ciente de que os dados coletados nos
@@ -87,7 +87,9 @@ para tecnologias alternativas que facilitam a navegação para pessoas com
 deficiência. Quando é utilizado o \textit{dwell time} como método de clique, por
 exemplo, assistir um vídeo no modo de tela cheia no YouTube torna-se um desafio,
 pois o usuário é forçado a mover o cursor do \textit{mouse} a todo o momento
-a fim de evitar que cliques involuntários ocorram. Já para o G1, o menu
+a fim de evitar que cliques involuntários ocorram. 
+
+Já para o G1, o menu
 interativo é um grande problema para aplicações alternativas de controle
 do cursor do \textit{mouse}, como o eViacam, visto que os itens na barra de
 navegação do menu se expandem e mudam apenas com o simples ato de passar o
@@ -127,7 +129,8 @@ que para o YouTube, a tarefa se iniciou em um vídeo em modo de tela cheia.
 	\item Clicar no botão de avançar vídeo.                            \hfill(Área A1)
 	\item Clicar no botão de sair do modo de tela cheia.               \hfill(Área A2)
 	\end{itemize}
-
+~
+\break
 \item Teste no G1 (ver Figura~\ref{fig:g1}):
 	\begin{itemize}
 	\item[$\ast$] Subtarefa 1:
@@ -185,7 +188,7 @@ seja, 25\% dos valores acima da mediana e 25\% abaixo.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=.7\linewidth]{fig/time}
+	\includegraphics[width=.65\linewidth]{fig/time}
 	\caption{Distribuição do tempo de conclusão das tarefas.}
 	\label{fig:tempo}
 \end{figure}
@@ -226,6 +229,12 @@ itens, os quais são expandidos apenas passando o ponteiro do mouse sobre eles.
 
 \begin{subsection}{Quantidade de Cliques}
 
+\begin{figure}[!b]
+	\centering
+	\includegraphics[width=.65\linewidth]{fig/erros}
+	\caption{Distribuição da quantidade de erros cometidos em cada tarefa.}
+	\label{fig:cliques}
+\end{figure}
 A Figura~\ref{fig:cliques} mostra a quantidade de erros de clique (cliques
 involuntários ou sem sucesso), cometidos pelos usuários em cada tarefa. Alguns
 participantes realizaram a tarefa do YouTube usuando o \textit{dwell time} sem
@@ -234,12 +243,6 @@ aconteceu com a ferramenta baseada em sopro. No entanto, na tarefa do G1, o
 número de erros aumentou consideravelmente no \textit{dwell time}, onde a
 maioria dos voluntários errou entre 4 a 12 vezes.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=.7\linewidth]{fig/erros}
-	\caption{Distribuição da quantidade de erros cometidos em cada tarefa.}
-	\label{fig:cliques}
-\end{figure}
 
 A maioria dos dos erros de cliques cometidos pelos participantes com o
 dispositivo baseado em sopro foi causado por cliques sem sucesso, onde a pessoa
@@ -261,20 +264,20 @@ realizados corretamente, os cliques involuntários e os
 cliques errados (quando o usuário clicava intencionalmente em itens que não
 estavam previstos nas tarefas).
 
-É importante notar que eViacam apresentou alguns problemas em detectar a face do
-partcipante, e isso afetou diretamente a quantidade de cliques realizados. A
-detecção facial falhou diversas vezes quando o participante tentava posicionar o
-ponteiro do \textit{mouse} nos cantos da tela. À medida que o cursor se
-aproximava dos cantos, a velocidade no movimento do cursor (controlada pelo
-rastreador de face do eViacam) diminuía, o que causou muitos cliques
-involuntários quando os usuários estavam realizando as tarefas com o
-\textit{dwell time}, pois o cursor ficava sobre uma determinada área por
-tempo suficiente para que a ação de clique fosse executada.
+É importante ressaltar que eViacam apresentou alguns problemas em detectar a
+face do partcipante, e isso afetou diretamente a quantidade de cliques
+realizados. A detecção facial falhou diversas vezes quando o participante
+tentava posicionar o ponteiro do \textit{mouse} nos cantos da tela. À medida que
+o cursor se aproximava dos cantos, a velocidade no movimento do cursor
+(controlada pelo rastreador de face do eViacam) diminuía, o que causou muitos
+cliques involuntários quando os usuários estavam realizando as tarefas com o
+\textit{dwell time}, pois o cursor ficava sobre uma determinada área por tempo
+suficiente para que a ação de clique fosse executada.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.00\linewidth]{fig/DwellClicks}
-	\caption{Distribuição da quantidade de erros cometidos em cada tarefa.}
+	\includegraphics[width=.7\linewidth]{fig/DwellClicks}
+	\caption{Quantidade de erros cometidos em cada tarefa.}
 	\label{fig:dwellclicks}
 \end{figure}
 
@@ -285,6 +288,10 @@ YouTube com o valor mínimo de cliques estipulados (seis cliques). A situação
 piorou na tarefa o G1, uma vez que nenhum participante conseguiu terminar a
 tarefa realizando apenas a quantidade mínima de cliques, resultando em uma média 
 bem alta: 14 cliques para uma tarefa que exigia apenas quatro.
+
+~
+
+~
   
 A quantidade de cliques foi maior na tarefa do G1 devido a precisão
 relativamente alta necessária para selecionar os pontos desejados. O voluntário
@@ -295,8 +302,8 @@ vezes ficaram frustrados por não conseguir clicar no item desejado.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.00\linewidth]{fig/PuffClicks}
-	\caption{Distribuição da quantidade de erros cometidos em cada tarefa.}
+	\includegraphics[width=0.7\linewidth]{fig/PuffClicks}
+	\caption{Quantidade de erros cometidos em cada tarefa.}
 	\label{fig:puffclicks}
 \end{figure}
 
@@ -356,22 +363,24 @@ Tabela~\ref{tab:quest}.
 As Figuras~\ref{fig:DwellQuestions} e~\ref{fig:PuffQuestions} mostram uma visão
 geral de todas as respostas do questionário de múltipla escolha dadas pelos
 participantes. A escala Likert foi utilizada para representar as respostas, que
-variam de 1 a 5, tanto para o \textit{dwell time} quanto para o dispositivo
-baseado em sopro.  A resposta 1, colorida em vermelho, significa muito ruim,
+variam de 1 a 5, para ambos os métodos de clique utilizados no teste.
+
+A resposta 1, colorida em vermelho, significa muito ruim,
 enquanto que a resposta 5, colorida em verde escuro, significa muito bom. Ao
 realizar um rápida comparação entre as respostas, é possível afirmar que os
 participantes se sentiram mais satisfeitos com o desempenho geral do dispositivo
 de sopro do que com o \textit{dwell time}, pois a maioria das respostas
-para o método de clique baseado em sopro, em ambas as tarefas, realizadas foram 4
-ou 5, como mostrado na Figura~\ref{fig:PuffQuestions}, enquanto que as respostas
-para o \textit{dwell time} variaram de 3 a 5, como mostrado na
+para o método de clique baseado em sopro, tanto para tarefa do YouTube quanto
+para o G1, realizadas foram 4
+ou 5, como mostrado na Figura~\ref{fig:PuffQuestions}. Por outro lado, as 
+respostas para o \textit{dwell time} variaram de 3 a 5, conforme mostrado na
 Figura~\ref{fig:DwellQuestions}.  
 
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{fig/DwellQuestions}
+	\includegraphics[width=0.95\linewidth]{fig/DwellQuestions}
 	\caption{Escala Likert das respostas do \textit{dwell time}.} 
 	\label{fig:DwellQuestions}
 	\end{minipage}
@@ -381,7 +390,7 @@ Figura~\ref{fig:DwellQuestions}.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{fig/PuffQuestions}
+	\includegraphics[width=0.95\linewidth]{fig/PuffQuestions}
 	\caption{Escala Likert das respostas do protótipo baseado em sopro.}
 	\label{fig:PuffQuestions}
 	\end{minipage}
