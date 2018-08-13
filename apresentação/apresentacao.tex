@@ -1,0 +1,305 @@
+\documentclass[subsection=false, compress]{beamer}
+\setbeamertemplate{footline}[frame number] % numerar slides
+\setbeamertemplate{navigation symbols}{} % retirar barra de navegação
+
+\mode<presentation>
+\usetheme{Singapore}
+%\usefonttheme{structurebold}
+%\usebeamercolor[fg]{section in sidebar}
+
+\ifdefined\hyperref  
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{subfig}
+\usepackage{graphicx}
+%\usepackage{subcaption}  
+\usepackage{pgfpages}
+\usepackage{ifpdf}   
+\usepackage{multimedia}  
+\usepackage{color}   
+\usepackage{url} 
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{nameref}
+\usepackage{array}
+\usepackage{marvosym} 
+\usepackage{multicol} 
+\usepackage{pifont}
+\usepackage{marvosym}
+\usepackage{cancel}
+%\usepackage{enumitem} 
+%\usepackage{minted}
+%\usepackage{subfigure}
+%\usepackage{xmpmulti}
+%\usepackage{animate}
+\usepackage[export]{adjustbox}
+\usepackage{changepage}
+\usepackage{lipsum}
+
+\definecolor{erick}{HTML}{7CFC00}
+\definecolor{suzane}{HTML}{006400}
+
+
+\lstset{%
+	linewidth=\textwidth,%framed box is the text size 
+	xleftmargin=.10in,
+	xrightmargin=.10in, 
+	frame=trbl, 
+	columns=flexible, 
+	captionpos=t, 
+	upquote=false,
+	basicstyle=\footnotesize\ttfamily,
+	firstnumber=1,% 
+	numberfirstline=false,% 
+	numbers=left,%
+	numberstyle=\tiny,% 
+	stepnumber=1,%
+	numbersep=5pt,% 
+	backgroundcolor=\color{blue!15},% 
+	tabsize=4,% 
+	keywordstyle=\color{green!65!black},% 
+	commentstyle=\color{blue},% 
+	stringstyle=\color{magenta},% 
+	breaklines=true,% 
+	emph={label},%
+	abovecaptionskip=10pt,% 
+	belowcaptionskip={\abovecaptionskip},%
+	showstringspaces=false, 
+	escapeinside=@@,%
+	literate={Ê}{{\^{E}}}1
+}%
+\usepackage{textpos} % package for the positioning
+
+% position the logo
+\addtobeamertemplate{frametitle}{}{%
+	\begin{textblock*}{100mm}(\textwidth,6.70cm)
+		\includegraphics[height=1.00cm,width=1.00cm,keepaspectratio]{Figures/logo_ufpa}
+	\end{textblock*}
+	%\begin{textblock*}{100mm}(-0.80cm,-0.25cm)
+	%\begin{textblock*}{100mm}(-0.80cm,6.90cm)
+	%	\includegraphics[height=1.00cm,width=1.00cm,keepaspectratio]{Figures/ihc}
+	%\end{textblock*}
+}
+
+%%\pgfdeclareimage[width=0.85cm, height=1.10cm]{ufpa}{Figures/logo_ufpa}
+%\pgfdeclareimage[width=1.60cm, height=1.00cm]{ufpa}{Figures/foot_img}
+%\logo{\pgfuseimage{ufpa}}
+
+\hypersetup{
+	pdftitle={Uma Proposta de Acionador Externo de Baixo Custo Baseado em Sopro}
+	pdfauthor={Erick Modesto Campos}
+}
+\fi
+
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+% http://tex.stackexchange.com/questions/50286/beamer-singapore-theme-follow-up-line-above-footline-and-hide-footline-for-si
+%\setbeamercolor{footlinerule}{use=structure,bg=structure.fg!25!bg,green}
+\setbeamertemplate{footline}
+{%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.5ex,dp=0ex,center]{footlinerule}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.6ex,dp=0ex,center]{empty}
+	\end{beamercolorbox}%
+	\leavevmode%
+	\hbox{%
+
+	\begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=2ex,center]{author in head/foot}%
+		\usebeamerfont{author in head/foot}%
+		\insertshortauthor\hspace{1em}%(FCT/\insertshortinstitute)
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=2ex,right]{title in head/foot}%
+		\usebeamerfont{title in head/foot}
+		\insertshorttitle
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=2ex,right]{author in head/foot}%
+		\usebeamerfont{author in head/foot}%
+		\textbf{\textcolor{black}{\currentname}}
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.10\paperwidth,ht=2.25ex,dp=2ex,right]{date in head/foot}%
+		\textbf{\textcolor{black}{\insertframenumber{} de \inserttotalframenumber\hspace*{1ex}}}
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}%
+
+%\title[Universal Remote Control System with AGR]
+%{\Large A Proposal of a Universal Remote Control System Based on Head Movements}
+%
+%\author[Cassio T. Batista]
+%{\large
+%\textbf{Cassio Trindade Batista}\\
+%Erick Modesto Campos\\
+%Nelson Cruz Sampaio Neto
+%\vspace{.2cm}
+%}
+
+%\institute[UFPA]{
+%\small
+%Universidade Federal do Pará\\[1pt]
+%%Programa de Pós-Graduação em Ciência da Computação\\[1pt]
+%Laboratório de Visualização, Interação e Sistemas Inteligentes\\[1pt]
+%Belém -- Pará -- Brazil\\[1pt]
+%\begin{figure}
+%	\includegraphics[width=.13\textwidth]{Figures/logo_ufpa}
+%\end{figure}
+%\vspace{-0.40cm}
+%}
+%\date{
+%\small
+%25 de outubro de 2017
+%}
+\title[Acionador Externo de Baixo Custo Baseado em Sopro]
+{\Large Uma Proposta de Acionador Externo de Baixo Custo Baseado em Sopro}
+
+\author[Erick M. Campos]
+{\large \textbf{Erick Modesto Campos}\vspace{.2cm}}
+
+\institute[UFPa]{
+\small
+Universidade Federal do Pará\\[1pt]
+Instituto de Tecnologia\\[1pt]
+Faculdade de Engenharia da Computação e Telecomunicações\\[1pt]
+Orientador: MSc. Cassio Trindade Batista\\
+Coorientador: Prof. Dr. Nelson Cruz Sampaio Neto\\
+\begin{figure}
+\includegraphics[width=.13\textwidth]{Figures/logo_ufpa}
+\end{figure}
+\vspace{-.35cm}
+}
+\date{\small{03 de Agosto de 2018}}
+
+\begin{document}
+% ------------------------------------------------------------------------------
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+% ------------------------------------------------------------------------------
+\begin{frame}{Agenda}
+\begin{enumerate}
+	\item Introdução
+	\bigskip
+
+	\item Protótipo
+	\bigskip
+
+	\item Testes e Resultados
+	\bigskip
+
+	\item Conclusões e Trabalhos Futuros
+\end{enumerate}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% begin of body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introdução}
+\input{chapters/intro.tex}
+
+\section{Protótipo}
+\input{chapters/meth.tex}
+%
+\section{Testes e Resultados}
+\input{chapters/test.tex}
+%
+\section{Considerações Finais}
+\input{chapters/final.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% end of body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{}
+\renewcommand*{\currentname}{Agradecimentos}
+% ------------------------------------------------------------------------------
+\begin{frame}{Agradecimentos}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\textwidth]{Figures/logo_ufpa}\\
+	\includegraphics[width=0.4\textwidth]{Figures/propesp} \quad 
+	\includegraphics[width=0.4\textwidth]{Figures/pibic} 
+\end{figure}
+
+
+
+%\begin{center}
+%\begin{figure}
+%	\includegraphics[width=0.20\textwidth]{Figures/calabriano}
+%	\quad\quad
+%	\includegraphics[width=0.25\textwidth]{Figures/appd}\\[12pt]
+%	\includegraphics[width=0.20\textwidth]{Figures/logo_ufpa}
+%	\quad\quad
+%	\includegraphics[width=0.30\textwidth]{Figures/cnpq}
+%\end{figure}
+%\end{center}
+\end{frame}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+%\begin{frame}{Agradecimentos}
+%\begin{center}
+%\begin{figure}
+%	\includegraphics[width=0.85\textwidth]{Figures/voluntarios}
+%\end{figure}
+%\end{center}
+%\end{frame}
+% ------------------------------------------------------------------------------
+
+\section*{}
+\renewcommand*{\currentname}{Thanks}
+%\setbeamertemplate{footline}
+%{%
+%	\begin{beamercolorbox}[wd=\paperwidth,ht=0.5ex,dp=0ex,center]{footlinerule}
+%	\end{beamercolorbox}%
+%	\begin{beamercolorbox}[wd=\paperwidth,ht=0.6ex,dp=0ex,center]{empty}
+%	\end{beamercolorbox}%
+%	\leavevmode%
+%	\hbox{%
+%
+%	\begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=2ex,center]{author in head/foot}%
+%		\usebeamerfont{author in head/foot}%
+%		%\insertshortauthor\hspace{1em}
+%	\end{beamercolorbox}%
+%
+%	\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=2ex,right]{title in head/foot}%
+%		\usebeamerfont{title in head/foot}
+%		%\insertshorttitle
+%	\end{beamercolorbox}%
+%
+%	\begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=2ex,right]{author in head/foot}%
+%		\usebeamerfont{author in head/foot}%
+%		\textbf{\textcolor{black}{\currentname}}
+%	\end{beamercolorbox}%
+%
+%	\begin{beamercolorbox}[wd=.10\paperwidth,ht=2.25ex,dp=2ex,right]{date in head/foot}%
+%		\textbf{\textcolor{black}{\insertframenumber{} of \inserttotalframenumber\hspace*{1ex}}}
+%	\end{beamercolorbox}}%
+%	\vskip0pt%
+%}%
+% ------------------------------------------------------------------------------
+\begin{frame}
+\author{}
+\institute{
+	\fontsize{34pt}{34pt}\selectfont
+	\textcolor{blue!50!black}{\bf Obrigado!}\\[12pt]
+}
+\date{
+	\normalsize
+	Erick M. Campos (\href{mailto:erickcampos@ufpa.br}{\tt erickcampos@ufpa.br})\\[1pt]
+	Universidade Federal do Pará (UFPA)\\[1pt]
+	Belém -- Pará -- Brasil\\
+}
+\titlepage
+\end{frame}
+\end{document}
+%%% EOF %%%

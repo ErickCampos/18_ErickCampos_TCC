@@ -1,0 +1,590 @@
+% ----------------------------------------------------------------------------
+\begin{frame}{Agenda}
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item Revisão Teórica
+	\bigskip
+	\begin{itemize}
+		\item Reconhecimento Automático de Voz (ASR)
+		\medskip
+		\item Síntese de Voz (TTS)
+		\medskip
+		\item Detecção da Atividade de Voz (VAD)
+		\medskip
+			\item O Protocolo da Samsung
+		\medskip
+		\item Beaglebone Black (BBB)
+		\smallskip
+		\begin{itemize}
+			\item PinMux pelo Sistema de Arquivos Linux
+			\smallskip
+			\item PinMux pela Unidade Programável em Tempo Real (PRU)
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Agenda}
+%\begin{enumerate}
+%	\setcounter{enumi}{1}
+%	\item Revisão Teórica
+%	\bigskip
+%	\begin{itemize}
+%		\item Reconhecimento Automático de Voz (ASR)
+%		\medskip
+%		\item Síntese de Voz (TTS)
+%		\medskip
+%		\item Detecção da Atividade de Voz (VAD)
+%		\medskip
+%		\item Modulação por Largura de Pulso (PWM)
+%		\medskip
+%		\item Protocolos de Comunicação via Luz Infravermelha (IR)
+%		\smallskip
+%		\begin{itemize}
+%			\item O Protocolo da Samsung
+%		\end{itemize}
+%		\smallskip
+%		\item Beaglebone Black (BBB)
+%		\smallskip
+%		\begin{itemize}
+%			\item PinMux pelo Sistema de Arquivos Linux
+%			\smallskip
+%			\item PinMux pela Unidade Programável em Tempo Real (PRU)
+%		\end{itemize}
+%		\smallskip
+%		\item Escala de Usabilidade de Sistema (SUS)
+%		\medskip
+%		\item Ferramentas
+%	\end{itemize}
+%\end{enumerate}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Reconhecimento (ASR)}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Reconhecimento Automático de Voz}
+%\begin{itemize}
+%	\item Técnicas: 
+%	\medskip
+%	\begin{itemize}
+%		\item Alinhamento de séries temporais (DTW) 
+%		\smallskip
+%		\item Redes neurais artificiais (ANN)
+%		\smallskip
+%		\item Mistura de gaussianas (GMM)
+%		\smallskip
+%		\item Máquinas de vetor de suporte (SVM)
+%		\smallskip
+%		\item[] \dots
+%	\end{itemize}
+%
+%	\bigskip
+%	\item Estado da arte: modelos paramétrico-estatísticos: 
+%	\medskip
+%	\begin{itemize}
+%		\item \textbf{HMM}: Modelos ocultos de Markov no \textit{back end}
+%		\smallskip
+%		\item \textbf{MFCC}: Coeficientes cepstrais no \textit{front end}
+%	\end{itemize}
+%\end{itemize}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{Reconhecimento Automático de Voz}
+\begin{itemize}
+	\item Estado da arte: modelos paramétrico-estatísticos: 
+	\smallskip
+	\begin{itemize}
+		\item \textbf{HMM}: Modelos ocultos de Markov no \textit{back end}
+		\smallskip
+		\item \textbf{MFCC}: Coeficientes cepstrais no \textit{front end}
+	\end{itemize}
+\end{itemize}
+\begin{figure}
+	\includegraphics[width=0.67\textwidth]{../Figures/asr_sch}
+	\caption{Arquitetura de um sistema ASR}
+\end{figure}
+\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}[fragile]{Reconhecimento Automático de Voz}
+\begin{itemize}
+	\item Modelo Acústico
+\end{itemize}
+\begin{figure}
+	\vspace{-10pt}
+	\includegraphics[width=\textwidth]{Figures/xis}
+	\vspace{-12pt}
+\end{figure}
+\begin{itemize}
+	\item Modelo de Linguagem: $p(\text{\it{``I ate bread''}}) > p(\text{\it{``I ate dread''}}) $
+	\medskip
+	\item Dicionário Fonético: conversão grafema-fonema (G2P)
+	\vspace{-3pt}
+\end{itemize}
+\begin{listing}
+\begin{lstlisting}
+aumentar    a u~ m e~  t a X
+volume      v o l u~ m i  
+\end{lstlisting}
+\end{listing}
+\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Front End}
+%\begin{itemize}
+%	\item Processo de parametrização do sinal, que nada mais é que uma compressão
+%	\bigskip
+%	\item O sinal é dividido em \textit{frames} de, tipicamente, 10~ms 
+%	\bigskip
+%	\item Os \textit{frames} são convertidos do domínio do tempo para o domínio 
+%	do \textit{cepstrum}, no qual 39 MFCCs são extraídos para cada
+%	\textit{frame} e organizados em uma matriz $\bf{X}$
+%\end{itemize}
+%\end{frame}
+%
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Modelo de Linguagem e Decodificador}
+%\begin{itemize}
+%\item O modelo de linguagem provê a probabilidade $p(\mathcal{T})$ de
+%observar uma sentença $\mathcal{T}=[\text{I}, \text{ate}, \text{bread}]$ (p.e.)
+%\begin{eqnarray}\notag
+%	p(\text{``I ate bread''}) &>& p(\text{``I ate dread''})\\\notag
+%	%p(\text{``bread''} \ | \ \text{``I''}, \ \text{``ate''}) &>& p(\text{``dread''} \ | \ \text{``I''}, \ \text{``ate''})
+%\end{eqnarray}
+%
+%\medskip
+%\item O decodificador busca a melhor sentença $\mathcal{T}^*$ que maximiza a
+%\textit{likelihood}:
+%\begin{equation}\notag
+%	\mathcal{T}^* = \arg \max_{\mathcal{T}} p({\tt{\bf{X}}} | \mathcal{T}) p(\mathcal{T}),
+%\end{equation}
+%onde $\bf{X}$ é a matriz de MFCCs e a probabilidade
+%$p({\tt{\bf{X}}}|\mathcal{T})$ é dada pelo modelo acústico
+%\end{itemize}
+%\end{frame}
+%
+%% ----------------------------------------------------------------------------
+%\begin{frame}[fragile]{Dicionário Fonético}
+%\begin{itemize}
+%	\item G2P: Mapeamento dos grafemas para fonemas
+%	\smallskip
+%	\item Gera rótulos para o aprendizado do modelo acústico
+%\end{itemize}
+%\begin{listing}
+%\begin{lstlisting}{bash}
+%<s>             sil
+%</s>            sil
+%ligar           l i g a X
+%desligar        d e s l i g a X
+%televisão       t e l e v i z a~ w~
+%aumentar        a u~ m e~  t a X
+%diminuir        dZ i~ m i~ n u j X
+%volume          v o l u~ m i
+%canal           k a n a w
+%mais            m a j s
+%menos           m e~ n u s
+%\end{lstlisting}
+%\end{listing}
+%\end{frame}
+%
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Modelo Acústico}
+%\begin{itemize}
+%	\item Assinala \textit{chunks} de áudio a fonemas, onde cada fonema (ou
+%	conjunto de fonemas) é modelado por uma HMM contínua
+%\end{itemize}
+%\begin{figure}
+%	\includegraphics[width=0.95\textwidth]{Figures/xis}
+%	\caption{Conversão G2P: \texttt{xis} $\ \rightarrow \ $ \texttt{S i j s}}
+%\end{figure}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Síntese (TTS)}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Síntese de Voz}
+%\begin{itemize}
+%	\item Técnicas
+%	\medskip
+%	\begin{itemize}
+%		\item Concatenação
+%		\smallskip
+%		\item Articulatória
+%		\smallskip
+%		\item Formantes (regras, ``fonte-filtro'')
+%		\smallskip
+%		\item Estatístico-paramétrica (HMMs) $\rightarrow$ mais recente
+%		\smallskip
+%		\item[] \dots
+%	\end{itemize}
+%\end{itemize}
+%\begin{figure}
+%	\includegraphics[width=\textwidth]{../Figures/tts_sch}
+%	\caption{Arquitetura de um sistema TTS}
+%\end{figure}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{Síntese de Voz}
+\begin{itemize}
+	\item Front End:
+	\smallskip
+	\begin{itemize}
+		\item Normalização ou pré-processamento do texto
+		%\smallskip
+		%\begin{itemize}
+		%	\item Conversão de números, abreviaturas e outros símbolos em
+		%	palavras escritas por extenso
+		%\end{itemize}
+		\smallskip
+		\item Conversão grafema-fonema (G2P)
+		\smallskip
+		\item Separação em sílabas
+		\smallskip
+		\item Determinação da sílaba tônica (\textit{stress})
+	\end{itemize}
+	\medskip
+	\item Sintetizador
+	\smallskip
+	\begin{itemize}
+		\item Converte a representação linguística (\textit{label}) em voz.
+	\end{itemize}
+\end{itemize}
+\begin{figure}
+	\includegraphics[width=0.85\textwidth]{../Figures/tts_sch}
+	\caption{Arquitetura de um sistema TTS}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detecção (VAD)}
+%% ----------------------------------------------------------------------------
+%\begin{frame}[fragile]{Detecção da Atividade de Voz}
+%\begin{itemize}
+%	\item Utilizada para restringir o sinal de entrada do sistema ASR
+%	\medskip
+%	\item Presença/ausência de sons vozeados/não-vozeados (silêncio)
+%	\medskip
+%	\item Algoritmos baseados na energia ($E_F$) do sinal com valores fixos de
+%	\textit{threshold} ($T$) são mais simples e, portanto, mais indicados para
+%	sistemas em tempo real de menor porte 
+%\end{itemize}
+%\begin{lstlisting}[language=Python, morekeywords={True,False},escapechar=@]
+%T = @$\kappa$ {\scriptsize$\times$} E$_{R}$@
+%if @E$_{F} >$ T@:
+%    fala = True
+%else: 
+%    fala = False
+%\end{lstlisting}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{Detecção da Atividade de Voz}
+\begin{itemize}
+	\item Detecta a presença ou ausência de sons vozeados e não-vozeados baseado
+	na energia do sinal
+%	\medskip
+%	\item A energia do $x$-ésimo \textit{frame}, com $N$ amostras discretas no
+%	tempo, é dada pela soma dos quadrados das $N$ amostras:
+\end{itemize}
+\begin{align}\notag
+	E_x &= \sum_{n=x \cdot N}^{(x \cdot N) + N-1} x[n]^2
+\end{align}
+\begin{figure}
+	\includegraphics[width=0.80\textwidth]{../Figures/vad}
+	\caption{Exemplo de detecção de fala em um sinal de voz}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Modulação (PWM)}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Modulação por Largura de Pulso}
+%\begin{itemize}
+%	\item Resultados analógicos por meios digitais
+%	\bigskip
+%	\item Controle digital oscila entre ``ligado'' e ``desligado'', produzindo
+%	uma onda quadrada com tensão média entre os limites de tensão do pino
+%	\bigskip
+%	\item Parâmetros importantes: período ($T$) e \textit{duty cycle} ($\%T$)
+%	\bigskip
+%	\item Grande parte dos protocolos de comunicação entre controles remotos e
+%	aparelhos utiliza PWM para minimizar ruídos e economizar energia.
+%\end{itemize}
+%\end{frame}
+%
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Modulação por Largura de Pulso}
+%\begin{figure}
+%	\includegraphics[width=\textwidth]{../Figures/pwm}
+%	\caption{PWMs de mesmo período ($T$), mas \textit{duty cycles} diferentes}
+%\end{figure}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Comunicação via IR}
+\subsection{Protocolo IR da Samsung}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Protocolos de Comunicação viz Luz Infravermelha}
+%\begin{itemize}
+%	\item O envio de dados do controle remoto para o aparelho é normalmente
+%	feito por luz infravermelha (IR) 
+%	
+%	\bigskip
+%	\item O processo de comunicação ocorre, geralmente, em 4 passos, a fim de se
+%	minimizar possíveis interferências:
+%	\medskip
+%	\begin{itemize}
+%		\item Bits de \textit{start};
+%		\smallskip
+%		\item Bits de comando (``aumentar volume'', etc.);
+%		\smallskip
+%		\item Bits de endereço do aparelho;
+%		\smallskip
+%		\item Bits de \textit{stop}.
+%	\end{itemize}
+%
+%	\medskip
+%	\item Na prática, entretanto, cada empresa utiliza seu próprio protocolo,
+%	normalmente não disponibilizando documentação
+%\end{itemize}
+%\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{O Protocolo da Samsung}
+%\begin{itemize}
+%	\item Felizmente, a Samsung disponibiliza livremente na Internet seu 
+%	documento de \textit{application notes} \checkmark
+%	\bigskip
+%	\item Os bits sempre são uma transição \textit{high-to-low}, com uma PWM no 
+%	estado alto (\textit{high, burst}) de frequência 37,9~kHz e \textit{duty
+%	cycle} entre 33\% e 50\% do período $T$ da própria PWM
+%	\bigskip
+%	\item O bit `1' dura 2250~$\mu$s: 560~$\mu$s no estado alto (\textit{burst})
+%	e 1690~$\mu$s no estado baixo (\textit{idle}) da forma de onda quadrada
+%	\bigskip
+%	\item O bit `0' dura 1120~$\mu$s: 560~$\mu$s no estado alto (\textit{burst}) 
+%	e 560~$\mu$s no estado baixo (\textit{idle}) da forma de onda quadrada
+%\end{itemize}
+%\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{O Protocolo da Samsung}
+%\begin{itemize}
+%	\item O protocolo é dividido em quatro grandes blocos:
+%	\medskip
+%	\begin{enumerate}
+%		\item O primeiro, composto apenas de um bit diferenciado, é chamado de 
+%		\textit{leader}, e tem período de 9000~$\mu$s: 4500~$\mu$s no nível alto
+%		e 4500~$\mu$s no nível baixo
+%		\bigskip
+%		\item Os dois sub-blocos seguintes, chamados de \textit{custom}, são 
+%		exatamente iguais e contém 8 bits normais cada, definindo o endereço do
+%		aparelho
+%		\bigskip
+%		\item Os dois sub-blocos seguintes, chamados de \textit{data} e
+%		$\overline{\text{\textit{data}}}$, respectivamente, definem os dados,
+%		sendo o segundo o complemento do primeiro.
+%		\bigskip
+%		\item O quarto e último bloco contém apenas um bit, sempre `0', para
+%		encerrar o comando.
+%	\end{enumerate}
+%\end{itemize}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{O Protocolo IR da Samsung}
+\begin{figure}
+	\includegraphics[width=0.85\textwidth]{../Figures/samsung_protocol}
+	\caption{Esquemático do protocolo da Samsung}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Beaglebone (BBB)}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Beaglebone Black}
+%\begin{itemize}
+%	\item Microcomputador embarcado baseado em Linux
+%	\bigskip
+%	\item \textit{Open hardware} e \textit{open source}
+%	\bigskip
+%	\item Especificações (BBB revisão B):
+%	\medskip
+%	\begin{itemize}
+%		\item Processador: ARM Cortex-A8 1~GHz
+%		\medskip
+%		\item Memória: 512~MB 800~MHz
+%		\medskip
+%		\item Armaz. (\textit{Flash}): 2~GB eMMC
+%		\medskip
+%		\item N$\textdegree$ GPIOs: 69 / 92
+%		\medskip
+%		\item Preço: US\$ 45,00
+%	\end{itemize}
+%\end{itemize}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{Beaglebone Black}
+\begin{figure}
+	\includegraphics[width=0.85\textwidth]{../Figures/beagleboneblack}
+	\caption{Detalhes de \textit{hardware} da Beaglebone Black}
+\end{figure}
+\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{Expansão dos \textit{Headers} e Multiplexação dos Pinos}
+\begin{itemize}
+	\item Cada pino da BBB possui até 8 modos diferentes de funcionamento: UART,
+	SPI, eCAP, eMMC, HDMI, GPIO, ...
+	\bigskip
+	\item PinMux ou \textit{pin muxing}: escolha da função do pino
+	\bigskip
+	\item Modos de PinMux utilizados no trabalho: 
+	\medskip
+	\begin{itemize}
+		\item Sistema de arquivos Linux $\rightarrow$ GPIO
+		\medskip
+		\item Unidade programável em tempo real (PRU) através da sobreposição da
+		árvore de dispositivos (DTO) 
+		\item[] $\hookrightarrow$ GPI e eCAP (EHRPWM)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}[fragile]{PinMux pelo Sistema de Arquivos}
+\begin{itemize}
+	\item P9\_27 modo 7: GPIO $3 \times 32 + 19 = 115$
+	\item \texttt{/sys/class/.../direction} $\rightarrow$ ``in'' ou ``out''
+	\item \texttt{/sys/class/.../value} $\rightarrow$ ``0'' ou ``1''
+\end{itemize}
+\begin{listing}
+\begin{lstlisting}[language=bash]
+#!/bin/bash
+echo 115  > /sys/class/gpio/export 
+echo out > /sys/class/gpio/gpiochip115/direction 
+for i in `seq 10`; do
+    echo 1 > /sys/class/gpio/gpiochip115/value 
+    sleep 0.5
+    echo 0 > /sys/class/gpio/gpiochip115/value 
+    sleep 0.5
+done 
+echo 115 > /sys/class/gpio/unexport 
+\end{lstlisting}
+\caption{Acesso ao GPIO 115 / P9\_27 / GPIO3[19]}
+\end{listing}
+\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{PinMux pelo Sistema de Arquivos}
+%\begin{itemize}
+%	\item Desvantagem: lento demais ($\approx 22~\mu$s)
+%	\item Período da PWM do protocolo da Samsung: $1/37900=26$,$385~\mu s$
+%\end{itemize}
+%\begin{figure}
+%	\includegraphics[width=0.77\textwidth]{../Figures/gpio_hist}
+%	\caption{Tempo de escrita em arquivos na BBB (\texttt{fprintf()})}
+%\end{figure}
+%\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Unidade Programável em Tempo Real}
+%\begin{itemize}
+%	\item \textbf{PRU}: Unidade programável em tempo real
+%	\medskip
+%	\begin{itemize}
+%		\normalsize
+%		\item Microcontroladores de baixa latência (200~MHz)
+%		\medskip
+%		\item 2 \textit{cores} (PRU 0 e PRU 1) separados do ARM Cortex-A8
+%		\medskip
+%		\item Sem \textit{cache}
+%		\medskip
+%		\item Sem \textit{pipeline}
+%		\medskip
+%		\item Controle de interrupção otimizado
+%		\medskip
+%		\item Acesso direto a pinos e periféricos locais
+%	\end{itemize}
+%\end{itemize}
+%\end{frame}
+
+% ----------------------------------------------------------------------------
+\begin{frame}{PinMux pela Unidade Programável em Tempo Real}
+\begin{itemize}
+	\item Acesso direto a pinos e periféricos locais
+\end{itemize}
+\begin{figure}
+	\includegraphics[width=0.77\textwidth]{../Figures/pru}
+	\caption{Arquitetura do SoC AM3358x}
+\end{figure}
+\end{frame}
+
+%% ----------------------------------------------------------------------------
+%\begin{frame}{PinMux pela PRU}
+%\begin{itemize}
+%	\item P8\_41: Modos 5 e 6 $\rightarrow$ \textit{core} 1 do PRUSS
+%	\smallskip
+%	\begin{itemize}
+%		\item R30.04: GPO $\rightarrow$ escrita/saída
+%		\smallskip
+%		\item R31.04: GPI $\rightarrow$ leitura/entrada
+%	\end{itemize}
+%
+%	\medskip
+%	\item P8\_13: modo 4 $\rightarrow$ EHRPWM via eCAP (periférico)
+%	\smallskip
+%	\begin{itemize}
+%		\item \textit{Enhanced CAPture}: trem de pulsos que simula uma PWM
+%	\end{itemize}
+%\end{itemize}
+%\begin{table}
+%\centering
+%\begin{tabular}{ccc}
+%\hline
+%\hline
+%          & P8\_41                       & P8\_13         \\
+%\hline 
+%%Pino SoC  & T1                           & T10            \\
+%Nome      & GPIO2\_10                    & EHRPWM2B       \\
+%\hline
+%\hline
+%Modo 4    & -                            & {\bf EHRPWM2B} \\
+%Modo 5    & {\bf pr1\_PRU1\_PRU\_R30\_4} & -              \\
+%Modo 6    & {\bf pr1\_PRU1\_PRU\_R31\_4} & -              \\
+%\hline
+%\hline
+%%P8\_12  
+%\end{tabular}
+%\end{table}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Ferramentas}
+%% ----------------------------------------------------------------------------
+%\begin{frame}{Ferramentas}
+%\begin{itemize}
+%	\item ASR: Julius
+%	\bigskip
+%	\item TTS: API TextToSpeech
+%	\bigskip
+%	\item Recursos para ASR em PT\_BR: Grupo FalaBrasil
+%	\bigskip
+%	\item PinMux do pinos da BBB: \texttt{libpruio}
+%	\bigskip
+%	\item Desenvolvimento do Aplicativo Android:
+%	\medskip
+%	\begin{itemize}
+%		\item Froyo (2.2) e Gingerbread (2.3) $\rightarrow$ Eclipse
+%		\medskip
+%		\item Jelly Bean (4.2) e KitKat (4.4.2) $\rightarrow$ Android Studio
+%	\end{itemize}
+%	\medskip
+%	\item Acesso ao MySQL: \texttt{libmysqlclient}
+%\end{itemize}
+%\end{frame}
+%%%% EOF %%%

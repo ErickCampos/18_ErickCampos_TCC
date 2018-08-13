@@ -1,0 +1,48 @@
+resumo: sucinto. falar dos resultados
+justificativa: conceito de deficiência -> legislação brasileira -> governo -> conceito médico -> conceito social
+lei brasileira de inclusão -> barreiras pra PCD MMSS logo no inicio
+conceito social de deficiência
+pontuar barreiras impostas pra PCD MMSS quando interagem com dispositivos com
+controle remoto por exemplo considerando conceito atual de deficiência na legislação 
+- barreira vs obstáculo vs ruído
+- existe tecnologia acessivel que não é barreira
+colocar PCD MMSS como publico alvo ja no começo do trabalho
+
+objetivos específicos
+tá misturado com a metodologia
+i.e. - testes de usabilidade com voluntários:
+	a técnica usada nos testes é metodologia (o como), não objetivo (alcançar o que eu quero)
+
+2.6 - métricas de avaliação -> forma de avaliação
+não é métrica oficial de usabilidade, é só a forma que eu to avaliando
+
+usabilidade de um sistema interativo: 3 variáveis
+- usuário -> já fiz
+- contexto de operação: o sistema deve se adaptar ao usuário, e não o contrário
+- trabalho realizado: união da tarefa com a atividade
+
+relatar que não conhecemos o usuario primeiro porque é dificil passar pela
+burocracia das instituições de apoio às PCD
+
+reforçar: publico alvo no inicio!!!
+
+pag. 13: acessibilidade TV digital -> dispositivo menor??
+pag. 16: eixo de rotação da cabeça
+fig. 9: esquematico do sistema -> diagrama de blocos
+	cade bluetooth?
+
+usar um MCU pra reduzir a energia do LED IR
+jogava fora o HT12
+
+divisor de tensão no pino co C.H.I.P. -> explicar a gambiarra
+LED de status com uma tensão de 1.7V
+
+acessar o timer do R8 pra gerar o PWM pro IR do protocolo da Samsung
+
+esquemático: circuito de radiofrequencia -> circuito do meu modulo transmissor do acionador externo
+colocar a figura da teoria do sensor de proximidade
+noção de preço dos produtos
+
+multimodal: 49m
+
+acionamento: mesmo movimento de controle repetidas vezes pra ligar
