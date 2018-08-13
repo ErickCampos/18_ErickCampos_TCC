@@ -24,12 +24,12 @@ dispositivos de entrada mais utilizados em computadores \textit{desktop}, ao
 passo que as telas sensíveis ao toque (\textit{touchscreen}) são utilizados em
 \textit{smartphones} e \textit{tablets}. No entanto, esses métodos de entrada
 convencionais forçam o usuário a utilizar as mãos, o que se torna um problema
-sério se o usuário possuir algum problema na realização de movimentos dos
-membros superiores, o que inclui também pessoas com problemas em habilidades
-motoras finas, por exemplo, fraqueza dos dedos, cujas limitações se concentram
-no manuseio de objetos físicos. Nesse sentido, as interações não-convencionais
-devem ser exploradas a fim de evitar que pessoas com deficiência motora sejam
-digitalmente excluídas.  
+sério se o usuário, por exemplo, possuir algum problema na realização de
+movimentos dos membros superiores, o que inclui também pessoas com problemas em
+habilidades motoras finas, como fraqueza dos dedos, cujas limitações se
+concentram no manuseio de objetos físicos. Nesse sentido, as interações
+não-convencionais devem ser exploradas a fim de evitar que pessoas com
+deficiência motora sejam digitalmente excluídas.  
 
 %página 2
 Interações não-convencionais, por definição, ocorrem quando o usuário é capaz de
@@ -87,7 +87,8 @@ consiga realizar, através do sopro, os eventos de clique do \textit{mouse},
 descartando a necessidade de utilizar as mão para realizar essa ação. Vale
 ressaltar que todas as interfaces de programação e pacotes de \textit{software}
 utilizados para a criação do dispositivo proposto neste trabalho são
-\textit{open-source} ou encontram-se disponíveis livremente na Internet.
+\textit{open-source} ou encontram-se disponíveis livremente na
+Internet~\cite{portaudio},~\cite{xlib}.
 
 %página 3
 \section{Justificativa}
@@ -207,6 +208,17 @@ entre o acionador e o sistema operacional do computador.
 	\caption{Mouse adaptado para receber a interface P2 Jack de um acionador.}
 	\label{fig:mouse}
 \end{figure}
+
+Existem também produtos no mercado com a proposta de controlar os eventos de
+clique através do sopro, por exemplo, como o acionador Sip/Puff
+Switch~\cite{SipPuff} e o IntegraMouse~\cite{IntegraMouse} --- um produto que
+permite controlar o ponteiro do \textit{mouse} e realizar cliques no computador,
+através dos movimentos da boca e de sopro, respectivamente. Entretanto, o
+Sip/Puff Switch custa cerca de U\$ 319, já o IntegraMouse está custando em média
+\euro 2000. Esses preços são extremamente altos para pessoas de baixo poder
+aquisitivo. Esse alto preço contribui bastante para que esse tipo de TA não seja
+amplamente difundida, contribuindo para o aumento da exclusão digital imposta às
+PCD.
 
 Como pode ser visto, o custo dos acionadores comerciais são bem elevados. Alguns
 deles possuem um mecanismo bem simples e ainda assim são vendidos a valores
@@ -449,16 +461,6 @@ interface de áudio do computador. Um \textit{software driver} para capturar os
 sinais de áudio e convertê-los em eventos de clique, por exemplo, seria
 necessário e uma proposta semelhante a essa não foi encontrada.    
 
-Existem produtos no mercado com a proposta de controlar os eventos de
-clique através do sopro, como o acionador Sip/Puff Switch~\cite{SipPuff} e o
-IntegraMouse~\cite{IntegraMouse} --- um produto que permite controlar o ponteiro do
-\textit{mouse} e realizar cliques no computador, através dos movimentos da boca
-e de sopro, respectivamente. Entretanto, o Sip/Puff Switch custa cerca
-de U\$ 319, já o IntegraMouse está custando em média \euro 2000. Esses preços
-são extremamente altos para pessoas de baixo poder aquisitivo. Esse alto preço
-contribui bastante para que esse tipo de TA não seja
-amplamente difundida, contribuindo para o aumento da exclusão digital imposta às
-PCD.
 
 %Diante de tais circunstâncias, este trabalho tem como finalidade apresentar  uma
 %solução para diminuir a exclusão digital vivenciada por PCD, as quais estão à
@@ -477,13 +479,17 @@ solução de baixo custo para diminuir a exclusão digital vivenciada por PCD,
 as quais estão à margem do mundo eletrônico por conta da ausência de recursos 
 que adaptem os dispositivos às suas necessidades. Para isso, foi desenvolvido 
 um acionador externo baseado em sopro capaz de realizar o clique do 
-\textit{mouse} do computador. A comunicação entre o acionador e o computador é
-realizada através da interface de áudio, com o auxílio de um \textit{software}
-que possui a função de capturar os sinais do acionador pela entrada de áudio do
-computador e convertê-los em clique. O dispositivo desenvolvido deve ser
-utilizado em conjunto com alguma ferramenta alternativa de controle do ponteiro 
-do \textit{mouse}, como as aplicações que utilizam os movimentos da cabeça
-do usuário para realizar essa função. 
+\textit{mouse} do computador. A utilização do sopro para realizar o clique do
+\textit{mouse} foi escolhida, pois é umas das poucas ações que a grande maioria
+das pessoas consegue realizar.  Dessa forma, pessoas com diversos tipos de
+deficiência, incluindo as com deficiência motora severa dos  membros superiores,
+serão beneficiadas por esse dispositivo. A comunicação entre o acionador e o
+computador é realizada através da interface de áudio, com o auxílio de um
+\textit{software} que possui a função de capturar os sinais do acionador pela
+entrada de áudio do computador e convertê-los em clique. O dispositivo
+desenvolvido deve ser utilizado em conjunto com alguma ferramenta alternativa de
+controle do ponteiro do \textit{mouse}, como as aplicações que utilizam os
+movimentos da cabeça do usuário para realizar essa função. 
 
 
 \section{Objetivos}
