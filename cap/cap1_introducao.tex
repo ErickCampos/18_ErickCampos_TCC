@@ -40,7 +40,7 @@ utilizar a fala como uma interação não-convencional para realizar uma tarefa 
 digitação. Nesse caso, o dispositivo de entrada utilizado como método
 convencional para realizar a digitação (normalmente um teclado) precisa ser
 substituído por um microfone. Outro bom exemplo é a utilização de uma
-\textit{webcam} para capturar os movimentos a cabeça do usuário e convertê-los
+\textit{webcam} para capturar os movimentos da cabeça do usuário e convertê-los
 em comandos de controle de um televisor, como em~\cite{Batista17}. Dessa forma,
 tais equipamentos são utilizados, portanto, como tecnologias assistivas, pois
 elas podem ser a única forma para que pessoas com deficiência motora dos
@@ -88,7 +88,7 @@ descartando a necessidade de utilizar as mão para realizar essa ação. Vale
 ressaltar que todas as interfaces de programação e pacotes de \textit{software}
 utilizados para a criação do dispositivo proposto neste trabalho são
 \textit{open-source} ou encontram-se disponíveis livremente na
-Internet~\cite{portaudio},~\cite{xlib}.
+Internet~\cite{portaudio},~\cite{xlib},~\cite{ErickGit}.
 
 %página 3
 \section{Justificativa}
@@ -127,7 +127,9 @@ Tabela~\ref{tab:ibge} mostra o perfil da população brasileira com deficiência
 	Cognitiva & Problemas mentais ou intelectuais & 2.611.536   &  1,369\%  \\ 
 	\hline
 	\hline
+\vspace{-1.25cm}
 \end{tabular}
+\caption*{\textbf{Fonte:} Extraída de~\cite{tIBGE}}
 \end{table} %ok
 
 Apesar da atual existência de inúmeros instrumentos voltados para TA, como
@@ -138,13 +140,13 @@ subdesenvolvidos, por exemplo, apenas 15\% das PCD têm acesso a essas Tecnologi
 Assistivas~\cite{WHO15}. Um fator que pode contribuir para esse cenário são os
 altos preços de algumas dessas tecnologias. 
 
-\subsection{Acionadores Externos}
+\subsection{Acionadores Externos Comerciais}
 
 Acionadores externos, dispositivos que permitem as PCD a utilizarem
 equipamentos ativados normalmente por botões ou teclados~\cite{tecla}, são um
 grande exemplo de ferramentas voltadas para TA que não são acessíveis
 economicamente para grande parte da população. Apesar de existirem uma grande 
-variedade de tipos e funcionalidades, a média de dos acionadores externos
+variedade de tipos e funcionalidades, a média dos acionadores externos
 é bastante alta. A Tabela~\ref{tab:acionadores} mostra os valores comerciais 
 de alguns  acionadores externos. 
 
@@ -206,6 +208,8 @@ entre o acionador e o sistema operacional do computador.
 	\centering
 	\includegraphics[width=0.65\textwidth]{fig/mouse13}
 	\caption{Mouse adaptado para receber a interface P2 Jack de um acionador.}
+	\vspace{-1.0cm}
+	\caption*{\textbf{Fonte: } Extraído de~\cite{MouseJack}.}
 	\label{fig:mouse}
 \end{figure}
 
@@ -217,13 +221,14 @@ através dos movimentos da boca e de sopro, respectivamente. Entretanto, o
 Sip/Puff Switch custa cerca de U\$ 319, já o IntegraMouse está custando em média
 \euro 2000. Esses preços são extremamente altos para pessoas de baixo poder
 aquisitivo. Esse alto preço contribui bastante para que esse tipo de TA não seja
-amplamente difundida, contribuindo para o aumento da exclusão digital imposta às
-PCD.
+amplamente difundida, contribuindo também para o aumento da exclusão digital
+imposta às PCD.
 
+\newpage
 Como pode ser visto, o custo dos acionadores comerciais são bem elevados. Alguns
 deles possuem um mecanismo bem simples e ainda assim são vendidos a valores
-absurdos. Por exemplo, o acionador~\cite{StringSwitch} possui apenas uma simples
-corda que puxa uma chave de fim de curso. Assim, quando o corda do acionador é
+altos. Por exemplo, o acionador~\cite{StringSwitch} possui apenas uma simples
+corda que puxa uma chave de fim de curso. Assim, quando a corda do acionador é
 puxada, os pinos de referência e saída do P2 Jack são curto-circuitados,
 ``simulando'', no P2 Jack, os mesmos estados de aberto e fechado da chave de fim
 de curso. Realizando pesquisas em sites como
@@ -248,7 +253,7 @@ público. %ok
 Nesse sentido, esta pesquisa tem como intuito apresentar uma solução para
 diminuir a exclusão digital vivenciada pelas PCD, que muitas vezes não conseguem
 utilizar aparelhos eletrônicos, como \textit{smartphones} e computadores
-\textit{desktop}, devido a limitação de recursos que os adaptem às suas
+\textit{desktop}, devido à limitação de recursos que os adaptem às suas
 necessidades. Além disso, a solução proposta, apesar de ser voltada para o uso de
 uma determinada função em sistemas computacionais, pode ser utilizada em outros
 dispositivos que necessitem de uma interação através do pressionamento de um
@@ -260,7 +265,7 @@ acesso a essa ferramenta.
 % que %auxiliam o uso de tarefas em dispositivos que normalmente não possuem
 % interfaces %alternativas de controle. 
  
-\subsubsection {Pesquisas Acadêmicas Relacionadas à Acionadores Externos}
+\subsection {Pesquisas Acadêmicas Relacionadas à Acionadores Externos}
 
 A ideia de ajudar PCD a utilizar aparelhos eletrônicos com o auxílio de
 acionadores externos tem sido alvo de inúmeras pesquisas acadêmicas. Uma grande
@@ -302,7 +307,7 @@ componentes ópticos: um LED (do inglês \textit{light emitting diode}) infraver
 emissor e um receptor. Os LEDs foram posicionados bem próximos a um dos
 olhos do usuário e através do valor da tensão no LED infravermelho receptor foi
 possível identificar se a pessoa estava de olho aberto ou fechado. Quando o
-usuário está de olho aberto , o sinal infravermelho refletido no olho gera uma
+usuário está de olho aberto, o sinal infravermelho refletido no olho gera uma
 tensão bem abaixo da tensão percebida quando a pessoa está com o olho fechado.
 Com isso, foi possível detectar os eventos de clique identificando os piscar dos
 olhos. A detecção foi baseada na amplitude do sinal de tensão do LED receptor e
@@ -332,7 +337,16 @@ determinada área que esteja muito próxima da posição atual do ponteiro e nã
 houver tempo suficiente entre os comandos de mover e parar, o cursor pode não
 ficar exatamente sobre a área desejada. Outro grande problema nessa abordagem é
 movimentar o cursor na diagonal, pois o usuário é forçado a realizar muitos
-comandos de para conseguir posicionar o \textit{mouse} na área desejada.   
+comandos para conseguir posicionar o \textit{mouse} na área desejada.   
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/frontal}
+	\caption{Músculo frontal.}
+	\vspace{-1.0cm}
+	\caption*{\textbf{Fonte:} Extraído de~\cite{musculo}.}
+	\label{fig:frontal}
+\end{figure}
 
 Há trabalhos que, para implementar a função de clique, utilizam acionadores
 baseados em sinais obtidos por eletromiografia (EMG), um método de registro da
@@ -346,13 +360,6 @@ vezes de forma consecutiva. Assim, o sinal elétrico capturado pelo circuito de
 EMG, quando os músculos da testa são contraídos, é convertido nesses dois
 eventos de clique.
   
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{fig/frontal}
-	\caption{Músculo frontal.}
-	\label{fig:frontal}
-\end{figure}
-
 Já em~\cite{Kaushik12}, foi proposto um acionador que permitia controlar o
 movimento do ponteiro do mouse e as funções de clique esquerdo e direito,
 através de EMG e mecanomiografia (MMG). A MMG é uma técnica não-invasiva que
@@ -388,10 +395,11 @@ Figuras~\ref{fig:masseter} e~\ref{fig:risorio}, respectivamente.
 	\quad
 	\subfloat[Músculo risório.\label{fig:risorio}]  {\includegraphics[width=0.48\linewidth]{fig/risorio}}
 	\caption{Músculos localizados na lateral da face.}
-	\label{fig:test}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Extraído de~\cite{musculo}.}
 \end{figure}
 
-\break
+%\break
 Para o MMG, foi utilizado um piezo --- um transdutor que sob estresses
 mecânicos, como vibrações e compressões, gera sinais elétricos --- o qual foi
 colocado no músculo platisma localizado no pescoço, como mostrado na
@@ -403,11 +411,14 @@ respectivamente. Entretanto, assim como~\cite{Karimullah02}, é preciso realizar
 vários comandos para mover o cursor nas diagonais, por exemplo.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{fig/platisma}
+	\includegraphics[width=0.65\textwidth]{fig/platisma}
 	\caption{Músculo platisma.}
+	\vspace{-1.0cm}
+	\caption*{\textbf{Fonte: }Extraído de~\cite{musculo}.}
 	\label{fig:platisma}
 \end{figure}
 
+\newpage
 O trabalho~\cite{Simpson08} realizou o controle do ponteiro através dos
 movimentos da cabeça e utilizou um acionador muito interessante que
 utilizava os sinais de um acelerômetro para realizar os eventos de clique. O
@@ -417,13 +428,13 @@ possuem dificuldade de audição a melhorar sua capacidade auditiva. Esse
 acionador é dividido em dois módulos: transmissor e receptor. O módulo
 transmissor é o que fica, de fato, posicionado atrás da orelha do usuário. Já o
 receptor fica conectado diretamente no computador via USB. Os módulos se
-comunicam utilizando sinais de rádiofrequência. Para ativar a função de clique,
+comunicam utilizando sinais de radiofrequência. Para ativar a função de clique,
 o usuário deve realizar uma pressão entre os dentes superiores e inferiores
 (oclusão).  O sensor é capaz de distinguir o comando de clique através da
 pressão entre os dentes, da vibração causada no sensor quando o usuário
 movimenta a cabeça e até mesmo da vibração causada pelo ato de abrir a boca ao
 falar ou bocejar. Isso evita que cliques sejam detectados de forma equivocada,
-tornando o acionador mais confiável para o função do clique.
+tornando o acionador mais confiável para a função do clique.
 
 No trabalho desenvolvido em~\cite{Antunes16}, os movimentos da cabeça capturados
 por uma \textit{webcam} foram utilizados para controlar o ponteiro do mouse. Já
@@ -434,7 +445,7 @@ com o computador através da tecnologia Bluetooth. Com isso, uma pessoa que tenh
 os movimentos dos membros inferiores preservados, consegue utilizar a função de
 clique no computador sem a necessidade de utilizar a mãos. 
 
-O FlipMouse, descrito em~\cite{Aigner16}, permite que uma pessoas controle o
+O FlipMouse, descrito em~\cite{Aigner16}, permite que uma pessoa controle o
 cursor do \textit{mouse}, bem como a função de clique. Um módulo
 \textit{joystick} e seu \textit{switch} são utilizados para mover o cursor e 
 realizar o clique esquerdo, respectivamente. Já o clique direito do
@@ -444,6 +455,7 @@ FlipMouse e o computador é estabelecida através da interface USB com o auxíli
 de um microcontrolador que gerencia o protocolo de comunicação exigida pela
 interface USB.
 
+\vspace{-0.15cm}
 Como visto até agora, existem diversos tipos de acionadores construídos com a
 finalidade de serem utilizados como método alternativo para o clique do
 \textit{mouse}.  Contudo, dentre a literatura consultada, apenas o FlipMouse
@@ -474,6 +486,7 @@ necessário e uma proposta semelhante a essa não foi encontrada.
 %conseguia utilizar um computador, poderá realizar várias tarefas no computador
 %forma independente, ajudando na inclusão digital e social dessa pessoa.
 
+\vspace{-0.15cm}
 Diante de tais circunstâncias, este trabalho tem como finalidade apresentar  uma
 solução de baixo custo para diminuir a exclusão digital vivenciada por PCD, 
 as quais estão à margem do mundo eletrônico por conta da ausência de recursos 
@@ -503,7 +516,7 @@ de conceito, será possível controlar os cliques, com o auxílio de um
 seus derivados. No entanto, o sistema projetado pode ser ampliando para os
 sistemas operacionais Windows e MacOS para atender um maior número de potenciais
 usuários do produto. É importante também que esse produto seja de baixo custo e
-que todo o projeto seja livremente disponibilizado% para que qualquer pessoa que
+que todo o projeto seja livremente disponibilizado.% para que qualquer pessoa que
 %tenha acesso a esse projeto, se desejar, possa construir por conta própria seu
 %acionador, aumentando assim, o número de pessoas beneficiadas por este trabalho.
 
@@ -522,7 +535,7 @@ que todo o projeto seja livremente disponibilizado% para que qualquer pessoa que
 
 \begin{subsection}{Objetivos Específicos}
 
-Os objetivos específicos podem ser:
+Os objetivos específicos são:
 i) estudo e implementação das ferramentas que constituem acionador;
 ii) estudo de APIs para criação do \textit{software};
 iii) teste com voluntários;
@@ -532,7 +545,7 @@ Uma breve descrição sobre cada tópico é feita a seguir.
 \begin{enumerate}[i)]
 
 \setlength\itemsep{-.2cm}
-	\item Estudo e implementação ferramentas que constituem o acionador: \vspace{-.2cm}
+	\item Estudo e implementação as ferramentas que constituem o acionador: \vspace{-.2cm}
 	\begin{itemize}
 		%\setlength\itemsep{-.1cm}
 		\item Estudo de componentes eletrônicos sensíveis ao fluxo de ar
@@ -565,7 +578,7 @@ provocados pela ação de sopro.
 
 Este capítulo fez uma breve introdução sobre as motivações que levaram ao
 desenvolvimento do projeto além de mostrar os objetivos do trabalho.
-A seguir, é apresentada uma síntese dos conteúdos que serão abordados nos
+A seguir, apresenta-se uma síntese dos conteúdos que são abordados nos
 próximos capítulos.
 
 \begin{description}
@@ -589,13 +602,13 @@ para emulação de cliques do \textit{mouse}.
 	\textit{feedback} através de um questionário de qualidade baseado em uma escala
 	quantitativa.  Os detalhes sobre a metodologia dos testes aplicados aos voluntários e
 	os resultados obtidos e avaliados. Detalhes sobre as falhas cometidas e
-	dificuldades gerais encontradas durante o projeto também serão relatados neste
+	dificuldades gerais encontradas durante o projeto também são relatadas neste
 	capítulo.
 
 	\item[Capítulo 5.] Considerações Finais. 
 %	Discussões sobre os resultados dos testes feitos com o grupo de voluntários
 %	serão abordadas nesse capítulo, 
-    Neste capítulo será apresentado a conclusão do trabalho, as contribuições do
+    Neste capítulo é apresentado a conclusão do trabalho, as contribuições do
 	projeto e a perspectiva para as próximas versões do dispositivo, esta última 
 	discutida na seção de trabalhos futuros. 
 
