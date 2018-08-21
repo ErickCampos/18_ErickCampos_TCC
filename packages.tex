@@ -80,6 +80,16 @@ linkcolor=black,
 %citecolor=red,
 citecolor=black,
 }
+\newcommand*{\captionsource}[2]{%
+  \centering{
+  \caption[{#1}]{%
+    #1%
+   % \\\hspace{\linewidth}%
+   \\ 
+	\textbf{Fonte:} #2%
+  }}
+}
+
 
 % Ensiar o Latex a separar silabas
 \hyphenation{DMT En-ge-nhei-ro}
