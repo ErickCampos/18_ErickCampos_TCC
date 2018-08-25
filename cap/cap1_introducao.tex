@@ -314,7 +314,7 @@ tensão bem abaixo da tensão percebida quando a pessoa está com o olho fechado
 Com isso, foi possível detectar os eventos de clique identificando o piscar dos
 olhos. A detecção foi baseada na amplitude do sinal de tensão do LED receptor e
 no tempo em que o usuário ficava de olho fechado, evitando que o sistema
-identificasse um clique de involuntário quando a pessoa piscasse de forma
+identificasse um clique involuntário quando a pessoa piscasse de forma
 natural. Esse acionador construído para realizar o clique de um \textit{mouse} é
 bastante interessante, porém, como descrito em~\cite{Batista17}, onde foi
 elaborado um acionador que utiliza esse mesmo princípio de funcionamento, pode
@@ -330,11 +330,11 @@ para mover o cursor para esquerda, direita, cima, baixo e parar o cursor,
 respectivamente. Quando o usuário realiza um comando para mover o cursor,
 \textit{move right}, por exemplo, o ponteiro começa a se mover a 20
 \textit{pixels} por segundo na direção dado no comando e só para de se
-movimentar quando for reconhecido o camando \textit{stop}. Em relação ao evento
+movimentar quando for reconhecido o comando \textit{stop}. Em relação ao evento
 de clique, foi implementado apenas o clique simples do \textit{mouse}, sendo
 necessário realizar o comando de voz \textit{click} para que o sistema emule
 essa função. O trabalho proposto é bastante interessante, mas pode apresentar
-problemas, por exemplo, caso o usuário desejar mover o cursor para uma
+problemas, por exemplo, caso o usuário deseje mover o cursor para uma
 determinada área que esteja muito próxima da posição atual do ponteiro e não
 houver tempo suficiente entre os comandos de mover e parar, o cursor pode não
 ficar exatamente sobre a área desejada. Outro grande problema nessa abordagem é
