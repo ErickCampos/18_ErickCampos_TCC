@@ -145,11 +145,11 @@ altos preços de algumas dessas tecnologias.
 Acionadores externos, dispositivos que permitem as PCD a utilizarem
 equipamentos ativados normalmente por botões ou teclados~\cite{tecla}, são um
 grande exemplo de ferramentas voltadas para TA que não são acessíveis
-economicamente para grande parte da população. Apesar de existirem uma grande 
-variedade de tipos e funcionalidades, a média dos acionadores externos
+economicamente para grande parte da população. Apesar de existir uma grande 
+variedade de tipos e funcionalidades, a média de preço dos acionadores externos
 é bastante alta. A Tabela~\ref{tab:acionadores} mostra os valores comerciais 
 de alguns  acionadores externos. 
-
+\vspace{-0.3cm}
 \begin{table}[!h]
 \centering
 \caption{Acionadores externos comerciais.}
@@ -178,6 +178,8 @@ de alguns  acionadores externos.
 	\hline
 	\hline
 \end{tabular}
+\vspace{-0.5cm}
+\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 \end{table}
 
 Acionadores que possuem como saída de comunicação o P2 Jack,
@@ -192,7 +194,7 @@ pressionamento de um acionador~\cite{ATswitchYT}. %Como forma de controle de uma
 É possível controlar o clique de um mouse com a comunicação P2
 Jack, mas é necessário o auxílio de um \textit{mouse}, como~\cite{MouseJack},
 mostrado na Figura~\ref{fig:mouse}, que possua uma adaptação que receba como
-entrada o P2 Jack de um acionador.  Já para acionadores,
+entrada o P2 Jack de um acionador.  Já os acionadores,
 como~\cite{Blue2},~\cite{FootPedal} e ~\cite{SipPuff}, que possuem comunicação
 Bluetooth ou USB, conseguem realizar o controle dos evento de clique de
 \textit{mouse} facilmente sem o auxílio de outros dispositivos, bastando apenas
@@ -213,8 +215,9 @@ entre o acionador e o sistema operacional do computador.
 	\label{fig:mouse}
 \end{figure}
 
+\vspace{-0.8cm}
 Existem também produtos no mercado com a proposta de controlar os eventos de
-clique através do sopro, por exemplo, como o acionador Sip/Puff
+clique através do sopro, por exemplo, o acionador Sip/Puff
 Switch~\cite{SipPuff} e o IntegraMouse~\cite{IntegraMouse} --- um produto que
 permite controlar o ponteiro do \textit{mouse} e realizar cliques no computador,
 através dos movimentos da boca e de sopro, respectivamente. Entretanto, o
@@ -258,7 +261,7 @@ necessidades. Além disso, a solução proposta, apesar de ser voltada para o us
 uma determinada função em sistemas computacionais, pode ser utilizada em outros
 dispositivos que necessitem de uma interação através do pressionamento de um
 botão, como ligar ou desligar televisores. Como grande parte dos acionadores
-disponíveis no mercado possuem um custo muito elevado, há a necessidade de a
+disponíveis no mercado possuem um custo muito elevado, há a necessidade da
 solução proposta ser de baixo custo para que mais PCD possam ter
 acesso a essa ferramenta. 
 
@@ -274,7 +277,7 @@ básicas do \textit{mouse} de um computador, onde geralmente se utiliza o
 movimento da cabeça ou dos olhos como método não-convencional de controle do
 cursor do \textit{mouse}. No entanto, para esse tipo de abordagem, há uma certa
 dificuldade em emular a função de clique.  Normalmente, para essa determinada
-função,  é utilizada o \textit{dwell time}, um método que utiliza um tempo
+função, é utilizado o \textit{dwell time}, um método que utiliza um tempo
 específico em segundos em que o ponteiro do mouse fica sobre um determinada área
 da tela para realizar  o clique. Todavia, tal técnica obriga o usuário a ficar
 com a cabeça ou com os olhos parados em uma determinada posição por algum tempo
@@ -283,24 +286,23 @@ para que a função de clique seja ativada, gerando um certo incômodo no usuár
 %além de, naturalmente, aumentar o tempo de utilização a medida em que o número
 %de tarefas realizadas também aumentar.
 
-Outro problema recorrente do \textit{dwell time} é esse método naturalmente
-demanda mais tempo, em comparação com o método convencional de clique, 
-para executar uma tarefa. Devido isso,
-há diversas pesquisas que tentam solucionar esses problemas do \textit{dwell
-time} através de métodos alternativos para a emulação do clique do
-\textit{mouse}.  Em~\cite{Aanand18} foi proposto um algoritmo chamado de
-OptiDwell para emular a função de clique.  Esse algoritmo utiliza o mesmo
-princípio do \textit{dwelltime}, mas com a diferença de que o usuário sabe
-exatamente, através de \textit{feedbacks} visuais e sonoros, quando o evento de
-clique irá acontecer.  Com o algoritmo OptiDwell, o usuário tem uma noção mais
-precisa do tempo para que a função de clique seja realizada. O usuário sabe que
-o clique está para ser realizado através da mudança de cor do cursor do
-\textit{mouse}. Por exemplo, se a pessoa deseja clicar em uma letra no teclado
-virtual, a cor do ponteiro ficará mudando ao longo do tempo. Quando o ponteiro
-estiver em uma determinada cor, a função de clique será chamada, além de ser
-ativado um som de estalo (clique). Com isso a pessoa tem uma noção mais precisa do
-tempo para realizar o clique, porém o tempo de execução dessa função continua 
-sendo um problema.
+Outro problema recorrente do \textit{dwell time} é que esse método naturalmente
+demanda mais tempo, em comparação com o método convencional de clique, para
+executar uma tarefa. Devido a isso, há diversas pesquisas que tentam solucionar
+esses problemas do \textit{dwell time} através de métodos alternativos para a
+emulação do clique do \textit{mouse}.  Em~\cite{Aanand18} foi proposto um
+algoritmo chamado de OptiDwell para emular a função de clique.  Esse algoritmo
+utiliza o mesmo princípio do \textit{dwelltime}, mas com a diferença de que o
+usuário sabe exatamente, através de \textit{feedbacks} visuais e sonoros, quando
+o evento de clique irá acontecer.  Com o algoritmo OptiDwell, o usuário tem uma
+noção mais precisa do tempo para que a função de clique seja realizada. O
+usuário sabe que o clique está para ser realizado através da mudança de cor do
+cursor do \textit{mouse}. Por exemplo, se a pessoa deseja clicar em uma letra no
+teclado virtual, a cor do ponteiro mudará ao longo do tempo. Quando o
+ponteiro estiver em uma determinada cor, a função de clique será chamada, além
+de ser ativado um som de estalo (clique). Com isso a pessoa tem uma noção mais
+precisa do tempo para realizar o clique, porém o tempo de execução dessa função
+continua sendo um problema.
 
 O trabalho proposto em~\cite{Skim10} utiliza um acionador baseado em dois
 componentes ópticos: um LED (do inglês \textit{light emitting diode}) infravermelho
@@ -309,7 +311,7 @@ olhos do usuário e através do valor da tensão no LED infravermelho receptor f
 possível identificar se a pessoa estava de olho aberto ou fechado. Quando o
 usuário está de olho aberto, o sinal infravermelho refletido no olho gera uma
 tensão bem abaixo da tensão percebida quando a pessoa está com o olho fechado.
-Com isso, foi possível detectar os eventos de clique identificando os piscar dos
+Com isso, foi possível detectar os eventos de clique identificando o piscar dos
 olhos. A detecção foi baseada na amplitude do sinal de tensão do LED receptor e
 no tempo em que o usuário ficava de olho fechado, evitando que o sistema
 identificasse um clique de involuntário quando a pessoa piscasse de forma
@@ -508,7 +510,7 @@ movimentos da cabeça do usuário para realizar essa função.
 \section{Objetivos}
 
 O objetivo geral do projeto é construir um protótipo de acionador externo
-baseado e sopro que ajude as PCD a controlarem de forma independente os eventos
+baseado em sopro que ajude as PCD a controlarem de forma independente os eventos
 de clique do \textit{mouse} e também dispositivos de propósito geral que
 necessitam de uma interação através de botão ou teclado. A princípio, como prova
 de conceito, será possível controlar os cliques, com o auxílio de um
@@ -536,7 +538,7 @@ que todo o projeto seja livremente disponibilizado.% para que qualquer pessoa qu
 \begin{subsection}{Objetivos Específicos}
 
 Os objetivos específicos são:
-i) estudo e implementação das ferramentas que constituem acionador;
+i) estudo e implementação de ferramentas que constituem acionador;
 ii) estudo de APIs para criação do \textit{software};
 iii) teste com voluntários;
 
