@@ -66,7 +66,7 @@ Como um dos objetivos do acionador é ser de baixo custo, a comunicação entre 
 acionador desenvolvido e o computador é realizada através da interface de áudio
 P2 Jack. Para gerar um pulso na interface de áudio, basta curto-circuitar o pino
 de GND com o \textit{Right} e \textit{Left} do P2 Jack do acionador. Para fazer
-isso, foi necessário a utilização de uma porta lógica inversora do componente
+isso, foi necessária a utilização de uma porta lógica inversora do componente
 SN7404, ilustrado na Figura~\ref{fig:sn7404}. Essa porta lógica captura o sinal
 da saída do LM358 somente quando a saída do amplificador é de nível lógico alto,
 pois a saída desse componente também é utilizado como alimentação do SN7404.
@@ -86,7 +86,9 @@ do \textit{mouse}.
 	\begin{minipage}[c]{\textwidth}
 	\centering
 	\includegraphics[width=0.45\linewidth]{fig/sn7404}
-	\caption{Circuito interno do componente sn7404.}
+	\caption{Circuito interno do componente SN7404.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Extraída de~\cite{sn7404im}.}
 	\label{fig:sn7404}
 	\end{minipage}
 \end{figure} 
@@ -112,7 +114,7 @@ e, se desejar, construir seu próprio acionador. É importante ressaltar que
 alguns componentes, como o piezo, não possuíam biblioteca nativa no Kicad. Por
 isso foi necessário desenvolver uma biblioteca para cada um desses componentes.
 
-Após a construção do \textit{layout} do circuito no Kicad etapa de confecção da
+Após a construção do \textit{layout} do circuito no Kicad, a etapa de confecção da
 placa foi iniciada. A técnica de transferência térmica, um método bem primitivo,
 porém bastante prático e barato, foi utilizada. O circuito é impresso em papel
 fotográfico em uma impressora a \textit{laser} na melhor qualidade possível. Em
@@ -134,19 +136,10 @@ produto. Geralmente, o percloreto de ferro é vendido em pó, porém é necessá
 apenas misturar o produto com água para obter a solução desejada. A placa com o
 circuito recém transferido é mergulhada nessa solução e todo o cobre da placa é
 corroído, restando apenas o \textit{layout} do circuito desejado. Apos a
-corrosão realiza-se a limpeza do circuito com uma água corrente e detergente a
+corrosão, realiza-se a limpeza do circuito com água corrente e detergente a
 fim de retirar todas as impurezas do circuito. A etapa final consiste em furar a
 placa nos locais desejados e realizar a soldagem dos componentes da placa.
 
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{\textwidth}
-	\centering
-	\includegraphics[width=0.45\linewidth]{fig/puff2}
-	\caption{Placa de circuito impresso construído como acionador baseado em sopro.}
-	\label{fig:placa}
-	\end{minipage}
-\end{figure} 
 
 A Figura~\ref{fig:placa} mostra a placa confeccionada neste trabalho. É possível
 notar que o dispositivo é relativamente pequeno: mede cerca de 7$\times$7
@@ -154,12 +147,26 @@ centímetros. Os componentes mais caros utilizados para o desenvolvimento do
 acionador externo baseado em sopro foram o disco piezoelétrico, o amplificador
 operacional LM358, o inversor SN7404 e a placa de fenolite. 
 
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{\textwidth}
+	\centering
+	\includegraphics[width=0.4\linewidth]{fig/puff2}
+	\caption{Placa de circuito impresso construído como acionador baseado em sopro.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elebarada pelo autor.}
+	\label{fig:placa}
+	\end{minipage}
+\end{figure} 
+
+
 Cerca de R\$ 30 reais
-foram gastos para na protótipo proposto neste trabalho. Esse valor é bem mais
+foram gastos para a construção do protótipo proposto neste trabalho. Esse valor é bem mais
 barato que outros acionadores que utilizam o sopro como método não-convencional
 para o clique \textit{mouse}, como~\cite{SipPuff}. Os preços tomados como
-parâmetro neste trabalho foi baseado na loja Tip
-Eletrônica\footnote{\url{http://tipeletronica.com.br/}}. 
+parâmetro neste trabalho foram baseados na loja Tip
+Eletrônica\footnote{\url{http://tipeletronica.com.br/}}, loja localizada na
+cidade de Belém do Pará. 
 
 \end{section}
 
@@ -231,9 +238,11 @@ Figura~\ref{fig:suporte}.
 	\centering
 	\includegraphics[width=0.60\linewidth]{fig/erick}
 	\caption{Usuário testando o acionador baseado em sopro em conjunto com o
-suporte de sustentação desenvolvido.} %Note que o LED de \textit{status} fica no campo de visão
+suporte de sustentação.} %Note que o LED de \textit{status} fica no campo de visão
 %do usuário. Sendo assim, o suporte não compromete a visualização do LED que
 %informa quando o acionador foi ativado pelo sopro.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 	\label{fig:suporte}
 	\end{minipage}
 \end{figure}
@@ -244,7 +253,7 @@ independentemente da posição da cabeça da pessoa. Além disso, o LED de
 não compromete a visualização do LED que informa quando o acionador foi ativado
 ou não pelo sopro. É importante também ressaltar que, como o \textit{headset}
 utilizado possui uma estrutura de ajuste de tamanho, o suporte pode ser
-utilizado por varias pessoas bastando apenas ajustar o tamanho desejado para
+utilizado por várias pessoas, bastando apenas ajustar o tamanho desejado para
 cada tamanho de cabeça. 
 
 \end{section}
@@ -260,7 +269,7 @@ reconheceria o sensor de sopro como um dispositivo de \textit{mouse}. No
 entanto, como o único propósito da interface \textit{jack} em computadores
 \textit{desktop} é lidar com entrada e saída de áudio, foi possível utilizar a
 biblioteca PortAudio~\cite{portaudio} para gravar áudio e simplesmente
-``fingir'' que que o emulador de clique do \textit{mouse} era um microfone. Já
+``fingir'' que o emulador de clique do \textit{mouse} era um microfone. Já
 que os dados são transmitidos para o computador através do canal
 \textit{sleeve}, enquanto os pinos \textit{tip} e \textit{ring} do conector TRS
 são responsáveis por receber os dados do sensor piezoelétrico; os três canais
@@ -276,11 +285,13 @@ negativo entre as amostras 12.000 e 20.000.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.80\linewidth]{fig/pa_signal}
+	\includegraphics[width=0.7\linewidth]{fig/pa_signal}
 	\caption{Sinal de áudio gravado durante um sopro sobre o disco
 	piezoelétrico. Os picos são referentes aos canais direito (\textit{ring}) e
 	esquerdo (\textit{tip}) da interface \textit{jack} de 3,5~mm,
 	respectivamente.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 	\label{fig:pa_signal}
 \end{figure}
 \vspace{-0.75cm}
@@ -308,24 +319,27 @@ ser configurados a fim de ajustar a precisão do dispositivo.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.00\linewidth]{fig/pa_thresh}
+	\includegraphics[width=0.95\linewidth]{fig/pa_thresh}
 	\caption{Exemplo de funcionamento do algoritmo desenvolvido para identificar
 	o sopro quando o sensor piezoelétrico é utilizado no lugar do microfone. A
 	técnica de janelamento é utilizada para identificar cinco valores
 	consecutivos de amplitude que são maiores do que um \textit{threshold}
 	estipulado. O volume do microfone foi mantido sem amplificação.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 	\label{fig:pa_thresh}
+
+\vspace{-0.75cm}
 \end{figure}
-%\vspace{-0.75cm}
 
 Já no teste 2, em cor preta, a análise que começa na amostra de número 2000
 ocasionalmente ocorre próxima à transição entre os picos do sinal, o que
 eventualmente resulta em um valor de amostra menor do que o \textit{threshold}
 antes de se chegar à quinta amostra. Nesse caso, o tamanho da janela (que estava
-em 250) é restaurado 1000 e a busca continua a partir da amostra de número 3750.
-Graças ao segundo pico do sinal, a identificação do sopro pode ser recuperada
-pelo algoritmo, como mostrado no teste 3, em cor magenta. 
-
+em 250) é restaurado para 1000 e a busca continua a partir da amostra de número
+3750.  Graças ao segundo pico do sinal, a identificação do sopro pode ser
+recuperada pelo algoritmo, como mostrado no teste 3, em cor magenta. 
+ 
 O evento de clique esquerdo do mouse, por sua vez, é realizado através da API da
 biblioteca Xlib~\cite{xlib}. Basicamente, o foco do ponteiro do mouse é ajustado
 para a janela em plano mais fundo através da função \texttt{XQueryPointer}, e
@@ -344,14 +358,14 @@ cursor. No entanto, foi utilizado o \textit{software} eViacam~\cite{eviacam}.
 Esse programa, distrubuído livremente, é multiplataforma e permite controlar os
 movimentos do cursor do \textit{mouse} através dos movimentos da cabeça
 capturados por uma \textit{webcam}. Além de ser \textit{software} livre e de
-código aberto, o motivo principal para a escolha do eViacam foi as suas
+código aberto, o motivo principal para a escolha do eViacam foram as suas
 configurações que podem ser adaptadas para cada perfil de usuário.
 
 O método de clique habilitado por padrão no eViacam é o \textit{dwell time}. No
 entanto, esse método de clique pode ser desabilitado, o que deixa a
 possibilidade de utilizar o acionador externo baseado em sopro para realizar a
 função de clique. A aba de configuração do clique no eViacam, mostrada na
-Figura~\ref{fig:click}, também permote definir o tempo de ativação do clique, no
+Figura~\ref{fig:click}, também permite definir o tempo de ativação do clique, no
 caso do \textit{dwell time}, que é estabelecido como 10~ds (ou seja, 1 segundo)
 como tempo padrão. 
 
@@ -359,8 +373,10 @@ como tempo padrão.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/eviacamclick}
+	\includegraphics[width=0.6\linewidth]{fig/eviacamclick}
 	\caption{Configuração do \textit{dwell time}.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 	\label{fig:click}
 	\end{minipage}
 \end{figure}
@@ -374,8 +390,10 @@ configuração da velocidade do ponteiro nos eixos X e Y. O valor padrão é 10.
 	\centering
 	\begin{minipage}[c]{\textwidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/EviacamConfiguration}
+	\includegraphics[width=0.6\linewidth]{fig/EviacamConfiguration}
 	\caption{Configuração da velocidade de movimento do cursor do \textit{mouse}.}
+	\vspace{-1cm}
+	\caption*{\textbf{Fonte: }Elaborada pelo autor.}
 	\label{fig:mouse1}
 	\end{minipage}
 \end{figure}
